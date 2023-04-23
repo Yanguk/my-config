@@ -1,6 +1,5 @@
-# my-config
+# neo-vim-setting
 
-## nvim
 - lua pack
 https://github.com/wbthomason/packer.nvim
 
@@ -24,6 +23,4 @@ gh repo clone Yanguk/neo-vim-setting ~/.config/nvim
 
 iterm2로 해야 잘 적용이됨
 
-iterm으로 전향해야할듯 .보다 좋은게 알라크리티로 전향함
-
-### alacritty
+iterm으로 전향해야할듯 .

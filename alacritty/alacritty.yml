@@ -123,6 +123,7 @@ window:
 
 # Font configuration
 font:
+  #size: 11.0
   size: 16.0
   # Normal (roman) font face
   #normal:

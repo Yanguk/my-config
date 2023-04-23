@@ -47,5 +47,5 @@ g.goyo_margin_top = 2
 g.goyo_margin_bottom = 2
 
 -- spell
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = { 'en_us' }
 vim.opt.spell = true

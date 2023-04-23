@@ -18,6 +18,15 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'path' },
+    {
+      name = 'spell',
+      option = {
+          keep_all_entries = false,
+          enable_in_context = function()
+              return true
+          end,
+      },
+    }
   }, {
     { name = 'buffer' },
   })

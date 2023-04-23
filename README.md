@@ -20,3 +20,6 @@ iterm으로 전향해야할듯 .보다 좋은게 알라크리티로 전향함
 
 
 ### alacritty
+```
+brew install --cask alacritty
+```

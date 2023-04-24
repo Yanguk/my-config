@@ -1,7 +1,5 @@
-local function map(m, k, v)
-  vim.keymap.set(m, k, v
-    -- ,{ silent = true }
-  )
+local function map(m, k, v, option)
+  vim.keymap.set(m, k, v, option or {})
 end
 
 vim.g.mapleader = ","
@@ -43,4 +41,8 @@ map('n', '<leader>z', ':Goyo<CR>')
 map('n', '<leader>d', ':GitGutterToggle<CR>')
 
 -- spell
-map('n', '<leader>ss', ':setlocal spell!<cr>')
+map('n', '<leader>ss', ':setlocal spell!<CR>')
+
+-- 주석
+map("n", "<leader>/", ":CommentToggle <CR>")
+

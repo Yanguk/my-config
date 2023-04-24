@@ -48,6 +48,9 @@ return require('packer').startup({function(use)
 		end
 	}
 
+  -- comment
+  use "terrortylor/nvim-comment"
+
   end,
   config = {},
 })

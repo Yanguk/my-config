@@ -21,11 +21,6 @@ vim.opt.splitright = true
 -- don't create backup files
 vim.opt.swapfile = false
 
--- indent guides settings
-vim.g.indent_guides_enable_on_vim_startup = true
-vim.g.indent_guides_start_level = 2
-vim.g.indent_guides_guide_size = 1
-
 -- show trailing whitespaces
 vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
 vim.cmd('match ExtraWhitespace /\\s\\+$/')

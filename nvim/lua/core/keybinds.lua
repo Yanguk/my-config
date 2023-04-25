@@ -46,3 +46,18 @@ map('n', '<leader>ss', ':setlocal spell!<CR>')
 -- 주석
 map("n", "<leader>/", ":CommentToggle <CR>")
 
+-- 괄호 편하게 하기 위함
+map('v', '$1', '<esc>`>a)<esc>`<i(<esc>')
+map('v', '$2', '<esc>`>a]<esc>`<i[<esc>')
+map('v', '$3', '<esc>`>a}<esc>`<i{<esc>')
+map('v', '$$', '<esc>`>a"<esc>`<i"<esc>')
+map('v', '$q', '<esc>`>a\'<esc>`<i\'<esc>')
+map('v', '$e', '<esc>`>a"<esc>`<i"<esc>')
+
+map('i', '$1', '()<esc>i')
+map('i', '$2', '[]<esc>i')
+map('i', '$3', '{}<esc>i')
+map('i', '$4', '{<esc>o}<esc>O')
+map('i', '$q', '\'\'<esc>i')
+map('i', '$e', '""<esc>i')
+map('i', '$t', '<><esc>i')

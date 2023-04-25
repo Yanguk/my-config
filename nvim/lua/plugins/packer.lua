@@ -29,7 +29,6 @@ return require('packer').startup({function(use)
   ---- custome
   use 'mileszs/ack.vim'
   use 'junegunn/goyo.vim'
-  use 'nathanaelkane/vim-indent-guides'
   use 'tpope/vim-fugitive'
   use 'editorconfig/editorconfig-vim'
   use 'vim-scripts/bufexplorer.zip'
@@ -50,6 +49,9 @@ return require('packer').startup({function(use)
 
   -- comment
   use "terrortylor/nvim-comment"
+
+  -- indent
+  use "lukas-reineke/indent-blankline.nvim"
 
   end,
   config = {},

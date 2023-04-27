@@ -31,7 +31,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
 lspconfig['tsserver'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  -- 절대경로 참조
+  root_dir = function(fname)
+    return lspconfig.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+  end
 }
 
 lspconfig['rust_analyzer'].setup {
@@ -39,6 +43,7 @@ lspconfig['rust_analyzer'].setup {
 }
 
 lspconfig['eslint'].setup({
+  capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,

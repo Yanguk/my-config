@@ -48,10 +48,13 @@ return require('packer').startup({function(use)
 	}
 
   -- comment
-  use "terrortylor/nvim-comment"
+  use 'terrortylor/nvim-comment'
 
   -- indent
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  -- ligthLine
+  use 'itchyny/lightline.vim'
 
   end,
   config = {},

@@ -33,6 +33,8 @@ map('n', '<leader>bn', ':bn<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 map('n', '<leader>o', ':BufExplorer<CR>')
 
+map('n', '<leader>b', ':CtrlPBuffer<CR>')
+
 map('n', '<leader>nn', ':NERDTreeToggle<CR>')
 map('n', '<leader>nb', ':NERDTreeFromBookmark')
 map('n', '<leader>nf', ':NERDTreeFind<CR>')

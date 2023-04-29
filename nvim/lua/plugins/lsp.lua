@@ -49,5 +49,9 @@ lspconfig['eslint'].setup({
       buffer = bufnr,
       command = "EslintFixAll",
     })
-  end
+  end,
+  settings = {
+    nodePath = vim.fn.getcwd() .. '/.yarn/sdks',
+    packageManager = 'yarn',
+  }
 })

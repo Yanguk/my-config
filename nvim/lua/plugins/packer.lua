@@ -56,6 +56,8 @@ return require('packer').startup({function(use)
   -- ligthLine
   use 'itchyny/lightline.vim'
 
+  use("gbprod/yanky.nvim")
+
   end,
   config = {},
 })

@@ -28,13 +28,6 @@ map('n', '<leader>g', ':Ack')
 
 map('n', '<leader>pp', ':setlocal paste!<CR>')
 
-map('n', '<leader>bp', ':bp<CR>')
-map('n', '<leader>bn', ':bn<CR>')
-map('n', '<leader>ls', ':ls<CR>')
-map('n', '<leader>o', ':BufExplorer<CR>')
-
-map('n', '<leader>b', ':CtrlPBuffer<CR>')
-
 map('n', '<leader>nn', ':NERDTreeToggle<CR>')
 map('n', '<leader>nb', ':NERDTreeFromBookmark')
 map('n', '<leader>nf', ':NERDTreeFind<CR>')
@@ -63,3 +56,12 @@ map('i', '$4', '{<esc>o}<esc>O')
 map('i', '$q', '\'\'<esc>i')
 map('i', '$e', '""<esc>i')
 map('i', '$t', '<><esc>i')
+
+-- buffer
+vim.g.ctrlp_map = '<C-f>'
+map('n', '<leader>o', ':BufExplorer<CR>')
+map('n', '<leader>j', ':CtrlP<CR>')
+map('n', '<C-b>', ':CtrlPBuffer<CR>')
+-- map('n', '<leader>bp', ':bp<CR>')
+-- map('n', '<leader>bn', ':bn<CR>')
+-- map('n', '<leader>ls', ':ls<CR>')

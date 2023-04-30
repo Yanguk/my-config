@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/one_dark.yaml
+  - ~/.config/alacritty/themes/github_dark.yaml
 
 ############################### options
 # Configuration for Alacritty, the GPU enhanced terminal emulator.

@@ -14,6 +14,7 @@ vim.opt.hlsearch = true
 
 -- set options for Rust files
 vim.cmd('autocmd FileType rust setlocal shiftwidth=4 tabstop=4')
+
 -- split view settings
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -47,3 +48,8 @@ vim.opt.spell = true
 
 -- ligthLine
 o.laststatus = 2
+
+-- color
+vim.o.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

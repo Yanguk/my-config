@@ -28,9 +28,10 @@ map('n', '<leader>a', ':Ack ')
 
 map('n', '<leader>pp', ':setlocal paste!<CR>')
 
-map('n', '<leader>nn', ':NERDTreeToggle<CR>')
-map('n', '<leader>nb', ':NERDTreeFromBookmark')
-map('n', '<leader>nf', ':NERDTreeFind<CR>')
+map('n', '<leader>nn', ':NvimTreeToggle<CR>')
+map('n', '<leader>nc', ':NvimTreeFocus<CR>')
+map('n', '<leader>nr', ':NvimTreeCollapse<CR>')
+map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
 
 map('n', '<leader>z', ':Goyo<CR>')
 map('n', '<leader>d', ':GitGutterToggle<CR>')

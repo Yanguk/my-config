@@ -24,7 +24,7 @@ map('n', '<leader>te', ':tabedit <C-r>=escape(expand("%:p:h"), " ")<CR>/')
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
 map('n', '<leader>cl', ':let @+=expand("%p:h")<CR>:pwd<CR>')
 
-map('n', '<leader>g', ':Ack')
+map('n', '<leader>a', ':Ack ')
 
 map('n', '<leader>pp', ':setlocal paste!<CR>')
 
@@ -61,7 +61,15 @@ map('i', '$t', '<><esc>i')
 map('n', '<leader>o', ':BufExplorer<CR>')
 
 vim.g.ctrlp_map = '<C-f>'
-map('n', '<leader>j', ':CtrlPBuffer<CR>')
--- map('n', '<leader>bp', ':bp<CR>')
--- map('n', '<leader>bn', ':bn<CR>')
--- map('n', '<leader>ls', ':ls<CR>')
+map('n', '<leader>eb', ':CtrlPBuffer<CR>')
+map('n', '<leader>ec', ':CtrlPCurFile<CR>')
+map('n', '<leader>em', ':CtrlPMRUFiles<CR>')
+
+map('n', '<leader>bp', ':bp<CR>')
+map('n', '<leader>bn', ':bn<CR>')
+map('n', '<leader>ls', ':ls<CR>')
+
+map('n', '<leader>gs', ':G status<CR>')
+map('n', '<leader>gb', ':G branch ')
+map('n', '<leader>gl', ':G log --oneline ')
+map('n', '<leader>gw', ':G switch ')

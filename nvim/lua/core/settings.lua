@@ -37,7 +37,7 @@ g.multi_cursor_skip_key = '<C-x>'
 g.multi_cursor_quit_key = '<Esc>'
 
 -- goyo
-g.goyo_width=100
+g.goyo_width= '70%'
 g.goyo_margin_top = 2
 g.goyo_margin_bottom = 2
 

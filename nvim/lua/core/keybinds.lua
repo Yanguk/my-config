@@ -1,5 +1,5 @@
 local function map(m, k, v, option)
-  vim.keymap.set(m, k, v, option or {})
+  vim.keymap.set(m, k, v, option)
 end
 
 vim.g.mapleader = ","
@@ -7,18 +7,18 @@ vim.g.mapleader = ","
 map('n', '<leader>w', ':w!<CR>')
 map('n', '<leader><CR>', ':noh<CR>')
 
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-l>', '<C-w>l')
+-- map('n', '<C-j>', '<C-w>j')
+-- map('n', '<C-k>', '<C-w>k')
+-- map('n', '<C-h>', '<C-w>h')
+-- map('n', '<C-l>', '<C-w>l')
 
 -- tab
 map('n', '<leader>tn', ':tabnew<CR>')
 map('n', '<leader>to', ':tabonly<CR>')
 map('n', '<leader>tc', ':tabclose<CR>')
 map('n', '<leader>tm', ':tabmove')
-map('n', '<leader>tb', ':gt<CR>')
-map('n', '<leader>tp', ':gT<CR>')
+map('n', '<leader>tb', ':tabnext<CR>')
+map('n', '<leader>tp', ':tabprevious<CR>')
 map('n', '<leader>te', ':tabedit <C-r>=escape(expand("%:p:h"), " ")<CR>/')
 
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')

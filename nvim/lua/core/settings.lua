@@ -46,9 +46,6 @@ g.goyo_margin_bottom = 2
 vim.opt.spelllang = { 'en_us' }
 vim.opt.spell = true
 
--- ligthLine
-o.laststatus = 2
-
 -- color
 vim.o.termguicolors = true
 vim.g.loaded_netrw = 1

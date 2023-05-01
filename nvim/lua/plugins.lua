@@ -39,7 +39,6 @@ return require('packer').startup({function(use)
   use 'vim-scripts/bufexplorer.zip'
   use 'kien/ctrlp.vim'
   use 'terryma/vim-multiple-cursors'
-  use 'airblade/vim-gitgutter'
 
   use ({
     'simrat39/rust-tools.nvim',
@@ -92,6 +91,11 @@ return require('packer').startup({function(use)
         },
       })
     end,
+  }
+
+  use {
+    'airblade/vim-gitgutter',
+    after = 'github-nvim-theme',
   }
 
 	use({

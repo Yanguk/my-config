@@ -1,19 +1,8 @@
 local options = {
-  auto_install = true,
-  ensure_installed = {
-    "lua",
-    "vim",
-    "go",
-    "toml",
-    "css",
-    "tsx",
-    "css",
-    "html",
-    "lua"
-  },
+  auto_install = false,
+  ensure_installed = 'all',
   highlight = {
     enable = true,
-    use_languagetree = true,
   },
   autotag = {
     enable = true,

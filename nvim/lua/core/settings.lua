@@ -1,7 +1,6 @@
 local g = vim.g
 local o = vim.o
 
-vim.cmd('syntax on')
 vim.cmd('set noswapfile')
 
 vim.opt.number = true

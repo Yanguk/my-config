@@ -12,6 +12,9 @@ local options = {
     },
   },
   indent = { enable = true },
+  context_commentstring = {
+    enable = true,
+  },
 }
 
 require('nvim-treesitter.configs').setup(options)

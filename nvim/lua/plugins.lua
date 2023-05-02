@@ -38,6 +38,7 @@ return require('packer').startup({function(use)
   use 'editorconfig/editorconfig-vim'
   use 'vim-scripts/bufexplorer.zip'
   use 'kien/ctrlp.vim'
+
   use 'terryma/vim-multiple-cursors'
 
   use ({
@@ -50,16 +51,18 @@ return require('packer').startup({function(use)
 	use {
     {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+      run = ':TSUpdate',
+      config = function()
+        require('plugins.treesitter')
+      end
     },
     {
       'windwp/nvim-ts-autotag',
       after = 'nvim-treesitter',
-      config = function()
-        require('plugins.treesitter')
-      end
     }
   }
+
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use ({
     'terrortylor/nvim-comment',

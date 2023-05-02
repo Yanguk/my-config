@@ -39,9 +39,6 @@ map('n', '<leader>d', ':GitGutterToggle<CR>')
 -- spell
 map('n', '<leader>ss', ':setlocal spell!<CR>')
 
--- 주석
-map("n", "<leader>/", ":CommentToggle <CR>")
-
 -- 괄호 편하게 하기 위함
 map('v', '$1', '<esc>`>a)<esc>`<i(<esc>')
 map('v', '$2', '<esc>`>a]<esc>`<i[<esc>')
@@ -74,3 +71,5 @@ map('n', '<leader>gs', ':G status<CR>')
 map('n', '<leader>gb', ':G branch ')
 map('n', '<leader>gl', ':G log --oneline ')
 map('n', '<leader>gw', ':G switch ')
+
+-- diagnostics mappings

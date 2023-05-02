@@ -4,7 +4,8 @@ end
 
 vim.g.mapleader = ","
 
-map('n', '<leader>w', ':w!<CR>')
+map('n', '<leader>w', ':w<CR>')
+map('n', '<leader>q', ':q<CR>')
 map('n', '<leader><CR>', ':noh<CR>')
 
 -- map('n', '<C-j>', '<C-w>j')

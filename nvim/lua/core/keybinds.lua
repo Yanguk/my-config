@@ -72,5 +72,3 @@ map('n', '<leader>gs', ':G status<CR>')
 map('n', '<leader>gb', ':G branch ')
 map('n', '<leader>gl', ':G log --oneline ')
 map('n', '<leader>gw', ':G switch ')
-
--- diagnostics mappings

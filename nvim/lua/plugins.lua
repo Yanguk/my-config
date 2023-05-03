@@ -136,5 +136,13 @@ return require('packer').startup({function(use)
     ft = { "markdown" },
   })
 
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('plugins.null-ls')
+    end
+  }
+
   end
 })

@@ -25,7 +25,8 @@ return require('packer').startup({function(use)
       { 'hrsh7th/cmp-cmdline' },
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-vsnip' },
-      { 'hrsh7th/vim-vsnip' }
+      { 'hrsh7th/vim-vsnip' },
+      { 'f3fora/cmp-spell' }
     },
     config = function()
       require('plugins.lsp')
@@ -135,14 +136,6 @@ return require('packer').startup({function(use)
     end,
     ft = { "markdown" },
   })
-
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('plugins.null-ls')
-    end
-  }
 
   end
 })

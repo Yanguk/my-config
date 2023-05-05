@@ -1,6 +1,6 @@
 local options = {
   auto_install = false,
-  ensure_installed = 'all',
+  ensure_installed = { 'c', 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
   highlight = {
     enable = true,
   },

@@ -2,6 +2,7 @@ local g = vim.g
 local o = vim.o
 
 vim.cmd('set noswapfile')
+vim.cmd('set nospell')
 
 vim.opt.number = true
 vim.opt.tabstop = 2
@@ -43,7 +44,7 @@ g.goyo_margin_bottom = 2
 
 -- spell
 vim.opt.spelllang = { 'en_us' }
-vim.opt.spell = true
+-- vim.opt.spell = true
 
 -- color
 vim.o.termguicolors = true

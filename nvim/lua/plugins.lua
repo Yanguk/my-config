@@ -26,7 +26,6 @@ return require('packer').startup({function(use)
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-vsnip' },
       { 'hrsh7th/vim-vsnip' },
-      { 'f3fora/cmp-spell' }
     },
     config = function()
       require('plugins.lsp')

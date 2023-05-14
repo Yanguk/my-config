@@ -24,3 +24,7 @@ gh repo clone Yanguk/neo-vim-setting ~/.config/nvim
 iterm2로 해야 잘 적용이됨
 
 iterm으로 전향해야할듯 .
+
+
+
+brew install --cask font-meslo-lg-nerd-font

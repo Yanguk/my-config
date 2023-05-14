@@ -98,6 +98,9 @@ return require('packer').startup({function(use)
     end,
   }
 
+  use { "metalelf0/jellybeans-nvim", requires = "rktjmp/lush.nvim" }
+  use { "ellisonleao/gruvbox.nvim" }
+
   use {
     'airblade/vim-gitgutter',
     after = 'github-nvim-theme',

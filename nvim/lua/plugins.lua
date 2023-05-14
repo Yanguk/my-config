@@ -33,7 +33,6 @@ return require('packer').startup({function(use)
   })
 
   use 'mileszs/ack.vim'
-  use 'junegunn/goyo.vim'
   use 'tpope/vim-fugitive'
   use 'editorconfig/editorconfig-vim'
   use 'vim-scripts/bufexplorer.zip'
@@ -143,6 +142,13 @@ return require('packer').startup({function(use)
       require('plugins.null-ls')
     end
   }
+
+  use({
+    "Pocco81/true-zen.nvim",
+    config = function()
+       require('plugins.true-zen')
+    end,
+  })
 
   end
 })

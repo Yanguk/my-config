@@ -34,7 +34,6 @@ map('n', '<leader>nc', ':NvimTreeFocus<CR>')
 map('n', '<leader>nr', ':NvimTreeCollapse<CR>')
 map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
 
-map('n', '<leader>z', ':Goyo<CR>')
 map('n', '<leader>d', ':GitGutterToggle<CR>')
 
 -- spell

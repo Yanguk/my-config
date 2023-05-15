@@ -1,0 +1,14 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "globRoot": ".",
+  "dictionaryDefinitions": [
+    {
+      "name": "neovim",
+      "path": "./my-dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["neovim"],
+  "words": ["knowre"]
+}

@@ -102,8 +102,8 @@ return require('packer').startup({function(use)
   use {
     "ellisonleao/gruvbox.nvim",
     config = function()
-      -- vim.o.background = "dark" -- or "light" for light mode
-      -- vim.cmd([[colorscheme gruvbox]])
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd([[colorscheme gruvbox]])
     end
   }
   use {
@@ -111,7 +111,7 @@ return require('packer').startup({function(use)
     config = function()
       -- require('github-theme').setup({})
 
-      vim.cmd('colorscheme github_dark')
+      -- vim.cmd('colorscheme github_dark')
     end
   }
   use {

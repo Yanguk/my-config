@@ -1,7 +1,12 @@
 {
   "version": "0.2",
   "language": "en",
-  "globRoot": ".",
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    ".vscode"
+  ],
+  "allowCompoundWords": true,
   "dictionaryDefinitions": [
     {
       "name": "neovim",
@@ -9,6 +14,8 @@
       "addWords": true
     }
   ],
-  "dictionaries": ["neovim"],
-  "words": ["knowre"]
+  "ignoreRegExpList": [
+    "\\b\\d+[a-z]{1,2}\\b"
+	],
+  "dictionaries": ["neovim", "en"]
 }

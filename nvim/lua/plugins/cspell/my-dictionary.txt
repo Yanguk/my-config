@@ -5,4 +5,4 @@ yarnrc
 moknowre
 alacritty
 yanky
-
+gruvbox

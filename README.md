@@ -23,3 +23,7 @@ iterm으로 전향해야할듯 .보다 좋은게 알라크리티로 전향함
 ```
 brew install --cask alacritty
 ```
+## zsh
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions

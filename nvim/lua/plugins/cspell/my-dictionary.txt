@@ -1,6 +1,8 @@
-knowre
+knorwe
 nvim
 neovim
 yarnrc
 moknowre
 alacritty
+yanky
+

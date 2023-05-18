@@ -99,25 +99,32 @@ return require('packer').startup({function(use)
   }
 
   use { "metalelf0/jellybeans-nvim", requires = "rktjmp/lush.nvim" }
-  use { "ellisonleao/gruvbox.nvim" }
+  use {
+    "ellisonleao/gruvbox.nvim",
+    config = function()
+      -- vim.o.background = "dark" -- or "light" for light mode
+      -- vim.cmd([[colorscheme gruvbox]])
+    end
+  }
+  use {
+    'projekt0n/github-nvim-theme',
+    config = function()
+      -- require('github-theme').setup({})
+
+      vim.cmd('colorscheme github_dark')
+    end
+  }
+  use {
+    'navarasu/onedark.nvim',
+    config = function()
+      -- require('onedark').load()
+    end
+  }
 
   use {
     'airblade/vim-gitgutter',
     after = 'github-nvim-theme',
   }
-
-	use({
-		'projekt0n/github-nvim-theme',
-    tag = 'v0.0.7',
-		config = function()
-			require('github-theme').setup({
-        theme_style = 'dark_default'
-				-- ...
-			})
-
-			vim.cmd('colorscheme github_dark')
-		end
-	})
 
   use {
     'nvim-tree/nvim-tree.lua',
@@ -159,6 +166,8 @@ return require('packer').startup({function(use)
   }
 
   use { 'davidmh/cspell.nvim' }
+
+
 
   end
 })

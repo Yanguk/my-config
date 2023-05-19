@@ -32,11 +32,9 @@ return require('packer').startup({function(use)
     end,
   })
 
-  use 'mileszs/ack.vim'
   use 'tpope/vim-fugitive'
+
   use 'editorconfig/editorconfig-vim'
-  use 'vim-scripts/bufexplorer.zip'
-  use 'kien/ctrlp.vim'
 
   use 'terryma/vim-multiple-cursors'
 
@@ -122,11 +120,6 @@ return require('packer').startup({function(use)
   }
 
   use {
-    'airblade/vim-gitgutter',
-    after = 'github-nvim-theme',
-  }
-
-  use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons',
@@ -167,7 +160,20 @@ return require('packer').startup({function(use)
 
   use { 'davidmh/cspell.nvim' }
 
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		requires = { {'nvim-lua/plenary.nvim'} },
+		config = function()
+			require('plugins.telescope')
+		end
+	}
 
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('plugins.gitsigns')
+		end
+	}
 
   end
 })

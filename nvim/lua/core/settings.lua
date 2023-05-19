@@ -1,9 +1,6 @@
 local g = vim.g
 local o = vim.o
 
-vim.cmd('set noswapfile')
-vim.cmd('set nospell')
-
 vim.opt.number = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -39,7 +36,7 @@ g.multi_cursor_quit_key = '<Esc>'
 
 -- spell
 vim.opt.spelllang = { 'en_us' }
--- vim.opt.spell = true
+vim.opt.spell = false
 
 -- color
 vim.o.termguicolors = true

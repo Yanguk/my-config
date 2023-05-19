@@ -6,3 +6,5 @@ moknowre
 alacritty
 yanky
 gruvbox
+dotenv
+

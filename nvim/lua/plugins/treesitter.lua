@@ -1,6 +1,6 @@
 local options = {
   auto_install = false,
-  ensure_installed = { 'c', 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'c', 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'dot', 'dockerfile' },
   highlight = {
     enable = true,
   },

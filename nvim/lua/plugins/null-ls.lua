@@ -2,7 +2,7 @@ local null_ls = require("null-ls")
 
 local cspell_config = {
 	find_json = function(cwd)
-		return "~/.config/nvim/lua/plugins/cspell/cspell.json"
+		return "~/.config/cspell/cspell.json"
 	end,
 }
 

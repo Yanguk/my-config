@@ -119,7 +119,7 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # nvm
@@ -137,6 +137,10 @@ alias gw="git switch"
 alias vim="nvim"
 alias vi="nvim"
 
+# terminal
+export TERM="xterm-256color"
+[[ -n $TMUX ]] && export TERM="screen-256color"
+
 # knorwe ------------------
 # gettext
 # export PATH="/opt/homebrew/bin/gettext/bin:$PATH"
@@ -147,9 +151,3 @@ alias vi="nvim"
 # source /Users/yanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 # [ -f "/Users/yanguk/.ghcup/env" ] && source "/Users/yanguk/.ghcup/env" # ghcup-env
-
-source /Users/heoyanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-export TERM="xterm-256color"
-[[ -n $TMUX ]] && export TERM="screen-256color"
-

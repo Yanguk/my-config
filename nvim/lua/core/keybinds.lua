@@ -41,6 +41,7 @@ map('n', '<leader>bp', ':bp<CR>')
 map('n', '<leader>bn', ':bn<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 
+map('n', '<leader>gg', ':G<CR>')
 map('n', '<leader>gs', ':G status<CR>')
 map('n', '<leader>gb', ':G branch ')
 map('n', '<leader>gl', ':G log --oneline ')

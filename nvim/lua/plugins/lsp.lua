@@ -35,6 +35,10 @@ lspconfig['eslint'].setup({
   }
 })
 
+lspconfig['lua_ls'].setup({
+  capabilities = capabilities,
+})
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)

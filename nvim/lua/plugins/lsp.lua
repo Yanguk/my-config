@@ -11,7 +11,14 @@ lspconfig['tsserver'].setup {
 }
 
 lspconfig['rust_analyzer'].setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
+	settings = {
+		['rust-analyzer'] = {
+			checkOnSave = {
+				command = "clippy",
+			},
+		}
+	},
 }
 
 lspconfig['eslint'].setup({

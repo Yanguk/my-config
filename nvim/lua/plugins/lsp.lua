@@ -1,5 +1,14 @@
 -- Setup language servers.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local cmpCapabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local clientCapabilities = vim.lsp.protocol.make_client_capabilities()
+clientCapabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
+local capabilities = vim.tbl_extend('keep', cmpCapabilities, cmpCapabilities )
+
 local lspconfig = require('lspconfig')
 
 lspconfig['tsserver'].setup {

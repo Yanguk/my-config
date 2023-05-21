@@ -176,5 +176,14 @@ return require('packer').startup({function(use)
 
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    after = 'nvim-treesitter',
+    config = function()
+      require('plugins.nvim-ufo')
+    end
+  }
+
   end
 })

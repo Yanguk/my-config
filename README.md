@@ -21,11 +21,15 @@ brew install --cask alacritty
   ln ~/.config/omz/.zshrc ~/.zshrc
 ```
 
-
 ## zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
+brew install autojump
+
 ## telescope
 brew install fd
 brew install ripgrep
+
+## issue
+neovim에서 언더컬이 적용안됨 ㅠ

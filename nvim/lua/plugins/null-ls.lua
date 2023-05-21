@@ -1,15 +1,13 @@
 local null_ls = require("null-ls")
-local cspell = require("cspell")
-
-local cspell_config = {
-	find_json = function(cwd)
-		return "~/.config/cspell/cspell.json"
-	end,
-}
 
 null_ls.setup({
 	sources = {
-		cspell.diagnostics.with({ config = cspell_config }),
-		cspell.code_actions.with({ config = cspell_config }),
+		null_ls.builtins.code_actions.gitsigns,
+		null_ls.builtins.diagnostics.cspell.with({
+			extra_args = { '--config', '~/.config/cspell/cspell.json'},
+		}),
+		null_ls.builtins.code_actions.cspell.with({
+			extra_args = { '--config', '~/.config/cspell/cspell.json'},
+		}),
 	},
 })

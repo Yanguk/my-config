@@ -142,19 +142,21 @@ return require('packer').startup({function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('plugins.null-ls')
-    end
-  }
+		end
+	}
 
-  use({
-    "Pocco81/true-zen.nvim",
+	use {
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup {}
+		end
+	}
+
+	use {
+		"windwp/nvim-autopairs",
     config = function()
-       require('plugins.true-zen')
-    end,
-  })
-
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+			require("nvim-autopairs").setup {}
+		end
   }
 
   use { 'davidmh/cspell.nvim' }

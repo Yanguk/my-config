@@ -1,0 +1,11 @@
+{
+  "allowCompoundWords": true,
+  "language": "en",
+  "dictionaries": ["neovim", "en"],
+  "dictionaryDefinitions": [
+    { "name": "neovim", "addWords": true, "path": "./my-dictionary.txt" }
+  ],
+  "ignoreRegExpList": ["\\b\\d+[a-z]{1,2}\\b"],
+  "version": "0.2",
+  "ignorePaths": ["node_modules", ".git", ".vscode"]
+}

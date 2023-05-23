@@ -51,6 +51,6 @@ map('n', '<leader>zm', ':ZenMode<CR>')
 
 -- iconPicker
 local opts = { noremap = true, silent = true }
-map("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
-map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
-map("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
+map("n", "<Leader>ip", "<cmd>IconPickerNormal<cr>", opts)
+-- map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+-- map("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)

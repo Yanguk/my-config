@@ -45,8 +45,9 @@ map('n', '<leader>bn', ':bn<CR>')
 map('n', '<leader>bl', ':bl<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 
-map('n', '<leader>qq', ':BufDel<CR>')
-map('n', '<leader>qd', ':BufDel!<CR>')
+map('n', '<leader>qq', ':q<CR>')
+map('n', '<leader>qd', ':BufDel<CR>')
+map('n', '<leader>qD', ':BufDel!<CR>')
 map('n', '<leader>qa', ':BufDelAll<CR>')
 map('n', '<leader>qr', ':BufDelOthers<CR>')
 

@@ -6,8 +6,9 @@ end
 
 vim.g.mapleader = ","
 
-map('n', '<leader>w', ':w<CR>')
-map('n', '<leader>q', ':q<CR>')
+map('n', '<leader>ww', ':w<CR>')
+map('n', '<leader>wq', ':wq<CR>')
+
 map('n', '<leader><CR>', ':noh<CR>')
 
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')

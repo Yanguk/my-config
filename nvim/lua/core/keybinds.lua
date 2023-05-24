@@ -1,5 +1,6 @@
 local function map(m, k, v, option)
-	local opts = option or { noremap = true, silent = true }
+	local defaultOpts = { noremap = true }
+	local opts = vim.tbl_extend("keep", option or {}, defaultOpts)
 
   vim.keymap.set(m, k, v, opts)
 end
@@ -8,7 +9,7 @@ vim.g.mapleader = ","
 
 map('n', '<leader>w', ':w<CR>')
 
-map('n', '<leader><CR>', ':noh<CR>')
+map('n', '<leader><CR>', ':noh<CR>', { silent = true })
 
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
 map('n', '<leader>cl', ':let @+=expand("%p:h")<CR>:pwd<CR>')

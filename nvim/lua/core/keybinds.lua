@@ -6,8 +6,7 @@ end
 
 vim.g.mapleader = ","
 
-map('n', '<leader>ww', ':w<CR>')
-map('n', '<leader>wq', ':wq<CR>')
+map('n', '<leader>w', ':w<CR>')
 
 map('n', '<leader><CR>', ':noh<CR>')
 
@@ -46,6 +45,7 @@ map('n', '<leader>bl', ':bl<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 
 map('n', '<leader>qq', ':q<CR>')
+map('n', '<leader>qw', ':wq<CR>')
 map('n', '<leader>qd', ':BufDel<CR>')
 map('n', '<leader>qD', ':BufDel!<CR>')
 map('n', '<leader>qa', ':BufDelAll<CR>')

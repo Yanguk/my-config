@@ -1,5 +1,7 @@
 local function map(m, k, v, option)
-  vim.keymap.set(m, k, v, option)
+	local opts = option or { noremap = true, silent = true }
+
+  vim.keymap.set(m, k, v, opts)
 end
 
 vim.g.mapleader = ","
@@ -41,6 +43,11 @@ map('n', '<leader>bp', ':bp<CR>')
 map('n', '<leader>bn', ':bn<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 
+map('n', '<leader>qq', ':BufDel<CR>')
+map('n', '<leader>qd', ':BufDel!<CR>')
+map('n', '<leader>qa', ':BufDelAll<CR>')
+map('n', '<leader>qr', ':BufDelOthers<CR>')
+
 map('n', '<leader>gg', ':G<CR>:resize 15<CR>', { silent = true })
 map('n', '<leader>gs', ':G status<CR>')
 map('n', '<leader>gb', ':G branch ')
@@ -50,7 +57,6 @@ map('n', '<leader>gw', ':G switch ')
 map('n', '<leader>zm', ':ZenMode<CR>')
 
 -- iconPicker
-local opts = { noremap = true, silent = true }
-map("n", "<Leader>ip", "<cmd>IconPickerNormal<cr>", opts)
+map("n", "<Leader>ip", "<cmd>IconPickerNormal<cr>")
 -- map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
 -- map("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)

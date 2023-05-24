@@ -1,5 +1,4 @@
 local g = vim.g
-local o = vim.o
 
 vim.opt.number = true
 vim.opt.tabstop = 2

@@ -197,5 +197,11 @@ return require('packer').startup({function(use)
 		end,
 	})
 
+	use {
+		'ojroques/nvim-bufdel',
+		config = function()
+			require('bufdel').setup()
+		end
+	}
 end
 })

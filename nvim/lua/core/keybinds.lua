@@ -42,6 +42,7 @@ map('i', '$t', '<><esc>i')
 
 map('n', '<leader>bp', ':bp<CR>')
 map('n', '<leader>bn', ':bn<CR>')
+map('n', '<leader>bl', ':bl<CR>')
 map('n', '<leader>ls', ':ls<CR>')
 
 map('n', '<leader>qq', ':BufDel<CR>')

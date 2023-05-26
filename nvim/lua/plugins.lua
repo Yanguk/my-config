@@ -31,8 +31,6 @@ return require('packer').startup({function(use)
     end,
   })
 
-  use 'tpope/vim-fugitive'
-
   use 'editorconfig/editorconfig-vim'
 
   use 'terryma/vim-multiple-cursors'
@@ -203,5 +201,15 @@ return require('packer').startup({function(use)
 			require('bufdel').setup()
 		end
 	}
+
+  use {
+		'voldikss/vim-floaterm',
+		config = function()
+			require('plugins.floaterm')
+		end,
+	}
+
+  -- use 'tpope/vim-fugitive'
+
 end
 })

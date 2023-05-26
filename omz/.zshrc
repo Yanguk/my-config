@@ -151,3 +151,7 @@ export TERM="xterm-256color"
 # source /Users/yanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 # [ -f "/Users/yanguk/.ghcup/env" ] && source "/Users/yanguk/.ghcup/env" # ghcup-env
+
+# gitlazy
+export XDG_CONFIG_HOME="$HOME/.config"
+

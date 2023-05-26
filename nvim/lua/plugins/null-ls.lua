@@ -9,7 +9,5 @@ null_ls.setup({
 		null_ls.builtins.code_actions.cspell.with({
 			extra_args = { '--config', '~/.config/cspell.json'},
 		}),
-		-- null_ls.builtins.diagnostics.cspell,
-		-- null_ls.builtins.code_actions.cspell,
 	},
 })

@@ -31,8 +31,12 @@ brew install autojump
 brew install fd
 brew install ripgrep
 
-## issue
-neovim에서 언더컬이 적용안됨 ㅠ
-
 ## term 256-color
 https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
+
+
+## lazygit
+brew install lazygit
+
+brew install git-delta
+

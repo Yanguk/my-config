@@ -54,11 +54,12 @@ map('n', '<leader>bR', ':BufDelOthers!<CR>')
 map('n', '<leader>qq', ':q<CR>')
 map('n', '<leader>qw', ':wq<CR>')
 
-map('n', '<leader>gg', ':G<CR>:resize 15<CR>', { silent = true })
-map('n', '<leader>gs', ':G status<CR>')
-map('n', '<leader>gb', ':G branch ')
-map('n', '<leader>gl', ':G log --oneline ')
-map('n', '<leader>gw', ':G switch ')
+-- fugitive
+-- map('n', '<leader>gg', ':G<CR>:resize 15<CR>', { silent = true })
+-- map('n', '<leader>gs', ':G status<CR>')
+-- map('n', '<leader>gb', ':G branch ')
+-- map('n', '<leader>gl', ':G log --oneline ')
+-- map('n', '<leader>gw', ':G switch ')
 
 map('n', '<leader>zm', ':ZenMode<CR>')
 

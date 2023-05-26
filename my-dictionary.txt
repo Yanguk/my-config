@@ -13,3 +13,5 @@ stylelua
 vite
 luarc
 floaterm
+autocmd
+clippy

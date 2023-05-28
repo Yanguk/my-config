@@ -18,12 +18,12 @@ brew install --cask alacritty
 ```
 ## zsh
 ```
-  ln ~/.config/omz/.zshrc ~/.zshrc
+  ln -s ~/.config/omz/.zshrc ~/.zshrc
 ```
 
 ## git
 ```
-  ln ~/.config/gitconfig/.gitconfig ~/.gitconfig
+  ln -s ~/.config/gitconfig/.gitconfig ~/.gitconfig
 ```
 
 ## zsh

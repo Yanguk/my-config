@@ -43,6 +43,12 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- 자동 줄바꿈 방지
-vim.opt.formatoptions:remove "c"
-vim.opt.formatoptions:remove "r"
-vim.opt.formatoptions:remove "o"
+-- vim.opt.formatoptions:remove "c"
+-- vim.opt.formatoptions:remove "r"
+-- vim.opt.formatoptions:remove "o"
+vim.cmd([[
+  augroup FormatOptions
+    autocmd!
+    autocmd FileType * set formatoptions-=cro
+  augroup END
+]])

@@ -43,8 +43,6 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- 자동 줄바꿈 방지
-vim.opt.wrap = false
--- vim.opt.formatoptions:remove { "c", "r", "o", "w" }
 vim.opt.formatoptions:remove "c"
 vim.opt.formatoptions:remove "r"
 vim.opt.formatoptions:remove "o"

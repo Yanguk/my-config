@@ -46,6 +46,8 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.opt.formatoptions:remove "c"
 -- vim.opt.formatoptions:remove "r"
 -- vim.opt.formatoptions:remove "o"
+vim.opt.wrap = false
+
 vim.cmd([[
   augroup FormatOptions
     autocmd!

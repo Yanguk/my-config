@@ -12,7 +12,8 @@ map('n', '<leader>w', ':w<CR>')
 map('n', '<leader><CR>', ':noh<CR>', { silent = true })
 
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
-map('n', '<leader>cl', ':let @+=expand("%p:h")<CR>:pwd<CR>')
+map('n', '<leader>cl', ':pwd<CR>')
+map('n', '<leader>cc', ':let @+=expand("%p:h")<CR>:pwd<CR>')
 
 map('n', '<leader>pp', ':setlocal paste!<CR>')
 

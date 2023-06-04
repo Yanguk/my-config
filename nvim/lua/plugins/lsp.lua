@@ -13,10 +13,9 @@ local lspconfig = require('lspconfig')
 
 lspconfig['tsserver'].setup {
   capabilities = capabilities,
-  -- 절대경로 참조
-  root_dir = function(fname)
-    return lspconfig.util.find_git_ancestor(fname) or vim.loop.os_homedir()
-  end
+	settings = {
+		importModuleSpecifierPreference = 'non-relative'
+	}
 }
 
 lspconfig['rust_analyzer'].setup {
@@ -49,18 +48,14 @@ lspconfig['lua_ls'].setup({
 	settings = {
 		Lua = {
 			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
 				version = 'LuaJIT',
 			},
 			diagnostics = {
-				-- Get the language server to recognize the `vim` global
 				globals = {'vim'},
 			},
 			workspace = {
-				-- Make the server aware of Neovim runtime files
 				library = vim.api.nvim_get_runtime_file('~/.config/nvim', true),
 			},
-			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
 				enable = false,
 			},
@@ -105,10 +100,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-  -- vim.diagnostic.config({
-  --   virtual_text = false
-  -- })
-
-  -- vim.o.updatetime = 250
-  -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 

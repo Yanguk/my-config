@@ -13,8 +13,11 @@ local lspconfig = require('lspconfig')
 
 lspconfig['tsserver'].setup {
   capabilities = capabilities,
-	settings = {
-		importModuleSpecifierPreference = 'non-relative'
+	init_options = {
+		hostInfo = "neovim",
+		preferences = {
+			importModuleSpecifierPreference = 'non-relative'
+		}
 	}
 }
 

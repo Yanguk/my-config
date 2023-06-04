@@ -161,7 +161,7 @@ return require('packer').startup({function(use)
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		requires = { {'nvim-lua/plenary.nvim'} },
+		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			require('plugins.telescope')
 		end
@@ -209,7 +209,13 @@ return require('packer').startup({function(use)
 		end,
 	}
 
-  -- use 'tpope/vim-fugitive'
+	use {
+		'sindrets/diffview.nvim',
+		config = function ()
+			require('diffview').setup()
+		end
+	}
 
-end
+  -- use 'tpope/vim-fugitive'
+  end
 })

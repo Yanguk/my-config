@@ -73,3 +73,7 @@ map("n", "<leader>zm", ":ZenMode<CR>")
 map("n", "<Leader>ip", "<cmd>IconPickerNormal<cr>")
 -- map("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
 -- map("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
+
+-- diffview
+map("n", "<Leader>dv", ":DiffviewFileHistory %<CR>")
+map("n", "<Leader>dc", ":DiffviewClose<CR>")

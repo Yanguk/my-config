@@ -51,11 +51,6 @@ map("n", "<leader>ba", ":BufDelAll<CR>")
 map("n", "<leader>bA", ":BufDelAll!<CR>")
 map("n", "<leader>br", ":BufDelOthers<CR>")
 map("n", "<leader>bR", ":BufDelOthers!<CR>")
-map("n", "<leader>bf", "<cmd>lua FormatBuffer()<CR>")
-
-function FormatBuffer()
-	vim.lsp.buf.format()
-end
 
 map("n", "<leader>qq", ":q<CR>")
 map("n", "<leader>qw", ":wq<CR>")

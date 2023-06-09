@@ -1,19 +1,8 @@
 local options = {
-  auto_install = true,
-  ensure_installed = {
-    "lua",
-    "vim",
-    "go",
-    "toml",
-    "css",
-    "tsx",
-    "css",
-    "html",
-    "lua"
-  },
+  auto_install = false,
+  ensure_installed = { 'c', 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'dot', 'dockerfile' },
   highlight = {
     enable = true,
-    use_languagetree = true,
   },
   autotag = {
     enable = true,
@@ -23,6 +12,9 @@ local options = {
     },
   },
   indent = { enable = true },
+  context_commentstring = {
+    enable = true,
+  },
 }
 
 require('nvim-treesitter.configs').setup(options)

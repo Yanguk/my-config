@@ -4,7 +4,9 @@ iterm2
 ghc
 gh
 fish
-coc
 plugin
 .DS_Store
 yarn
+node_modules
+coc
+lazygit/state.yml

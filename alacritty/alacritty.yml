@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/one_dark.yaml
+  - ~/.config/alacritty/themes/gruvbox_dark.yaml
 
 ############################### options
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
@@ -18,7 +18,7 @@ import:
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -26,6 +26,7 @@ import:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -51,7 +52,7 @@ window:
     y: 10
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -82,7 +83,7 @@ window:
   # startup_mode: SimpleFullscreen
 
   # Window title
-  #title: Alacritty
+  title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   # dynamic_title: true
@@ -111,7 +112,7 @@ window:
   #   - OnlyRight
   #   - Both
   #   - None (default)
-  #option_as_alt: None
+  option_as_alt: OnlyLeft
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -129,7 +130,7 @@ font:
   #normal:
     # Font family
   normal:
-    family: "MesloLGS NF"
+    family: "Hack Nerd Font"
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
@@ -137,40 +138,42 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: "Hack Nerd Font"
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
+    family: "Hack Nerd Font"
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
+    family: "Hack Nerd Font"
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -460,11 +463,12 @@ live_config_reload: true
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
+working_directory: './Desktop'
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -474,7 +478,7 @@ live_config_reload: true
   #triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: true
 
 # Hints
 #
@@ -768,7 +772,7 @@ live_config_reload: true
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-# key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -876,7 +880,7 @@ live_config_reload: true
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
   #- { key: N,              mods: Command,                    action: CreateNewWindow       }
-  #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
+  - { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 

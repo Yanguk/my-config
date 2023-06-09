@@ -7,8 +7,6 @@ end
 
 vim.g.mapleader = ","
 
-map("n", "<leader>w", ":w<CR>")
-
 map("n", "<leader><CR>", ":noh<CR>", { silent = true })
 
 map("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
@@ -51,9 +49,6 @@ map("n", "<leader>ba", ":BufDelAll<CR>")
 map("n", "<leader>bA", ":BufDelAll!<CR>")
 map("n", "<leader>br", ":BufDelOthers<CR>")
 map("n", "<leader>bR", ":BufDelOthers!<CR>")
-
-map("n", "<leader>qq", ":q<CR>")
-map("n", "<leader>qw", ":wq<CR>")
 
 -- fugitive
 -- map('n', '<leader>gg', ':G<CR>:resize 15<CR>', { silent = true })

@@ -221,13 +221,6 @@ return require("packer").startup({
 			end,
 		})
 
-		use({
-			"ThePrimeagen/refactoring.nvim",
-			requires = {
-				{ "nvim-lua/plenary.nvim" },
-				{ "nvim-treesitter/nvim-treesitter" },
-			},
-		})
 		-- use 'tpope/vim-fugitive'
 		use({
 			"L3MON4D3/LuaSnip",

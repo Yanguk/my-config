@@ -16,6 +16,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 brew install --cask alacritty
 ```
+
 ## zsh
 ```
   ln -s ~/.config/omz/.zshrc ~/.zshrc

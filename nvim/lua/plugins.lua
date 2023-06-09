@@ -228,12 +228,12 @@ return require("packer").startup({
 			tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 			-- install jsregexp (optional!:).
 			run = "make install_jsregexp",
-			config = function ()
+			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
-			dependencies = { "rafamadriz/friendly-snippets" }
+			dependencies = { "rafamadriz/friendly-snippets" },
 		})
 
-		use "rafamadriz/friendly-snippets"
+		use("rafamadriz/friendly-snippets")
 	end,
 })

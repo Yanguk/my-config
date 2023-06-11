@@ -16,3 +16,4 @@ floaterm
 autocmd
 clippy
 noti
+nums

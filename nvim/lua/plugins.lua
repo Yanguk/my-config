@@ -235,5 +235,12 @@ return require("packer").startup({
 		})
 
 		use("rafamadriz/friendly-snippets")
+
+		use({
+			"klen/nvim-test",
+			config = function()
+				require("plugins.nvim-test")
+			end,
+		})
 	end,
 })

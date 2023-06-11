@@ -39,8 +39,8 @@ vim.opt.spell = false
 
 -- color
 vim.o.termguicolors = true
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- 자동 줄바꿈 방지
 -- vim.opt.formatoptions:remove "c"

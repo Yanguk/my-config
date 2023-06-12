@@ -7,6 +7,7 @@ vim.opt.expandtab = false
 vim.opt.cursorline = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = true
+vim.opt.wrap = false
 
 -- set options for Rust files
 vim.cmd('autocmd FileType rust setlocal shiftwidth=4 tabstop=4')
@@ -43,14 +44,7 @@ vim.o.termguicolors = true
 -- vim.g.loaded_netrwPlugin = 1
 
 -- 자동 줄바꿈 방지
--- vim.opt.formatoptions:remove "c"
--- vim.opt.formatoptions:remove "r"
--- vim.opt.formatoptions:remove "o"
-vim.opt.wrap = false
-
-vim.cmd([[
-  augroup FormatOptions
-    autocmd!
-    autocmd FileType * set formatoptions-=cro
-  augroup END
-]])
+vim.opt.formatoptions:remove "c"
+vim.opt.formatoptions:remove "r"
+vim.opt.formatoptions:remove "o"
+vim.opt.formatoptions:remove "t"

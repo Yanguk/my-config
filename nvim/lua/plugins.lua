@@ -221,7 +221,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- use 'tpope/vim-fugitive'
 		use({
 			"L3MON4D3/LuaSnip",
 			-- follow latest release.

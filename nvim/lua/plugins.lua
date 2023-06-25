@@ -157,6 +157,10 @@ return require("packer").startup({
 		})
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		use("stevearc/dressing.nvim")
+		use({
+			"smartpde/telescope-recent-files",
+			config = function() end,
+		})
 
 		use({
 			"lewis6991/gitsigns.nvim",

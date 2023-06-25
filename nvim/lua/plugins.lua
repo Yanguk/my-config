@@ -84,7 +84,6 @@ return require("packer").startup({
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "nvim-tree/nvim-web-devicons" },
-			after = "github-nvim-theme",
 			config = function()
 				require("lualine").setup({
 					options = {
@@ -94,26 +93,11 @@ return require("packer").startup({
 			end,
 		})
 
-		use({ "metalelf0/jellybeans-nvim", requires = "rktjmp/lush.nvim" })
 		use({
 			"ellisonleao/gruvbox.nvim",
 			config = function()
 				vim.o.background = "dark" -- or "light" for light mode
 				vim.cmd([[colorscheme gruvbox]])
-			end,
-		})
-		use({
-			"projekt0n/github-nvim-theme",
-			config = function()
-				-- require('github-theme').setup({})
-
-				-- vim.cmd('colorscheme github_dark')
-			end,
-		})
-		use({
-			"navarasu/onedark.nvim",
-			config = function()
-				-- require('onedark').load()
 			end,
 		})
 
@@ -147,14 +131,14 @@ return require("packer").startup({
 		use({
 			"folke/zen-mode.nvim",
 			config = function()
-				require("zen-mode").setup({})
+				require("zen-mode").setup()
 			end,
 		})
 
 		use({
 			"windwp/nvim-autopairs",
 			config = function()
-				require("nvim-autopairs").setup({})
+				require("nvim-autopairs").setup()
 			end,
 		})
 
@@ -171,6 +155,8 @@ return require("packer").startup({
 				require("plugins.telescope")
 			end,
 		})
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+		use("stevearc/dressing.nvim")
 
 		use({
 			"lewis6991/gitsigns.nvim",
@@ -178,8 +164,6 @@ return require("packer").startup({
 				require("plugins.gitsigns")
 			end,
 		})
-
-		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 		use({
 			"kevinhwang91/nvim-ufo",
@@ -190,7 +174,6 @@ return require("packer").startup({
 			end,
 		})
 
-		use("stevearc/dressing.nvim")
 		use({
 			"ziontee113/icon-picker.nvim",
 			config = function()
@@ -223,16 +206,13 @@ return require("packer").startup({
 
 		use({
 			"L3MON4D3/LuaSnip",
-			-- follow latest release.
-			tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!:).
+			tag = "v<CurrentMajor>.*",
 			run = "make install_jsregexp",
 			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 			dependencies = { "rafamadriz/friendly-snippets" },
 		})
-
 		use("rafamadriz/friendly-snippets")
 
 		use({

@@ -10,7 +10,6 @@ vim.g.mapleader = ","
 map("n", "<leader><CR>", ":noh<CR>", { silent = true })
 
 map("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
-map("n", "<leader>cl", ":pwd<CR>")
 map("n", "<leader>cc", ':let @+=expand("%p:h")<CR>:pwd<CR>')
 
 map("n", "<leader>pp", ":setlocal paste!<CR>")
@@ -23,7 +22,6 @@ map("n", "<leader>nf", ":NvimTreeFindFile<CR>")
 -- spell
 -- map('n', '<leader>ss', ':setlocal spell!<CR>')
 
--- 괄호 편하게 하기 위함
 map("v", "$1", "<esc>`>a)<esc>`<i(<esc>")
 map("v", "$2", "<esc>`>a]<esc>`<i[<esc>")
 map("v", "$3", "<esc>`>a}<esc>`<i{<esc>")
@@ -49,13 +47,6 @@ map("n", "<leader>ba", ":BufDelAll<CR>")
 map("n", "<leader>bA", ":BufDelAll!<CR>")
 map("n", "<leader>br", ":BufDelOthers<CR>")
 map("n", "<leader>bR", ":BufDelOthers!<CR>")
-
--- fugitive
--- map('n', '<leader>gg', ':G<CR>:resize 15<CR>', { silent = true })
--- map('n', '<leader>gs', ':G status<CR>')
--- map('n', '<leader>gb', ':G branch ')
--- map('n', '<leader>gl', ':G log --oneline ')
--- map('n', '<leader>gw', ':G switch ')
 
 map("n", "<leader>zm", ":ZenMode<CR>")
 

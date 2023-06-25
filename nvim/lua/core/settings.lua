@@ -1,5 +1,3 @@
-local g = vim.g
-
 vim.opt.number = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -24,6 +22,7 @@ vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
 vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
 -- muti cursor
+local g = vim.g
 g.multi_cursor_use_default_mapping = 0
 g.multi_cursor_start_word_key = '<C-s>'
 g.multi_cursor_select_all_word_key = '<A-s>'

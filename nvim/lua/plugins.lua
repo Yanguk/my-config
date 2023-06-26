@@ -107,7 +107,7 @@ return require("packer").startup({
 				"nvim-tree/nvim-web-devicons",
 			},
 			config = function()
-				require("nvim-tree").setup({})
+				require("nvim-tree").setup()
 			end,
 		})
 
@@ -223,6 +223,14 @@ return require("packer").startup({
 			"klen/nvim-test",
 			config = function()
 				require("plugins.nvim-test")
+			end,
+		})
+
+		use({ "nvim-lua/plenary.nvim" })
+		use({
+			"nvim-pack/nvim-spectre",
+			config = function()
+				require("spectre").setup()
 			end,
 		})
 	end,

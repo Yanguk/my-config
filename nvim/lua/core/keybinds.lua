@@ -39,8 +39,7 @@ map("i", "$t", "<><esc>i")
 
 map("n", "<leader>bp", ":bp<CR>")
 map("n", "<leader>bn", ":bn<CR>")
-map("n", "<leader>bl", ":bl<CR>")
-map("n", "<leader>ls", ":ls<CR>")
+-- map("n", "<leader>ls", ":ls<CR>")
 map("n", "<leader>bd", ":BufDel<CR>")
 map("n", "<leader>bD", ":BufDel!<CR>")
 map("n", "<leader>ba", ":BufDelAll<CR>")
@@ -59,8 +58,21 @@ map("n", "<Leader>ip", "<cmd>IconPickerNormal<cr>")
 map("n", "<Leader>dv", ":DiffviewFileHistory %<CR>")
 map("n", "<Leader>dc", ":DiffviewClose<CR>")
 
-vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]])   -- make the window biger vertically
+vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]])   -- make the window smaller vertically
 vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
+-- spectre
+vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").open()<CR>', {
+	desc = "Open Spectre",
+})
+vim.keymap.set("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+	desc = "Search current word",
+})
+vim.keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+	desc = "Search current word",
+})
+vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+	desc = "Search on current file",
+})

@@ -17,3 +17,4 @@ autocmd
 clippy
 noti
 nums
+kakao

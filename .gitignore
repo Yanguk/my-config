@@ -10,3 +10,4 @@ yarn
 node_modules
 coc
 lazygit/state.yml
+nvim

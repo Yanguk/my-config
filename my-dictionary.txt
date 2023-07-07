@@ -18,3 +18,4 @@ clippy
 noti
 nums
 kakao
+iconify

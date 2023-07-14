@@ -144,6 +144,7 @@ export TERM="xterm-256color"
 # knorwe ------------------
 # gettext
 # export PATH="/opt/homebrew/bin/gettext/bin:$PATH"
+alias envrc_to_env="cp -f .envrc .env"
 
 # direnv
 # eval "$(direnv hook zsh)"

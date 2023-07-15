@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	pager = delta
+	pager = delta --tabs=4
 
 [user]
 	name = Yanguk

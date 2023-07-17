@@ -85,10 +85,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	autojump
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+  git
+  autojump
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,7 +141,7 @@ alias vi="nvim"
 export TERM="xterm-256color"
 [[ -n $TMUX ]] && export TERM="tmux-256color"
 
-# knorwe ------------------
+# knowre ------------------
 # gettext
 # export PATH="/opt/homebrew/bin/gettext/bin:$PATH"
 alias envrc_to_env="cp -f .envrc .env"
@@ -156,3 +156,35 @@ alias envrc_to_env="cp -f .envrc .env"
 # gitlazy
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# bridge
+function get_client_tag() {
+  local env=$1
+
+  if [ -z "$env" ]; then
+    echo "Error: Environment argument is missing."
+    return 1
+  fi
+
+  local latest_tag=$(git tag --list "$env.0.0.*-M" | sort -rV | head -1)
+  local latest_number=${latest_tag##*.}
+  local new_number=$(($latest_number + 1))
+  local new_tag="${latest_tag%.*}.$new_number-M"
+  echo -n "$new_tag" | pbcopy
+  echo "Copied to clipboard: $new_tag"
+}
+
+function get_server_tag() {
+  local env=$1
+
+  if [ -z "$env" ]; then
+    echo "Error: Environment argument is missing."
+    return 1
+  fi
+
+  local latest_tag=$(git tag --list "$env.server.bridge-server.0.0.*-M" | sort -rV | head -1)
+  local latest_number=${latest_tag##*.}
+  local new_number=$(($latest_number + 1))
+  local new_tag="${latest_tag%.*}.$new_number-M"
+  echo -n "$new_tag" | pbcopy
+  echo "Copied to clipboard: $new_tag"
+}

@@ -19,3 +19,4 @@ noti
 nums
 kakao
 iconify
+pbcopy

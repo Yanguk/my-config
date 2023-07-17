@@ -1,5 +1,5 @@
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --tabs=2
+    pager: delta --dark --paging=never --tabs=4
 

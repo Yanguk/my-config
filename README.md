@@ -19,16 +19,17 @@ brew install --cask alacritty
 
 ## zsh
 ```
-  ln -s ~/.config/omz/.zshrc ~/.zshrc
+  ln -sf ~/.config/omz/.zshrc ~/.zshrc
 ```
 
 ## git
 ```
-  ln -s ~/.config/gitconfig/.gitconfig ~/.gitconfig
+  ln -sf ~/.config/gitconfig/.gitconfig ~/.gitconfig
 ```
 
 ## zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 brew install autojump
@@ -39,7 +40,6 @@ brew install ripgrep
 
 ## term 256-color
 https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
-
 
 ## lazygit
 brew install lazygit

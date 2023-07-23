@@ -1,1 +1,0 @@
-{"allowCompoundWords":true,"dictionaryDefinitions":[{"addWords":true,"path":".\/my-dictionary.txt","name":"neovim"}],"ignoreRegExpList":["\\b\\d+[a-z]{1,2}\\b"],"language":"en","ignorePaths":["node_modules",".git",".vscode"],"words":["stylua","rustfmt"],"dictionaries":["neovim","en"],"version":"0.2"}

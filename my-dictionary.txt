@@ -1,0 +1,17 @@
+yanguk
+knowre
+nvim
+neovim
+yarnrc
+moknowre
+alacritty
+yanky
+gruvbox
+dotenv
+lspconfig
+stylelua
+vite
+luarc
+floaterm
+autocmd
+clippy

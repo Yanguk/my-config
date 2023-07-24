@@ -160,31 +160,110 @@ export XDG_CONFIG_HOME="$HOME/.config"
 function get_client_tag() {
   local env=$1
 
-  if [ -z "$env" ]; then
-    echo "Error: Environment argument is missing."
-    return 1
-  fi
+  case "$env" in
+    "prd" | "stg" | "dev")
+      ;;
+    *)
+      echo "Error: Invalid environment. Environment must be one of 'prd', 'stg', or 'dev'."
+      return 1
+      ;;
+  esac
 
   local latest_tag=$(git tag --list "$env.0.0.*-M" | sort -rV | head -1)
   local latest_number=${latest_tag##*.}
   local new_number=$(($latest_number + 1))
   local new_tag="${latest_tag%.*}.$new_number-M"
+
   echo -n "$new_tag" | pbcopy
   echo "Copied to clipboard: $new_tag"
+
+  echo "$new_tag"
 }
 
 function get_server_tag() {
   local env=$1
 
-  if [ -z "$env" ]; then
-    echo "Error: Environment argument is missing."
-    return 1
-  fi
+  case "$env" in
+    "prd" | "stg" | "dev")
+      ;;
+    *)
+      echo "Error: Invalid environment. Environment must be one of 'prd', 'stg', or 'dev'."
+      return 1
+      ;;
+  esac
 
   local latest_tag=$(git tag --list "$env.server.bridge-server.0.0.*-M" | sort -rV | head -1)
   local latest_number=${latest_tag##*.}
   local new_number=$(($latest_number + 1))
   local new_tag="${latest_tag%.*}.$new_number-M"
-  echo -n "$new_tag" | pbcopy
-  echo "Copied to clipboard: $new_tag"
+
+  echo "$new_tag"
+}
+
+function create_and_push_server_tag() {
+  local env=$1
+
+  case "$env" in
+    "prd" | "stg" | "dev")
+      ;;
+    *)
+      echo "Error: Invalid environment. Environment must be one of 'prd', 'stg', or 'dev'."
+      return 1
+      ;;
+  esac
+
+  local tag=$(get_server_tag "$env")
+
+  echo -e "[client_tag_name: $tag]"
+  echo -n "$env 클라이언트를 배포하시겠습니까? (y/n): "
+  read choice
+
+  case "$choice" in
+    [Yy])
+      git tag "$tag"
+      git push origin "$tag"
+
+      echo "Tag created and pushed: $tag"
+      ;;
+    [Nn])
+      echo "Tag creation and push aborted."
+      ;;
+    *)
+      echo "Invalid input. Tag creation and push aborted."
+      ;;
+  esac
+}
+
+function create_and_push_client_tag() {
+  local env=$1
+
+  case "$env" in
+    "prd" | "stg" | "dev")
+      ;;
+    *)
+      echo "Error: Invalid environment. Environment must be one of 'prd', 'stg', or 'dev'."
+      return 1
+      ;;
+  esac
+
+  local tag=$(get_client_tag "$env")
+
+  echo -e "[server_tag_name: $tag]"
+  echo -n "$env 서버를 배포하시겠습니까? (y/n): "
+  read choice
+
+  case "$choice" in
+    [Yy])
+      git tag "$tag"
+      git push origin "$tag"
+
+      echo "Tag created and pushed: $tag"
+      ;;
+    [Nn])
+      echo "Tag creation and push aborted."
+      ;;
+    *)
+      echo "Invalid input. Tag creation and push aborted."
+      ;;
+  esac
 }

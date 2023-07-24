@@ -174,9 +174,6 @@ function get_client_tag() {
   local new_number=$(($latest_number + 1))
   local new_tag="${latest_tag%.*}.$new_number-M"
 
-  echo -n "$new_tag" | pbcopy
-  echo "Copied to clipboard: $new_tag"
-
   echo "$new_tag"
 }
 
@@ -214,7 +211,13 @@ function create_and_push_server_tag() {
 
   local tag=$(get_server_tag "$env")
 
-  echo -e "[client_tag_name: $tag]"
+  local color_green="\e[32m"
+  local color_blue="\e[34m"
+  local color_reset="\e[0m"
+  local color_red="\e[31m"
+  local color_yellow="\e[33m"
+
+  echo -e "[client_tag_name: ${color_yellow}$tag${color_reset}]"
   echo -n "$env 클라이언트를 배포하시겠습니까? (y/n): "
   read choice
 
@@ -248,7 +251,13 @@ function create_and_push_client_tag() {
 
   local tag=$(get_client_tag "$env")
 
-  echo -e "[server_tag_name: $tag]"
+  local color_green="\e[32m"
+  local color_blue="\e[34m"
+  local color_reset="\e[0m"
+  local color_red="\e[31m"
+  local color_yellow="\e[33m"
+
+  echo -e "[server_tag_name: ${color_yellow}$tag${color_reset}]"
   echo -n "$env 서버를 배포하시겠습니까? (y/n): "
   read choice
 

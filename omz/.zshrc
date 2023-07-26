@@ -218,7 +218,7 @@ function create_and_push_server_tag() {
   local color_yellow="\e[33m"
 
   echo -e "[client_tag_name: ${color_yellow}$tag${color_reset}]"
-  echo -n "$env 클라이언트를 배포하시겠습니까? (y/n): "
+  echo -n "$env 서버를 배포하시겠습니까? (y/n): "
   read choice
 
   case "$choice" in
@@ -258,7 +258,7 @@ function create_and_push_client_tag() {
   local color_yellow="\e[33m"
 
   echo -e "[server_tag_name: ${color_yellow}$tag${color_reset}]"
-  echo -n "$env 서버를 배포하시겠습니까? (y/n): "
+  echo -n "$env 클라이언트를 배포하시겠습니까? (y/n): "
   read choice
 
   case "$choice" in

@@ -155,6 +155,3 @@ alias envrc_to_env="cp -f .envrc .env"
 
 # gitlazy
 export XDG_CONFIG_HOME="$HOME/.config"
-
-# docker
-source /Users/heoyanguk/.docker/init-zsh.sh || true # Added by Docker Desktop

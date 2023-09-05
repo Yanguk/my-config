@@ -1,15 +1,12 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "romkatv/powerlevel10k"
-
 brew "git"
 brew "mas"
-
 brew "autojump"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "romkatv/powerlevel10k/powerlevel10k"
-
 brew "awscli"
 brew "gh"
 brew "git-delta"
@@ -21,7 +18,6 @@ brew "yarn"
 brew "nvm"
 brew "node"
 brew "tmux"
-
 cask "alacritty"
 cask "figma"
 cask "font-hack"
@@ -31,11 +27,7 @@ cask "google-chrome"
 cask "notion"
 cask "slack"
 cask "visual-studio-code"
-
-mas "KakaoTalk"
-
-vscode "adpyke.codesnap"
-vscode "arcanis.vscode-zipfs"
+cask "rectangle"
 vscode "bungcip.better-toml"
 vscode "ChakrounAnas.turbo-console-log"
 vscode "dbaeumer.vscode-eslint"

@@ -7,6 +7,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -41,15 +42,5 @@ alias gw="git switch"
 alias vim="nvim"
 alias vi="nvim"
 
-# knowre ------------------
-# gettext
-# export PATH="/opt/homebrew/bin/gettext/bin:$PATH"
-alias envrc_to_env="cp -f .envrc .env"
-
 # direnv
-# eval "$(direnv hook zsh)"
-
-source /Users/yanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-# [ -f "/Users/yanguk/.ghcup/env" ] && source "/Users/yanguk/.ghcup/env" # ghcup-env
-
+eval "$(direnv hook zsh)"

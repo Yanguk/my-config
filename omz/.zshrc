@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -5,6 +7,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 plugins=(
   git
@@ -14,10 +18,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-export LANG=en_US.UTF-8
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -28,7 +28,7 @@ export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 [[ -n $TMUX ]] && export TERM="tmux-256color"
 
-# gitlazy
+# lazyGit
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # git
@@ -49,7 +49,7 @@ alias envrc_to_env="cp -f .envrc .env"
 # direnv
 # eval "$(direnv hook zsh)"
 
-# source /Users/yanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
+source /Users/yanguk/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 # [ -f "/Users/yanguk/.ghcup/env" ] && source "/Users/yanguk/.ghcup/env" # ghcup-env
 

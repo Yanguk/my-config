@@ -1,6 +1,6 @@
 import:
-  # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-  - ~/.config/alacritty/themes/gruvbox_dark.yaml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  # - ~/.config/alacritty/themes/gruvbox_dark.yaml
 
 ############################### options
 # Configuration for Alacritty, the GPU enhanced terminal emulator.

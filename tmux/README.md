@@ -1,3 +1,6 @@
+# Install plugin manager
+https://github.com/tmux-plugins/tpm
+
 # Installing tmux-256color for macOS
 
 * macOS 10.15.5

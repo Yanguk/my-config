@@ -20,6 +20,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# now load zsh-syntax-highlighting plugin
+source ~/.config/omz/theme/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

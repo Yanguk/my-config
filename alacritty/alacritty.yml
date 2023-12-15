@@ -1,5 +1,7 @@
 import:
- - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
+ # - ~/.config/alacritty/themes/themes/catppuccin_mocha.yaml
+ # - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
+ - ~/.config/alacritty/themes/themes/kanagawa_wave.yaml
 
 ############################### options
 # Configuration for Alacritty, the GPU enhanced terminal emulator.

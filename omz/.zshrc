@@ -44,3 +44,6 @@ alias vi="nvim"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+alias tzU="sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime"
+alias tzR="sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime"

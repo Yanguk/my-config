@@ -3,9 +3,9 @@ import = ["/Users/yangukheo/.config/alacritty/themes/themes/gruvbox_material_har
 live_config_reload = true
 working_directory = "./Desktop"
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "tmux attach || tmux"]
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "tmux attach || tmux"]
 
 [colors]
 transparent_background_colors = true

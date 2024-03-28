@@ -35,4 +35,4 @@ option_as_alt = "OnlyLeft"
 title = "Alacritty"
 padding = { x = 5, y = 5 }
 dimensions = { columns = 120, lines = 40 }
-opacity = 0.93
+# opacity = 0.93

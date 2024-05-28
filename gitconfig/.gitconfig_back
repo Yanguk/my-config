@@ -4,7 +4,13 @@
 
 [user]
   name = Yanguk
-  email = yanguk.heo@knowre.com
+	email = yanguk@duck.com
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = gpg
 
 [pull]
   ff = only

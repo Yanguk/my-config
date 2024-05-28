@@ -20,6 +20,7 @@ plugins=(
   autojump
   zsh-autosuggestions
   fast-syntax-highlighting
+  direnv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -40,9 +41,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 alias vim="nvim"
 alias vi="nvim"
 
-# direnv
-eval "$(direnv hook zsh)"
-
+# Timezone
 alias tzU="sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime"
 alias tzR="sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime"
 

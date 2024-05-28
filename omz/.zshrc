@@ -11,8 +11,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# omz plugins
 plugins=(
   git
+  gh
+  tmux
+
   autojump
   zsh-autosuggestions
   fast-syntax-highlighting
@@ -31,12 +35,6 @@ export TERM="xterm-256color"
 
 # lazyGit
 export XDG_CONFIG_HOME="$HOME/.config"
-
-# git
-alias gs="git status"
-alias gb="git branch"
-alias gl="git log --oneline"
-alias gw="git switch"
 
 # neoVim
 alias vim="nvim"

@@ -47,3 +47,8 @@ alias tzR="sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime"
 
 # gpg
 export GPG_TTY=$(tty)
+
+# knowre
+alias ywbs="yarn workspace bridge-server"
+alias ywbc='yarn workspace bridge-admin-client'
+

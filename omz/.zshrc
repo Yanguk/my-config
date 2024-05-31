@@ -13,6 +13,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # omz plugins
 plugins=(
+  yarn
   git
   gh
   tmux

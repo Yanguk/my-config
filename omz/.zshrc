@@ -53,4 +53,4 @@ export GPG_TTY=$(tty)
 # knowre
 alias ywbs="yarn workspace bridge-server"
 alias ywbc='yarn workspace bridge-admin-client'
-
+alias awspf='export AWS_PROFILE=$(sed -n -E "s/\[(profile )?([^][]+)\]?\s*$/\2/p" ~/.aws/credentials ~/.aws/config | sort -rg | uniq | fzf)'

@@ -50,9 +50,7 @@ alias tzR="sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime"
 # gpg
 export GPG_TTY=$(tty)
 
-# knowre
-alias pbs="pnpm --filter bridge-server"
-alias pbc='pnpm --filter bridge-admin-client'
+# aws-profile-change
 alias awspf='export AWS_PROFILE=$(sed -n -E "s/\[(profile )?([^][]+)\]?\s*$/\2/p" ~/.aws/credentials ~/.aws/config | sort -rg | uniq | fzf)'
 
 # java

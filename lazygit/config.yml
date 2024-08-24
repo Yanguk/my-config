@@ -3,7 +3,7 @@ git:
     colorArg: always
     pager: delta --dark --paging=never --tabs=2 -s
 
-gui:
-  theme:
-    selectedLineBgColor:
-      - black
+# gui:
+#   theme:
+#     selectedLineBgColor:
+#       - black

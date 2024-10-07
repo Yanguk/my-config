@@ -5,8 +5,9 @@
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// from the
 {
+  "theme": "One Dark",
   "buffer_font_family": "Hack Nerd Font",
   "vim_mode": true,
   "terminal": {
@@ -14,25 +15,16 @@
   },
   "buffer_font_size": 16,
   "languages": {
-    "TypeScript": {
-      "formatter": {
-        "code_actions": {
-          "source.fixAll.eslint": true
-        }
-      },
+    "TSX": {
+      // "formatter": "language_server",
       "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
+        "source.fixAll.eslint": true
       }
-    }
-  },
-  "lsp": {
-    "eslint": {
-      "settings": {
-        "codeActionOnSave": {
-          "rules": ["import/order"]
-        },
-        "nodePath": ".yarn/sdks"
+    },
+    "TypeScript": {
+      // "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     }
   }

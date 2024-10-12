@@ -21,7 +21,8 @@
       "space g g": [
         "workspace::SendKeystrokes",
         ": new center terminal enter lazygit space enter"
-      ]
+      ],
+      ";": "command_palette::Toggle"
     }
   }
 ]

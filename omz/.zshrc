@@ -38,6 +38,7 @@ export TERM="xterm-256color"
 
 # lazyGit
 export XDG_CONFIG_HOME="$HOME/.config"
+alias lg="lazygit"
 
 # neoVim
 alias vim="nvim"

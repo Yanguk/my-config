@@ -22,7 +22,6 @@ print_start "homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 print_end "homebrew"
-print_line
 
 # ----------------------------
 print_start "oh-my-zsh"
@@ -35,25 +34,27 @@ print_start "git"
 brew install git
 brew install gh
 print_end "git"
-print_line
 
 # ----------------------------
 print_start "clone config"
 git clone "https://github.com/Yanguk/my-config.git" "~/.config"
 print_end "clone config"
-print_line
+
+# ----------------------------
+print_start "brew bundle"
+cd ~/.config/homebrew
+brew bundle
+print_end "brew bundle"
 
 # ----------------------------
 print_start "clone neovim config"
 git clone "https://github.com/Yanguk/my-nvchad-2.git" "~/.config/neovim"
 print_end "clone neovim config"
-print_line
 
 # ----------------------------
 print_start "sync zsh config"
 ln -sf ~/.config/omz/.zshrc ~/.zshrc
 print_end "sync zsh config"
-print_line
 
 # ----------------------------
 print_start "zsh plugins"
@@ -61,7 +62,3 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZS
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 brew install autojump
 print_end "zsh plugins"
-print_line
-
-# ----------------------------
-print_end

@@ -37,7 +37,7 @@ print_end "git"
 
 # ----------------------------
 print_start "clone config"
-git clone "https://github.com/Yanguk/my-config.git" "~/.config"
+git clone "https://github.com/Yanguk/my-config.git" "${ZSH_CUSTOM:-$HOME}/.config"
 print_end "clone config"
 
 # ----------------------------
@@ -48,7 +48,7 @@ print_end "brew bundle"
 
 # ----------------------------
 print_start "clone neovim config"
-git clone "https://github.com/Yanguk/my-nvchad-2.git" "~/.config/neovim"
+git clone "https://github.com/Yanguk/my-nvchad-2.git" "${ZSH_CUSTOM:-$HOME}/.config/nvim"
 print_end "clone neovim config"
 
 # ----------------------------

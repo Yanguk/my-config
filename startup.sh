@@ -1,0 +1,67 @@
+function print_start() {
+  echo "=========================================================================================="
+  echo "[START] $1"
+  echo "=========================================================================================="
+}
+
+function print_end() {
+  echo "=========================================================================================="
+  echo "[END] $1"
+  echo "=========================================================================================="
+}
+
+function print_line() {
+  echo
+  echo "------------------------------------------------------------------------------------------"
+  echo
+}
+
+# ----------------------------
+print_start "homebrew"
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+print_end "homebrew"
+print_line
+
+# ----------------------------
+print_start "oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+print_end "oh-my-zsh"
+print_line
+
+# ----------------------------
+print_start "git"
+brew install git
+brew install gh
+print_end "git"
+print_line
+
+# ----------------------------
+print_start "clone config"
+git clone "https://github.com/Yanguk/my-config.git" "~/.config"
+print_end "clone config"
+print_line
+
+# ----------------------------
+print_start "clone neovim config"
+git clone "https://github.com/Yanguk/my-nvchad-2.git" "~/.config/neovim"
+print_end "clone neovim config"
+print_line
+
+# ----------------------------
+print_start "sync zsh config"
+ln -sf ~/.config/omz/.zshrc ~/.zshrc
+print_end "sync zsh config"
+print_line
+
+# ----------------------------
+print_start "zsh plugins"
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+brew install autojump
+print_end "zsh plugins"
+print_line
+
+# ----------------------------
+print_end

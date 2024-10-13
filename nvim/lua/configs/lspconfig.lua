@@ -8,7 +8,6 @@ local server_configs = {
   "yamlls",
   "tailwindcss",
   "graphql",
-  "kotlin_language_server",
 
   ["eslint"] = {
     on_attach = function(client, bufnr)
@@ -19,18 +18,6 @@ local server_configs = {
         command = "EslintFixAll",
       })
     end,
-    settings = (function()
-      local config = {}
-
-      local yarn_path = vim.fn.getcwd() .. "/.yarn"
-      local is_yarn_pnp = vim.fn.isdirectory(yarn_path) == 1
-
-      if is_yarn_pnp then
-        config.nodePath = vim.fn.getcwd() .. "/.yarn/sdks"
-      end
-
-      return config
-    end)(),
   },
   ["bashls"] = {
     filetypes = { "sh", "zsh", "bash" },
@@ -40,6 +27,9 @@ local server_configs = {
       offsetEncoding = "utf-16",
     }),
   },
+  -- ["denols"] = {
+  --   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+  -- },
 }
 
 for k, v in pairs(server_configs) do

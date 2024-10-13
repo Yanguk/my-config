@@ -16,11 +16,6 @@ return {
     enabled = false,
   },
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-  },
-
   --------------------
 
   {
@@ -35,6 +30,7 @@ return {
 
   {
     "stevearc/conform.nvim",
+    event = { "BufWritePre" },
     config = function()
       require("configs.conform")
     end,
@@ -67,8 +63,17 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim"
+    },
     version = "*",
     config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        automatic_installation = true
+      })
+
       require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
     end,
@@ -98,36 +103,9 @@ return {
       },
     },
     cmd = "Trouble",
-    opts = {},
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- lsp
-        "lua-language-server",
-        "rust-analyzer",
-        "clangd",
-        "yaml-language-server",
-        "bash-language-server",
-
-        -- web-dev
-        "eslint-lsp",
-        "typescript-language-server",
-        "graphql-language-service-cli",
-        "tailwindcss-language-server",
-
-        -- format
-        "shfmt",
-        "clang-format",
-        "stylua",
-        "yamlfmt",
-
-        -- util
-        "cspell",
-      },
-    },
+    config = function()
+      require("trouble").setup()
+    end,
   },
 
   {
@@ -201,13 +179,13 @@ return {
     end,
     opts = {
       sources = {
-        { name = "copilot", group_index = 2 },
+        { name = "copilot",  group_index = 2 },
         { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-        { name = "buffer", group_index = 2 },
+        { name = "luasnip",  group_index = 2 },
+        { name = "buffer",   group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "emoji", group_index = 2 },
+        { name = "path",     group_index = 2 },
+        { name = "emoji",    group_index = 2 },
       },
     },
   },
@@ -243,12 +221,12 @@ return {
       },
     },
     keys = {
-      { "gcc", mode = "n", desc = "comment toggle current line" },
-      { "gc", mode = { "n", "o" }, desc = "comment toggle linewise" },
-      { "gc", mode = "x", desc = "comment toggle linewise (visual)" },
-      { "gbc", mode = "n", desc = "comment toggle current block" },
-      { "gb", mode = { "n", "o" }, desc = "comment toggle blockwise" },
-      { "gb", mode = "x", desc = "comment toggle blockwise (visual)" },
+      { "gcc", mode = "n",          desc = "comment toggle current line" },
+      { "gc",  mode = { "n", "o" }, desc = "comment toggle linewise" },
+      { "gc",  mode = "x",          desc = "comment toggle linewise (visual)" },
+      { "gbc", mode = "n",          desc = "comment toggle current block" },
+      { "gb",  mode = { "n", "o" }, desc = "comment toggle blockwise" },
+      { "gb",  mode = "x",          desc = "comment toggle blockwise (visual)" },
     },
     config = function(_, opts)
       opts.pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
@@ -286,18 +264,41 @@ return {
 
   {
     "folke/zen-mode.nvim",
-    cmd = { "ZenMode" },
+    keys = { { "<leader>zm", "<cmd>ZenMode<CR>", desc = "ZenMode" } },
   },
 
   {
     "nvim-pack/nvim-spectre",
-    cmd = { "Spectre" },
+    keys = {
+      {
+        "<leader>S",
+        "<cmd>lua require('spectre').toggle()<CR>",
+        desc = "[S]earch current word",
+      },
+      {
+        "<leader>sw",
+        "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+        desc = "[S]earch current [W]ord",
+      },
+      {
+        "<leader>sw",
+        "<esc><cmd>lua require('spectre').open_visual()<CR>",
+        desc = "[S]earch current [W]ord",
+        mode = "v",
+      },
+      {
+        "<leader>sp",
+        "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+        desc = "[S]earch on current file",
+      },
+    },
     opts = {
       default = {
         replace = {
           cmd = "oxi",
         },
       },
+      is_block_ui_break = true,
     },
     config = true,
   },
@@ -311,7 +312,11 @@ return {
 
   {
     "sindrets/diffview.nvim",
-    cmd = { "DiffviewFileHistory", "DiffviewOpen" },
+    keys = {
+      { "<leader>do", "<cmd>DiffviewOpen<CR>",          desc = "Diffview open" },
+      { "<leader>dv", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file %" },
+      { "<leader>dc", "<cmd>DiffviewClose<CR>",         desc = "Diffview close" },
+    },
   },
 
   {
@@ -323,7 +328,7 @@ return {
 
   {
     "kdheepak/lazygit.nvim",
-    cmd = { "LazyGit" },
+    keys = { { "<leader>gg", "<cmd>LazyGit<CR>", desc = "LazyGit" } },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -332,6 +337,10 @@ return {
   {
     "kevinhwang91/nvim-ufo",
     event = "BufReadPost",
+    keys = {
+      { "zR", "<cmd>lua require('ufo').openAllFolds()<CR>",  desc = "ufo open All Folds" },
+      { "zm", "<cmd>lua require('ufo').closeAllFolds()<CR>", desc = "ufo close All Folds" },
+    },
     dependencies = {
       "kevinhwang91/promise-async",
       {
@@ -341,8 +350,8 @@ return {
           require("statuscol").setup({
             relculright = true,
             segments = {
-              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-              { text = { "%s" }, click = "v:lua.ScSa" },
+              { text = { builtin.foldfunc },      click = "v:lua.ScFa" },
+              { text = { "%s" },                  click = "v:lua.ScSa" },
               { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
             },
           })
@@ -361,7 +370,11 @@ return {
 
   {
     "andrewferrier/debugprint.nvim",
-    keys = { "g?" },
+    keys = {
+      { "g?",  mode = "n" },
+      { "g?",  mode = "x" },
+      { "g?d", "<cmd>DeleteDebugPrints<CR>", desc = "debugPrint DeleteDebugPrints" },
+    },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
@@ -480,8 +493,8 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^4", -- Recommended
-    lazy = false, -- This plugin is already lazy
+    version = "^5", -- Recommended
+    lazy = false,   -- This plugin is already lazy
   },
 
   {
@@ -494,7 +507,7 @@ return {
 
   {
     "stevearc/aerial.nvim",
-    cmd = { "AerialToggle" },
+    keys = { { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[T]oggle [A]erial", silent = true } },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
@@ -508,5 +521,102 @@ return {
     config = function()
       require("leap").add_default_mappings()
     end,
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<C-N>",
+        function()
+          require("harpoon"):list():next()
+        end,
+        desc = "harpoon [T]ab [N]ext",
+      },
+      {
+        "<C-P>",
+        function()
+          require("harpoon"):list():prev()
+        end,
+        desc = "harpoon [T]ab [P]rev",
+      },
+      {
+        "<C-e>",
+        function()
+          local harpoon = require("harpoon")
+
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "harpoon [E]xplorer",
+      },
+      {
+        "<leader>a",
+        function()
+          require("harpoon"):list():add()
+        end,
+        desc = "harpoon [A]dd",
+      },
+      {
+        "<A-1>",
+        function()
+          require("harpoon"):list():select(1)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-2>",
+        function()
+          require("harpoon"):list():select(2)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-3>",
+        function()
+          require("harpoon"):list():select(3)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-4>",
+        function()
+          require("harpoon"):list():select(4)
+        end,
+        desc = "harpoon select [1]",
+      },
+    },
+    config = function()
+      require("harpoon"):setup()
+    end,
+  },
+
+  {
+    "mistweaverco/kulala.nvim",
+    ft = { "http" },
+    config = function()
+      require("kulala").setup()
+    end,
+  },
+
+  {
+    "cameron-wags/rainbow_csv.nvim",
+    config = true,
+    ft = {
+      "csv",
+      "tsv",
+      "csv_semicolon",
+      "csv_whitespace",
+      "csv_pipe",
+      "rfc_csv",
+      "rfc_semicolon",
+    },
+    cmd = {
+      "RainbowDelim",
+      "RainbowDelimSimple",
+      "RainbowDelimQuoted",
+      "RainbowMultiDelim",
+    },
   },
 }

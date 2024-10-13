@@ -1,5 +1,5 @@
-# import = ["/Users/yangukheo/.config/alacritty/kanagawa_wave.toml"]
-import = ["/Users/yangukheo/.config/alacritty/gruvbox_dark.toml"]
+# import = ["~/.config/alacritty/kanagawa_wave.toml"]
+import = ["~/.config/alacritty/gruvbox_dark.toml"]
 
 live_config_reload = true
 working_directory = "./Desktop"

@@ -21,6 +21,9 @@ print_start "homebrew"
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+sudo chown -R $(whoami) $(brew --prefix)/*
+brew install cash
+
 print_end "homebrew"
 
 # ----------------------------
@@ -60,5 +63,6 @@ print_end "sync zsh config"
 print_start "zsh plugins"
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/ntnyq/omz-plugin-pnpm.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/pnpm
 brew install autojump
 print_end "zsh plugins"

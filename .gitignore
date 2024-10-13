@@ -10,7 +10,6 @@ yarn
 node_modules
 coc
 lazygit/state.yml
-nvim
 ngrok
 github-copilot
 tmux/plugins
@@ -20,3 +19,7 @@ alacritty/themes
 zed/*
 !zed/keymap.json
 !zed/settings.json
+
+# nvim
+lazy-lock.json
+.back

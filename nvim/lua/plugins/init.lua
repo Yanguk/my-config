@@ -508,7 +508,7 @@ return {
 
   {
     "stevearc/aerial.nvim",
-    keys = { { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[T]oggle [A]erial", silent = true } },
+    keys = { { "<leader>a", "<cmd>AerialToggle<CR>", desc = "Toggle [A]erial", silent = true } },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
@@ -553,11 +553,11 @@ return {
         desc = "harpoon [E]xplorer",
       },
       {
-        "<leader>a",
+        "<leader>ha",
         function()
           require("harpoon"):list():add()
         end,
-        desc = "harpoon [A]dd",
+        desc = "[H]arpoon [A]dd",
       },
       {
         "<A-1>",

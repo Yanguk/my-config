@@ -23,7 +23,7 @@ vim.filetype.add({
 
 -- UFO folding
 o.foldcolumn = "1" -- '0' is not bad
-o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
@@ -54,7 +54,11 @@ end, {
 -- ts 프로젝트에서는 자동포멧 비활성화
 autocmd("FileType", {
   pattern = { "typescript", "typescriptreact", "javascript" },
-  command = "FormatDisable",
+  callback = function()
+    if vim.b.disable_autoformat == nil and vim.g.disable_autoformat == nil then
+      vim.cmd("FormatDisable")
+    end
+  end,
 })
 
 -- Auto resize panes when resizing nvim window

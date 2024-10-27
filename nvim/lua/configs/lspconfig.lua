@@ -39,3 +39,10 @@ for k, v in pairs(server_configs) do
 
   lspconfig[server].setup(config)
 end
+
+-- local function is_current_dir_moknowre_included()
+--   local current_dir = vim.fn.getcwd()                    -- 현재 작업 디렉토리 가져오기
+--   local dir_name = vim.fn.fnamemodify(current_dir, ":t") -- 디렉토리 이름만 가져오기
+--
+--   return string.find(dir_name, "moknowre") ~= nil        -- moknowre가 포함되어 있는지 확인
+-- end

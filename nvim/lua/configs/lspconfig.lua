@@ -18,14 +18,26 @@ local server_configs = {
         command = "EslintFixAll",
       })
     end,
+    settings = (function()
+      local config = {}
+
+      local yarn_path = vim.fn.getcwd() .. "/.yarn"
+      local is_yarn_pnp = vim.fn.isdirectory(yarn_path) == 1
+
+      if is_yarn_pnp then
+        config.nodePath = vim.fn.getcwd() .. "/.yarn/sdks"
+      end
+
+      return config
+    end)(),
   },
   ["bashls"] = {
     filetypes = { "sh", "zsh", "bash" },
   },
   ["clangd"] = {
-    capabilities = vim.tbl_extend("force", default_config.capabilities, {
+    capabilities = {
       offsetEncoding = "utf-16",
-    }),
+    },
   },
   -- ["denols"] = {
   --   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),

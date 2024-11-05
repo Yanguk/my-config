@@ -37,3 +37,5 @@ hicampus
 kunnr
 zemp
 seongJangPan
+seong
+jang

@@ -5,7 +5,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "gruvbox",
   -- transparency = true,
 
   hl_override = {

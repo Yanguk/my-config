@@ -23,7 +23,7 @@ vim.filetype.add({
 
 -- UFO folding
 o.foldcolumn = "1" -- '0' is not bad
-o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
@@ -66,3 +66,8 @@ autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
+
+-- don't show parse errors in a separate window
+vim.g.zig_fmt_parse_errors = 0
+-- disable format-on-save from `ziglang/zig.vim`
+vim.g.zig_fmt_autosave = 0

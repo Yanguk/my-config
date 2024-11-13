@@ -5,6 +5,7 @@ local lspconfig = require("lspconfig")
 local default_config = require("configs.default-lsp")
 
 local server_configs = {
+  "zls",
   "yamlls",
   "tailwindcss",
   "graphql",

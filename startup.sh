@@ -50,11 +50,6 @@ brew bundle
 print_end "brew bundle"
 
 # ----------------------------
-print_start "clone neovim config"
-git clone "https://github.com/Yanguk/my-nvchad-2.git" "${ZSH_CUSTOM:-$HOME}/.config/nvim"
-print_end "clone neovim config"
-
-# ----------------------------
 print_start "sync zsh config"
 ln -sf ~/.config/omz/.zshrc ~/.zshrc
 print_end "sync zsh config"
@@ -64,5 +59,4 @@ print_start "zsh plugins"
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/ntnyq/omz-plugin-pnpm.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/pnpm
-brew install autojump
 print_end "zsh plugins"

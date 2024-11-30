@@ -179,13 +179,13 @@ return {
     end,
     opts = {
       sources = {
-        { name = "copilot", group_index = 2 },
+        { name = "copilot",  group_index = 2 },
         { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-        { name = "buffer", group_index = 2 },
+        { name = "luasnip",  group_index = 2 },
+        { name = "buffer",   group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "emoji", group_index = 2 },
+        { name = "path",     group_index = 2 },
+        { name = "emoji",    group_index = 2 },
       },
     },
   },
@@ -221,12 +221,12 @@ return {
       },
     },
     keys = {
-      { "gcc", mode = "n", desc = "comment toggle current line" },
-      { "gc", mode = { "n", "o" }, desc = "comment toggle linewise" },
-      { "gc", mode = "x", desc = "comment toggle linewise (visual)" },
-      { "gbc", mode = "n", desc = "comment toggle current block" },
-      { "gb", mode = { "n", "o" }, desc = "comment toggle blockwise" },
-      { "gb", mode = "x", desc = "comment toggle blockwise (visual)" },
+      { "gcc", mode = "n",          desc = "comment toggle current line" },
+      { "gc",  mode = { "n", "o" }, desc = "comment toggle linewise" },
+      { "gc",  mode = "x",          desc = "comment toggle linewise (visual)" },
+      { "gbc", mode = "n",          desc = "comment toggle current block" },
+      { "gb",  mode = { "n", "o" }, desc = "comment toggle blockwise" },
+      { "gb",  mode = "x",          desc = "comment toggle blockwise (visual)" },
     },
     config = function(_, opts)
       opts.pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
@@ -273,7 +273,7 @@ return {
       {
         "<leader>S",
         "<cmd>lua require('spectre').toggle()<CR>",
-        desc = "[S]earch current word",
+        desc = "[S]pectre Toggle",
       },
       {
         "<leader>sw",
@@ -314,9 +314,9 @@ return {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen" },
     keys = {
-      { "<leader>do", "<cmd>DiffviewOpen<CR>", desc = "Diffview open" },
+      { "<leader>do", "<cmd>DiffviewOpen<CR>",          desc = "Diffview open" },
       { "<leader>dv", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file %" },
-      { "<leader>dc", "<cmd>DiffviewClose<CR>", desc = "Diffview close" },
+      { "<leader>dc", "<cmd>DiffviewClose<CR>",         desc = "Diffview close" },
     },
   },
 
@@ -339,7 +339,7 @@ return {
     "kevinhwang91/nvim-ufo",
     event = "BufReadPost",
     keys = {
-      { "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", desc = "ufo open All Folds" },
+      { "zR", "<cmd>lua require('ufo').openAllFolds()<CR>",  desc = "ufo open All Folds" },
       { "zm", "<cmd>lua require('ufo').closeAllFolds()<CR>", desc = "ufo close All Folds" },
     },
     dependencies = {
@@ -351,8 +351,8 @@ return {
           require("statuscol").setup({
             relculright = true,
             segments = {
-              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-              { text = { "%s" }, click = "v:lua.ScSa" },
+              { text = { builtin.foldfunc },      click = "v:lua.ScFa" },
+              { text = { "%s" },                  click = "v:lua.ScSa" },
               { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
             },
           })
@@ -372,8 +372,8 @@ return {
   {
     "andrewferrier/debugprint.nvim",
     keys = {
-      { "g?", mode = "n" },
-      { "g?", mode = "x" },
+      { "g?",  mode = "n" },
+      { "g?",  mode = "x" },
       { "g?d", "<cmd>DeleteDebugPrints<CR>", desc = "debugPrint DeleteDebugPrints" },
     },
     dependencies = {
@@ -502,7 +502,7 @@ return {
   {
     "mrcjkb/rustaceanvim",
     version = "^5", -- Recommended
-    lazy = false, -- This plugin is already lazy
+    lazy = false,   -- This plugin is already lazy
   },
 
   {

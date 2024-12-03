@@ -2,7 +2,7 @@
 -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#format-command
 require("conform").setup({
   formatters_by_ft = {
-    lua = { "stylua" },
+    -- lua = { "stylua" },
 
     javascript = {
       "prettierd",

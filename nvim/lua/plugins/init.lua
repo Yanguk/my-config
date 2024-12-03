@@ -80,14 +80,6 @@ return {
   },
 
   {
-    "mfussenegger/nvim-lint",
-    event = "BufRead",
-    config = function()
-      require("configs.nvim-lint")
-    end,
-  },
-
-  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {

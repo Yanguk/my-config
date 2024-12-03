@@ -9,6 +9,8 @@ local server_configs = {
   "yamlls",
   "tailwindcss",
   "graphql",
+  "prismals",
+  "typos_lsp",
 
   ["eslint"] = {
     on_attach = function(client, bufnr)

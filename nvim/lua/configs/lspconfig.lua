@@ -10,7 +10,11 @@ local server_configs = {
   "tailwindcss",
   "graphql",
   "prismals",
-  "typos_lsp",
+  ["typos_lsp"] = {
+    init_options = {
+      config = '~/.config/nvim/typos.toml'
+    }
+  },
 
   ["eslint"] = {
     on_attach = function(client, bufnr)

@@ -23,6 +23,7 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
   direnv
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh

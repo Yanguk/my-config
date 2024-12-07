@@ -25,8 +25,12 @@ tree-sitter-lua = "0.0.31"
 "mason.nvim" = { git = "williamboman/mason.nvim" }
 "maosn-lspconfig.nvim" = { git = "williamboman/mason-lspconfig.nvim" }
 "nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
-
-
+"blink.cmp" = { git = "saghen/blink.cmp", build = "cargo build --release" }
+"friendly-snippets" = { git = "rafamadriz/friendly-snippets" }
+"LuaSnip" = { git = "L3MON4D3/LuaSnip", build = "make install_jsregexp" }
+"conform.nvim" = { git = "stevearc/conform.nvim" }
+tree-sitter-json = "0.0.33"
+nvim-web-devicons = "0.100"
 
 [treesitter]
 auto_highlight = "all"
@@ -42,4 +46,12 @@ items = [
   "mason.nvim",
   "maosn-lspconfig.nvim",
   "nvim-lspconfig",
+  "friendly-snippets",
+  "LuaSnip"
+]
+
+[bundles.cmp]
+items = [
+  "LuaSnip",
+  "blink.cmp",
 ]

@@ -1,7 +1,6 @@
 -- cSpell:disable
 local opt = vim.opt
 local o = vim.o
-local autocmd = vim.api.nvim_create_autocmd
 local g = vim.g
 
 vim.g.mapleader = " "
@@ -44,36 +43,45 @@ g.loaded_ruby_provider = 0
 -- disable nvim intro
 opt.shortmess:append "sI"
 
+o.signcolumn = "yes"
+o.splitbelow = true
+o.splitright = true
+o.timeoutlen = 400
+o.undofile = true
+
+-- interval for writing swap file to disk, also used by gitsigns
+o.updatetime = 250
+
 local disabled_built_ins = {
-    "2html_plugin",
-    "tohtml",
-    "getscript",
-    "getscriptPlugin",
-    "gzip",
-    "logipat",
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "matchit",
-    "tar",
-    "tarPlugin",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimballPlugin",
-    "zip",
-    "zipPlugin",
-    "tutor",
-    "rplugin",
-    "syntax",
-    "synmenu",
-    "optwin",
-    "compiler",
-    "bugreport",
-    "ftplugin"
+  "2html_plugin",
+  "tohtml",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "syntax",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin"
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-    g["loaded_" .. plugin] = 0
+  g["loaded_" .. plugin] = 1
 end

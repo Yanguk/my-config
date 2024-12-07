@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 local default_config = {
   capabilities = require('blink.cmp').get_lsp_capabilities(),
-  on_init = function (client)
+  on_init = function(client)
     client.server_capabilities.semanticTokensProvider = nil
   end,
   on_attach = function(client, bufnr)

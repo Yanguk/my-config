@@ -11,7 +11,7 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.42.1"                                       # rocks.nvim can also manage itself :D
+"rocks.nvim" = "2.42.1"                                                     # rocks.nvim can also manage itself :D
 "rocks-treesitter.nvim" = "1.2.0"
 "rocks-lazy.nvim" = "1.1.1"
 "rocks-git.nvim" = "2.5.1"
@@ -31,6 +31,8 @@ tree-sitter-lua = "0.0.31"
 "conform.nvim" = { git = "stevearc/conform.nvim" }
 tree-sitter-json = "0.0.33"
 nvim-web-devicons = "0.100"
+"trouble.nvim" = { git = "folke/trouble.nvim" }
+"telescope.nvim" = "scm"
 
 [treesitter]
 auto_highlight = "all"
@@ -47,11 +49,8 @@ items = [
   "maosn-lspconfig.nvim",
   "nvim-lspconfig",
   "friendly-snippets",
-  "LuaSnip"
+  "LuaSnip",
 ]
 
 [bundles.cmp]
-items = [
-  "LuaSnip",
-  "blink.cmp",
-]
+items = ["LuaSnip", "blink.cmp"]

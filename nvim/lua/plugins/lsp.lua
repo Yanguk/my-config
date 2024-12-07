@@ -8,7 +8,7 @@ require("mason-lspconfig").setup({
 })
 
 local lspconfig = require("lspconfig")
-local default_config = require("plugins.default-lsp")
+local default_config = require("configs.default-lsp")
 
 -- server setup
 local server_configs = {

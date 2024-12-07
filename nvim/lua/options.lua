@@ -1,73 +1,79 @@
 -- cSpell:disable
-require("nvchad.options")
-
--- add yours here!
 local opt = vim.opt
 local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd
-local command = vim.api.nvim_create_user_command
+local g = vim.g
 
------------ default options -----------
+vim.g.mapleader = " "
+
+------
+o.laststatus = 3
+o.showmode = false
+
+o.clipboard = "unnamedplus"
+o.cursorline = true
+o.cursorlineopt = "number"
+
+-- Indenting
+o.expandtab = true
+o.shiftwidth = 2
+o.smartindent = true
+o.tabstop = 2
+o.softtabstop = 2
+
+opt.fillchars = { eob = " " }
+o.ignorecase = true
+o.smartcase = true
+o.mouse = "a"
+
+-- Numbers
+o.number = true
+o.numberwidth = 2
+o.ruler = false
+
 o.termguicolors = true
 opt.wrap = false
-opt.swapfile = false -- don't create backup files
+opt.whichwrap:append "<>[]hl"
 
--- add filetype --
-vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
-})
+-- disable some default providers
+g.loaded_node_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
 
------------ plugin -----------
+-- disable nvim intro
+opt.shortmess:append "sI"
 
--- UFO folding
-o.foldcolumn = "1" -- '0' is not bad
-o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-o.foldlevelstart = 99
-o.foldenable = true
-o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+local disabled_built_ins = {
+    "2html_plugin",
+    "tohtml",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "matchit",
+    "tar",
+    "tarPlugin",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "zip",
+    "zipPlugin",
+    "tutor",
+    "rplugin",
+    "syntax",
+    "synmenu",
+    "optwin",
+    "compiler",
+    "bugreport",
+    "ftplugin"
+}
 
---------- rustaceanvim ---------
-require("configs.rustaceanvim")
-
--- conform toggle --
-command("FormatDisable", function(args)
-  if args.bang then
-    -- FormatDisable! will disable formatting just for this buffer
-    vim.b.disable_autoformat = true
-  else
-    vim.g.disable_autoformat = true
-  end
-end, {
-  desc = "Disable autoformat-on-save",
-  bang = true,
-})
-
-command("FormatEnable", function()
-  vim.b.disable_autoformat = false
-  vim.g.disable_autoformat = false
-end, {
-  desc = "Re-enable autoformat-on-save",
-})
-
--- ts 프로젝트에서는 자동포멧 비활성화
-autocmd("FileType", {
-  pattern = { "typescript", "typescriptreact", "javascript" },
-  callback = function()
-    if vim.b.disable_autoformat == nil and vim.g.disable_autoformat == nil then
-      vim.cmd("FormatDisable")
-    end
-  end,
-})
-
--- Auto resize panes when resizing nvim window
-autocmd("VimResized", {
-  pattern = "*",
-  command = "tabdo wincmd =",
-})
-
--- don't show parse errors in a separate window
-vim.g.zig_fmt_parse_errors = 0
--- disable format-on-save from `ziglang/zig.vim`
-vim.g.zig_fmt_autosave = 0
+for _, plugin in pairs(disabled_built_ins) do
+    g["loaded_" .. plugin] = 0
+end

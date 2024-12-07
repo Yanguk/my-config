@@ -1,0 +1,45 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.42.1"                                       # rocks.nvim can also manage itself :D
+"rocks-treesitter.nvim" = "1.2.0"
+"rocks-lazy.nvim" = "1.1.1"
+"rocks-git.nvim" = "2.5.1"
+"rocks-config.nvim" = "3.1.0"
+catppuccin = { git = "catppuccin/nvim", name = "catppuccin" }
+"oil.nvim" = { git = "stevearc/oil.nvim" }
+tree-sitter-tsx = "0.0.31"
+tree-sitter-zig = "0.0.32"
+tree-sitter-toml = "0.0.31"
+tree-sitter-lua = "0.0.31"
+"mason.nvim" = { git = "williamboman/mason.nvim" }
+"maosn-lspconfig.nvim" = { git = "williamboman/mason-lspconfig.nvim" }
+"nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
+
+
+
+[treesitter]
+auto_highlight = "all"
+# NOTE: These are parsers, not filetypes.
+auto_install = "prompt"
+
+[config]
+plugins_dir = "plugins/"
+auto_setup = false
+
+[bundles.lsp] # Create a bundle called `lsp`
+items = [
+  "mason.nvim",
+  "maosn-lspconfig.nvim",
+  "nvim-lspconfig",
+]

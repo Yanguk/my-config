@@ -36,6 +36,8 @@ local default_config = {
       opts("Trouble lsp_definitions")
     )
 
+    map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
+
     if client.server_capabilities.inlayHintProvider then
       map("n", "<leader>ih", function()
         local current_setting = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })

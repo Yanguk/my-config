@@ -32,7 +32,7 @@ o.ruler = false
 
 o.termguicolors = true
 opt.wrap = false
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 
 -- disable some default providers
 g.loaded_node_provider = 0
@@ -41,7 +41,7 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
 o.signcolumn = "yes"
 o.splitbelow = true
@@ -79,7 +79,8 @@ local disabled_built_ins = {
   "optwin",
   "compiler",
   "bugreport",
-  "ftplugin"
+  "ftplugin",
+  "netrw_nogx",
 }
 
 for _, plugin in pairs(disabled_built_ins) do

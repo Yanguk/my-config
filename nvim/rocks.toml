@@ -37,6 +37,9 @@ nvim-web-devicons = "0.100"
 nvim-surround = "2.1.5"
 "nvim-ts-autotag" = { git = "windwp/nvim-ts-autotag" }
 "nvim-ts-context-commentstring" = { git = "JoosepAlviste/nvim-ts-context-commentstring" }
+"dressing.nvim" = "3.1.0"
+"gx.nvim" = { git = "chrishrb/gx.nvim", keys = ["gx"], mode = ["n", "x"] }
+"lazygit.nvim" = "scm"
 
 [treesitter]
 auto_highlight = "all"

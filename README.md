@@ -12,3 +12,8 @@ ln -sf ~/.config/gitconfig/.gitconfig ~/.gitconfig
 
 mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
+# delta
+
+brew install bat
+bat cache --build

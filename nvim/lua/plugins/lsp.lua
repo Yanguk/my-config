@@ -4,7 +4,7 @@ table.unpack = table.unpack or unpack
 -- mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-  automatic_installation = true
+  automatic_installation = true,
 })
 
 local lspconfig = require("lspconfig")
@@ -12,10 +12,17 @@ local default_config = require("configs.default-lsp")
 
 -- server setup
 local server_configs = {
+  "lua_ls",
+  "zls",
   "yamlls",
   "tailwindcss",
   "graphql",
-  "lua_ls",
+  "prismals",
+  ["typos_lsp"] = {
+    init_options = {
+      config = "~/.config/nvim/typos.toml",
+    },
+  },
 
   ["eslint"] = {
     on_attach = function(client, bufnr)
@@ -34,9 +41,6 @@ local server_configs = {
     capabilities = {
       offsetEncoding = "utf-16",
     },
-  },
-  ["denols"] = {
-    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
   },
 }
 

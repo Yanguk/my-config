@@ -11,35 +11,76 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.42.1"                                                                   # rocks.nvim can also manage itself :D
+"rocks.nvim" = "2.42.1"                 # rocks.nvim can also manage itself :D
 "rocks-treesitter.nvim" = "1.2.0"
 "rocks-lazy.nvim" = "1.1.1"
 "rocks-git.nvim" = "2.5.1"
 "rocks-config.nvim" = "3.1.0"
-catppuccin = { git = "catppuccin/nvim", name = "catppuccin" }
-"oil.nvim" = { git = "stevearc/oil.nvim" }
+catppuccin = "0.1.0"
+"oil.nvim" = "2.13.0"
+"mason.nvim" = "1.10.0"
+"mason-lspconfig.nvim" = "1.31.0"
+"nvim-lspconfig" = "1.0.0"
+"friendly-snippets" = "scm"
+"conform.nvim" = "8.2.0"
+nvim-web-devicons = "0.100"
+"trouble.nvim" = "3.6.0"
+"telescope.nvim" = "scm"
+"nvim-notify" = "3.14.0"
+nvim-surround = "2.1.5"
+"nvim-ts-autotag" = "scm"
+"nvim-ts-context-commentstring" = "scm"
+"dressing.nvim" = "3.1.0"
+"lazygit.nvim" = "scm"
+nvim-ufo = "1.4.0"
+"statuscol.nvim" = "scm"
+"aerial.nvim" = "2.3.1"
+"gitsigns.nvim" = "0.9.0"
+luasnip = "2.3.0"
+"typescript-tools.nvim" = "scm"
+rustaceanvim = "5.17.1"
+"leap.nvim" = "scm"
+nvim-spectre = "scm"
+"diffview.nvim" = "scm"
 tree-sitter-tsx = "0.0.31"
 tree-sitter-zig = "0.0.32"
 tree-sitter-toml = "0.0.31"
 tree-sitter-lua = "0.0.31"
-"mason.nvim" = { git = "williamboman/mason.nvim" }
-"maosn-lspconfig.nvim" = { git = "williamboman/mason-lspconfig.nvim" }
-"nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
-"blink.cmp" = { git = "saghen/blink.cmp", build = "cargo build --release" }
-"friendly-snippets" = { git = "rafamadriz/friendly-snippets" }
-"LuaSnip" = { git = "L3MON4D3/LuaSnip", build = "make install_jsregexp" }
-"conform.nvim" = { git = "stevearc/conform.nvim" }
 tree-sitter-json = "0.0.33"
-nvim-web-devicons = "0.100"
-"trouble.nvim" = { git = "folke/trouble.nvim" }
-"telescope.nvim" = "scm"
-"nvim-notify" = { git = "rcarriga/nvim-notify" }
-nvim-surround = "2.1.5"
-"nvim-ts-autotag" = { git = "windwp/nvim-ts-autotag" }
-"nvim-ts-context-commentstring" = { git = "JoosepAlviste/nvim-ts-context-commentstring" }
-"dressing.nvim" = "3.1.0"
-"gx.nvim" = { git = "chrishrb/gx.nvim", keys = ["gx"], mode = ["n", "x"] }
-"lazygit.nvim" = "scm"
+"lualine.nvim" = "scm"
+"plenary.nvim" = "scm"
+tree-sitter-http = "0.0.32"
+tree-sitter-markdown = "0.0.36"
+
+[plugins."copilot.lua"]
+git = "zbirenbaum/copilot.lua"
+rev = "c810500b69cb8bcea58f2be635cb1340011714b5"
+
+[plugins."blink.cmp"]
+git = "saghen/blink.cmp"
+build = "cargo build --release"
+
+[plugins."gx.nvim"]
+git = "chrishrb/gx.nvim"
+keys = [{ lhs = "gx", mode = "n" }, { lhs = "gx", mode = "x" }]
+
+[plugins."debugprint.nvim"]
+git = "andrewferrier/debugprint.nvim"
+rev = "v3.7.0"
+keys = [{ lhs = "g?", mode = "n" }, { lhs = "g?", mode = "x" }]
+
+[plugins."kulala.nvim"]
+git = "mistweaverco/kulala.nvim"
+ft = "http"
+rev = "v4.4.1"
+
+[plugins."barbar.nvim"]
+git = "romgrk/barbar.nvim"
+rev = "^1.0.0"
+
+[plugins.blink-cmp-copilot]
+git = "giuxtaposition/blink-cmp-copilot"
+rev = "e3eedf36ceda1932e296ec894de4ceea8ddeacb6"
 
 [treesitter]
 auto_highlight = "all"
@@ -53,11 +94,11 @@ auto_setup = false
 [bundles.lsp] # Create a bundle called `lsp`
 items = [
   "mason.nvim",
-  "maosn-lspconfig.nvim",
+  "mason-lspconfig.nvim",
   "nvim-lspconfig",
   "friendly-snippets",
-  "LuaSnip",
+  "luasnip",
 ]
 
 [bundles.cmp]
-items = ["LuaSnip", "blink.cmp"]
+items = ["luasnip", "blink.cmp"]

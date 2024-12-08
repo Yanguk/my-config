@@ -86,3 +86,9 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
+
+vim.filetype.add({
+  extension = {
+    http = "http", -- .http 파일을 http 파일타입으로 설정
+  },
+})

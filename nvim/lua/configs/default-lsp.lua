@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 local default_config = {
-  capabilities = require('blink.cmp').get_lsp_capabilities(),
+  capabilities = require("blink.cmp").get_lsp_capabilities(),
   on_init = function(client)
     client.server_capabilities.semanticTokensProvider = nil
   end,
@@ -10,10 +10,9 @@ local default_config = {
       return { buffer = bufnr, desc = desc }
     end
 
-    -- Instead of using 'gr', trouble is used.
     map(
       "n",
-      "<leader>D",
+      "go",
       "<cmd>Trouble lsp_type_definition toggle focus=true auto_refresh=false<CR>",
       opts("Trouble lsp_type_definition")
     )
@@ -36,7 +35,9 @@ local default_config = {
       opts("Trouble lsp_definitions")
     )
 
-    map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
+    map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
+    map("n", "<leader>ra", vim.lsp.buf.rename, opts("rename"))
+    map("n", "K", vim.lsp.buf.hover, opts("Code action"))
 
     if client.server_capabilities.inlayHintProvider then
       map("n", "<leader>ih", function()

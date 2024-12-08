@@ -31,6 +31,6 @@ dimensions = { columns = 120, lines = 40 }
 live_config_reload = true
 working_directory = "./Desktop"
 # import = ["~/.config/alacritty/kanagawa_wave.toml"]
-import = ["~/.config/alacritty/gruvbox_dark.toml"]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 # blur = true
 # opacity = 0.95

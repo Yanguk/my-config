@@ -58,7 +58,5 @@ alias awspf='export AWS_PROFILE=$(sed -n -E "s/\[(profile )?([^][]+)\]?\s*$/\2/p
 # java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 export PATH=$PATH:~/.config/zig-macos-aarch64-0.14.0-dev.2340+182cdf74b
 

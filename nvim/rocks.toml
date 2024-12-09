@@ -38,15 +38,12 @@ luasnip = "2.3.0"
 "typescript-tools.nvim" = "scm"
 rustaceanvim = "5.18.0"
 "leap.nvim" = "scm"
-nvim-spectre = "scm"
-"diffview.nvim" = "scm"
 tree-sitter-tsx = "0.0.31"
 tree-sitter-zig = "0.0.32"
 tree-sitter-toml = "0.0.31"
 tree-sitter-lua = "0.0.31"
 tree-sitter-json = "0.0.33"
 "lualine.nvim" = "scm"
-"plenary.nvim" = "scm"
 tree-sitter-http = "0.0.32"
 tree-sitter-markdown = "0.0.36"
 tree-sitter-gitignore = "0.0.29"
@@ -54,7 +51,38 @@ tree-sitter-bash = "0.0.36"
 tree-sitter-git_config = "0.0.29"
 tree-sitter-xml = "0.0.34"
 tree-sitter-tmux = "0.0.29"
-"toggleterm.nvim" = "2.13.0"
+
+[plugins."diffview.nvim"]
+version = "scm"
+keys = [
+  { lhs = "<leader>do", mode = "n" },
+  { lhs = "<leader>dv", mode = "n" },
+  { lhs = "<leader>dc", mode = "n" },
+]
+
+
+[plugins."toggleterm.nvim"]
+version = "2.13.0"
+keys = [
+  { lhs = "<A-v>", mode = "n" },
+  { lhs = "<A-v>", mode = "t" },
+  { lhs = "<A-h>", mode = "n" },
+  { lhs = "<A-h>", mode = "t" },
+  { lhs = "<A-i>", mode = "n" },
+  { lhs = "<A-i>", mode = "t" },
+  { lhs = "<leader>lg", mode = "n" },
+]
+
+
+[plugins."nvim-spectre"]
+version = "scm"
+keys = [
+  { lhs = "<leader>sw", mode = "n" },
+  { lhs = "<leader>sw", mode = "v" },
+  { lhs = "<leader>S", mode = "v" },
+  { lhs = "<leader>sp", mode = "n" },
+]
+
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"

@@ -21,10 +21,7 @@
 "mason-lspconfig.nvim" = "1.31.0"
 "nvim-lspconfig" = "1.0.0"
 "friendly-snippets" = "scm"
-"conform.nvim" = "8.2.0"
 nvim-web-devicons = "0.100"
-"trouble.nvim" = "3.6.0"
-"telescope.nvim" = "scm"
 "nvim-notify" = "3.14.0"
 nvim-surround = "2.1.5"
 "nvim-ts-autotag" = "scm"
@@ -32,7 +29,6 @@ nvim-surround = "2.1.5"
 "dressing.nvim" = "3.1.0"
 nvim-ufo = "1.4.0"
 "statuscol.nvim" = "scm"
-"aerial.nvim" = "2.3.1"
 "gitsigns.nvim" = "0.9.0"
 luasnip = "2.3.0"
 "typescript-tools.nvim" = "scm"
@@ -51,15 +47,46 @@ tree-sitter-bash = "0.0.36"
 tree-sitter-git_config = "0.0.29"
 tree-sitter-xml = "0.0.34"
 tree-sitter-tmux = "0.0.29"
+"trouble.nvim" = "3.6.0"
+
+[plugins."nvim-autopairs"]
+version = "scm"
+event = "InsertEnter"
+
+[plugins."conform.nvim"]
+version = "8.2.0"
+event = "BufWritePre"
+keys = [{ lhs = "<leader>fm", mode = "n" }]
+
+[plugins."aerial.nvim"]
+version = "2.3.1"
+cmd = "AerialToggle"
+keys = [{ lhs = "<leader>a", mode = "n" }]
+
+[plugins."telescope.nvim"]
+version = "scm"
+cmd = "Telescope"
+keys = [
+  { lhs = "<leader>fw", mode = "n" },
+  { lhs = "<leader>fb", mode = "n" },
+  { lhs = "<leader>fh", mode = "n" },
+  { lhs = "<leader>ma", mode = "n" },
+  { lhs = "<leader>fo", mode = "n" },
+  { lhs = "<leader>fz", mode = "n" },
+  { lhs = "<leader>cm", mode = "n" },
+  { lhs = "<leader>gt", mode = "n" },
+  { lhs = "<leader>ff", mode = "n" },
+  { lhs = "<leader>fa", mode = "n" },
+]
 
 [plugins."diffview.nvim"]
 version = "scm"
+cmd = "DiffviewOpen"
 keys = [
   { lhs = "<leader>do", mode = "n" },
   { lhs = "<leader>dv", mode = "n" },
   { lhs = "<leader>dc", mode = "n" },
 ]
-
 
 [plugins."toggleterm.nvim"]
 version = "2.13.0"
@@ -73,7 +100,6 @@ keys = [
   { lhs = "<leader>lg", mode = "n" },
 ]
 
-
 [plugins."nvim-spectre"]
 version = "scm"
 keys = [
@@ -82,7 +108,6 @@ keys = [
   { lhs = "<leader>S", mode = "v" },
   { lhs = "<leader>sp", mode = "n" },
 ]
-
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"

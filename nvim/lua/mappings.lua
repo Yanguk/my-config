@@ -1,6 +1,5 @@
 -- cSpell:disable
 local map = vim.keymap.set
-local nomap = vim.keymap.del
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
@@ -33,33 +32,8 @@ map(
   { desc = "[T]oggle trailing [S]pace" }
 ) -- 뒤에 공백 토글
 
--- codeRunner
-map("n", "<leader>cr", function()
-  local current_file = vim.fn.expand("%:p")
-  local compiled_file = vim.fn.expand("%:t:r")
-
-  local ft_cmds = {
-    python = "python3 " .. current_file,
-    racket = "csi -script " .. current_file,
-    c = "gcc " .. current_file .. " -o " .. compiled_file .. " && " .. "./" .. compiled_file,
-    cpp = "g++ " .. current_file .. " -o " .. compiled_file .. " && " .. "./" .. compiled_file,
-  }
-
-  if ft_cmds[vim.bo.filetype] == nil then
-    vim.notify("No runner for " .. vim.bo.filetype)
-
-    return
-  end
-
-  require("nvchad.term").runner({
-    id = "runner",
-    pos = "sp",
-    cmd = ft_cmds[vim.bo.filetype],
-  })
-end, { desc = "codeRunner run" })
-
 -- resize window
 map("n", "<A-=>", ":vertical resize +5<CR>") -- make the window biger vertically
 map("n", "<A-->", ":vertical resize -5<CR>") -- make the window smaller vertically
-map("n", "<A-+>", ":resize +2<CR>") -- make the window bigger horizontally by pressing shift and =
-map("n", "<A-_>", ":resize -2<CR>") -- make the window smaller horizontally by pressing shift and -
+map("n", "<A-+>", ":resize +2<CR>")          -- make the window bigger horizontally by pressing shift and =
+map("n", "<A-_>", ":resize -2<CR>")          -- make the window smaller horizontally by pressing shift and -

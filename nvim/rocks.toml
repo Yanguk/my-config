@@ -16,7 +16,6 @@
 "rocks-lazy.nvim" = "1.1.1"
 "rocks-git.nvim" = "2.5.1"
 "rocks-config.nvim" = "3.1.0"
-catppuccin = "0.1.0"
 "oil.nvim" = "2.13.0"
 "mason.nvim" = "1.10.0"
 "mason-lspconfig.nvim" = "1.31.0"
@@ -55,6 +54,7 @@ tree-sitter-gitignore = "0.0.29"
 tree-sitter-bash = "0.0.36"
 tree-sitter-git_config = "0.0.29"
 tree-sitter-xml = "0.0.34"
+tree-sitter-tmux = "0.0.29"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
@@ -80,11 +80,15 @@ rev = "v4.4.1"
 
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
-rev = "^1.0.0"
+rev = "v1.9.1"
 
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
 rev = "e3eedf36ceda1932e296ec894de4ceea8ddeacb6"
+
+[plugins.nvim]
+git = "catppuccin/nvim"
+rev = "v1.9.0"
 
 [treesitter]
 auto_highlight = "all"

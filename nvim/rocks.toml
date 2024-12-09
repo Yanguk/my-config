@@ -11,7 +11,7 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.42.1"                 # rocks.nvim can also manage itself :D
+"rocks.nvim" = "2.42.2"
 "rocks-treesitter.nvim" = "1.2.0"
 "rocks-lazy.nvim" = "1.1.1"
 "rocks-git.nvim" = "2.5.1"
@@ -37,7 +37,7 @@ nvim-ufo = "1.4.0"
 "gitsigns.nvim" = "0.9.0"
 luasnip = "2.3.0"
 "typescript-tools.nvim" = "scm"
-rustaceanvim = "5.17.1"
+rustaceanvim = "5.18.0"
 "leap.nvim" = "scm"
 nvim-spectre = "scm"
 "diffview.nvim" = "scm"
@@ -55,6 +55,7 @@ tree-sitter-bash = "0.0.36"
 tree-sitter-git_config = "0.0.29"
 tree-sitter-xml = "0.0.34"
 tree-sitter-tmux = "0.0.29"
+"toggleterm.nvim" = "2.13.0"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
@@ -62,10 +63,12 @@ rev = "c810500b69cb8bcea58f2be635cb1340011714b5"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
+rev = "v0.7.3"
 build = "cargo build --release"
 
 [plugins."gx.nvim"]
 git = "chrishrb/gx.nvim"
+rev = "v0.7.0"
 keys = [{ lhs = "gx", mode = "n" }, { lhs = "gx", mode = "x" }]
 
 [plugins."debugprint.nvim"]

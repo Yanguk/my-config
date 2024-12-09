@@ -1,8 +1,9 @@
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
+local autocmd = vim.api.nvim_create_autocmd
 
-vim.g.mapleader = " "
+g.mapleader = " "
 
 ------
 o.laststatus = 3
@@ -86,13 +87,19 @@ for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
 
-g.loaded_node_provider = 0
-g.loaded_python3_provider = 0
-g.loaded_perl_provider = 0
-g.loaded_ruby_provider = 0
+g.loaded_node_provider = 1
+g.loaded_python3_provider = 1
+g.loaded_perl_provider = 1
+g.loaded_ruby_provider = 1
 
 vim.filetype.add({
   extension = {
     http = "http", -- .http 파일을 http 파일타입으로 설정
   },
+})
+
+-- Auto resize panes when resizing nvim window
+autocmd("VimResized", {
+  pattern = "*",
+  command = "tabdo wincmd =",
 })

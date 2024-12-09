@@ -49,6 +49,20 @@ tree-sitter-xml = "0.0.34"
 tree-sitter-tmux = "0.0.29"
 "trouble.nvim" = "3.6.0"
 
+[plugins.harpoon]
+git = "ThePrimeagen/harpoon"
+branch = "harpoon2"
+keys = [
+  { lhs = "<leader>ha", mode = "n" },
+  { lhs = "<C-e>", mode = "n" },
+  { lhs = "<C-N>", mode = "n" },
+  { lhs = "<C-P>", mode = "n" },
+  { lhs = "<A-1>", mode = "n" },
+  { lhs = "<A-2>", mode = "n" },
+  { lhs = "<A-3>", mode = "n" },
+  { lhs = "<A-4>", mode = "n" },
+]
+
 [plugins."nvim-autopairs"]
 version = "scm"
 event = "InsertEnter"

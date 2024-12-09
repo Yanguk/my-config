@@ -21,17 +21,17 @@ end)
 -- end, { desc = "Go to previous harpoon mark" })
 
 vim.keymap.set("n", "<A-1>", function()
-  harpoon:list():list():select(1)
+  harpoon:list():select(1)
 end)
 
 vim.keymap.set("n", "<A-2>", function()
-  harpoon:list():list():select(2)
+  harpoon:list():select(2)
 end)
 
 vim.keymap.set("n", "<A-3>", function()
-  harpoon:list():list():select(3)
+  harpoon:list():select(3)
 end)
 
 vim.keymap.set("n", "<A-4>", function()
-  harpoon:list():list():select(4)
+  harpoon:list():select(4)
 end)

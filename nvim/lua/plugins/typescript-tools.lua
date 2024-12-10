@@ -1,7 +1,7 @@
 local default_config = require("configs.default-lsp")
 local lspconfig = require("lspconfig")
 
-return {
+require("typescript-tools").setup({
   on_init = default_config.on_init,
   on_attach = default_config.on_attach,
   capabilities = default_config.capabilities,
@@ -12,4 +12,4 @@ return {
     },
   },
   root_dir = lspconfig.util.root_pattern("package.json"),
-}
+})

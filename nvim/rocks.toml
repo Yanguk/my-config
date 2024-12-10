@@ -48,6 +48,10 @@ tree-sitter-git_config = "0.0.29"
 tree-sitter-xml = "0.0.34"
 tree-sitter-tmux = "0.0.29"
 "trouble.nvim" = "3.6.0"
+tree-sitter-prisma = "0.0.29"
+tree-sitter-javascript = "0.0.33"
+tree-sitter-gitcommit = "0.0.33"
+tree-sitter-yaml = "0.0.30"
 
 [plugins.harpoon]
 git = "ThePrimeagen/harpoon"

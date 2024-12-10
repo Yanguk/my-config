@@ -125,7 +125,7 @@ version = "scm"
 keys = [
   { lhs = "<leader>sw", mode = "n" },
   { lhs = "<leader>sw", mode = "v" },
-  { lhs = "<leader>S", mode = "v" },
+  { lhs = "<leader>S", mode = "n" },
   { lhs = "<leader>sp", mode = "n" },
 ]
 

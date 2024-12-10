@@ -59,8 +59,6 @@ branch = "harpoon2"
 keys = [
   { lhs = "<leader>ha", mode = "n" },
   { lhs = "<C-e>", mode = "n" },
-  { lhs = "<C-N>", mode = "n" },
-  { lhs = "<C-P>", mode = "n" },
   { lhs = "<A-1>", mode = "n" },
   { lhs = "<A-2>", mode = "n" },
   { lhs = "<A-3>", mode = "n" },

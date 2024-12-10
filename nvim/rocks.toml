@@ -14,7 +14,7 @@
 "rocks.nvim" = "2.42.2"
 "rocks-treesitter.nvim" = "1.2.0"
 "rocks-lazy.nvim" = "1.1.1"
-"rocks-git.nvim" = "2.5.1"
+"rocks-git.nvim" = "2.5.2"
 "rocks-config.nvim" = "3.1.0"
 "oil.nvim" = "2.13.0"
 "mason.nvim" = "1.10.0"
@@ -52,6 +52,7 @@ tree-sitter-prisma = "0.0.29"
 tree-sitter-javascript = "0.0.33"
 tree-sitter-gitcommit = "0.0.33"
 tree-sitter-yaml = "0.0.30"
+"copilot.lua"= "scm"
 
 [plugins.harpoon]
 git = "ThePrimeagen/harpoon"
@@ -125,13 +126,9 @@ keys = [
   { lhs = "<leader>sp", mode = "n" },
 ]
 
-[plugins."copilot.lua"]
-git = "zbirenbaum/copilot.lua"
-rev = "c810500b69cb8bcea58f2be635cb1340011714b5"
-
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
-rev = "v0.7.3"
+rev = "v0.7.4"
 build = "cargo build --release"
 
 [plugins."gx.nvim"]

@@ -6,6 +6,7 @@ local js = {
 }
 
 require("debugprint").setup({
+  print_tag = "DEBUG_💥",
   filetypes = {
     ["typescript"] = js,
     ["typescriptreact"] = js,

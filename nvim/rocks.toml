@@ -177,7 +177,5 @@ items = [
   "nvim-lspconfig",
   "friendly-snippets",
   "luasnip",
+  "blink.cmp",
 ]
-
-[bundles.cmp]
-items = ["luasnip", "blink.cmp"]

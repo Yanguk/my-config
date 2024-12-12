@@ -57,6 +57,7 @@ tree-sitter-html = "0.0.33"
 tree-sitter-markdown_inline = "0.0.37"
 tree-sitter-rust = "0.0.37"
 nvim-highlight-colors = "scm"
+tree-sitter-jsonc = "0.0.29"
 
 [plugins.harpoon]
 git = "ThePrimeagen/harpoon"

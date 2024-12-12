@@ -7,4 +7,4 @@ require("aerial").setup({
   end,
 })
 
-vim.keymap.set("n", "<leader>a", require("aerial").toggle, { noremap = true })
+vim.keymap.set("n", "<leader>a", require("aerial").toggle, { noremap = true, desc = "Toggle Aerial" })

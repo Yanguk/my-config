@@ -4,28 +4,28 @@ require("conform").setup({
     lua = { "stylua" },
 
     javascript = {
-      "prettier",
+      "prettierd",
     },
     typescript = {
-      "prettier",
+      "prettierd",
     },
     javascriptreact = {
-      "prettier",
+      "prettierd",
     },
     typescriptreact = {
-      "prettier",
+      "prettierd",
     },
-    markdown = { "prettier" },
-    html = { "prettier" },
+    markdown = { "prettierd" },
+    html = { "prettierd" },
 
-    racket = { "raco" },
+    -- racket = { "raco" },
     sh = { "shfmt" },
     rust = { "rustfmt" },
-    c = { "clang_format" },
+    -- c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "prettier" },
-    jsonc = { "prettier" },
+    json = { "prettierd" },
+    jsonc = { "prettierd" },
     yaml = { "yamlfmt" },
     zig = { "zig fmt" },
   },
@@ -79,3 +79,5 @@ vim.api.nvim_create_user_command("Format", function(args)
 end, { range = true })
 
 vim.api.nvim_set_keymap("n", "<leader>fm", ":Format<CR>", { noremap = true, silent = true, desc = "format" })
+
+require("mason-conform").setup()

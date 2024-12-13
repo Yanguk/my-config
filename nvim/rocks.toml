@@ -56,11 +56,12 @@ tree-sitter-rust = "0.0.37"
 nvim-highlight-colors = "scm"
 tree-sitter-jsonc = "0.0.29"
 "which-key.nvim" = "3.14.1"
+"conform.nvim" = "8.2.0"
 
-[plugins."friendly-snippets" ]
+[plugins."friendly-snippets"]
 git = "rafamadriz/friendly-snippets"
 
-[plugins."copilot.lua" ]
+[plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
 
 [plugins.harpoon]
@@ -78,11 +79,6 @@ keys = [
 [plugins."nvim-autopairs"]
 version = "scm"
 event = "InsertEnter"
-
-[plugins."conform.nvim"]
-version = "8.2.0"
-event = "BufWritePre"
-keys = [{ lhs = "<leader>fm", mode = "n" }]
 
 [plugins."aerial.nvim"]
 version = "2.3.1"
@@ -163,6 +159,9 @@ git = "L3MON4D3/LuaSnip"
 [plugins.nvim]
 git = "catppuccin/nvim"
 
+[plugins."mason-conform.nvim"]
+git = "zapling/mason-conform.nvim"
+
 [treesitter]
 auto_highlight = "all"
 # NOTE: These are parsers, not filetypes.
@@ -177,12 +176,14 @@ items = [
   "mason.nvim",
   "mason-lspconfig.nvim",
   "nvim-lspconfig",
-  "friendly-snippets",
-  "luasnip",
-  "blink.cmp",
   "typescript-tools.nvim",
+  "luasnip",
   "rustaceanvim",
+  "blink.cmp",
 ]
 
 [bundles.cmp]
 items = ["luasnip", "blink.cmp", "friendly-snippets"]
+
+[bundles."conform-mason"]
+items = ["mason.nvim", "conform.nvim", "mason-conform.nvim"]

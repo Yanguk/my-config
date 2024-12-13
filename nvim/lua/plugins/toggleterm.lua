@@ -18,10 +18,10 @@ local lazygit = Terminal:new({
   direction = "float",
   float_opts = {
     width = function()
-      return vim.o.columns - 10
+      return vim.o.columns
     end,
     height = function()
-      return vim.o.lines - 5
+      return vim.o.lines
     end,
   },
 })

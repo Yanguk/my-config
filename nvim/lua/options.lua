@@ -2,7 +2,6 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
-
 g.mapleader = " "
 
 ------

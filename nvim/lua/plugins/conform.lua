@@ -30,6 +30,13 @@ require("conform").setup({
     zig = { "zig fmt" },
   },
   format_on_save = function(bufnr)
+    local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+    -- disable in moknowre
+    if bufname:match("/moknowre/") then
+      return
+    end
+
     -- Disable with a global or buffer-local variable
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
       return
@@ -59,8 +66,6 @@ end, {
   desc = "Re-enable autoformat-on-save",
 })
 
-vim.cmd("FormatDisable")
-
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
   if args.count ~= -1 then
@@ -73,4 +78,4 @@ vim.api.nvim_create_user_command("Format", function(args)
   require("conform").format({ async = true, lsp_format = "fallback", range = range })
 end, { range = true })
 
-vim.api.nvim_set_keymap("n", "<leader>fm", ":Format<CR>", { noremap = true, silent = true, desc = 'format' })
+vim.api.nvim_set_keymap("n", "<leader>fm", ":Format<CR>", { noremap = true, silent = true, desc = "format" })

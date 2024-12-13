@@ -88,4 +88,3 @@ require("typescript-tools").setup({
   },
   root_dir = lspconfig.util.root_pattern("package.json"),
 })
-

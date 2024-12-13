@@ -59,11 +59,9 @@ tree-sitter-jsonc = "0.0.29"
 
 [plugins."friendly-snippets" ]
 git = "rafamadriz/friendly-snippets"
-rev = "efff286dd74c22f731cdec26a70b46e5b203c619"
 
 [plugins."copilot.lua" ]
 git = "zbirenbaum/copilot.lua"
-rev = "d3783b9283a7c35940ed8d71549030d5f5f9f980"
 
 [plugins.harpoon]
 git = "ThePrimeagen/harpoon"
@@ -139,39 +137,31 @@ keys = [
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
-rev = "v0.7.6"
 build = "cargo build --release"
 
 [plugins."gx.nvim"]
 git = "chrishrb/gx.nvim"
-rev = "v0.7.0"
 keys = [{ lhs = "gx", mode = "n" }, { lhs = "gx", mode = "x" }]
 
 [plugins."debugprint.nvim"]
 git = "andrewferrier/debugprint.nvim"
-rev = "v3.7.0"
 keys = [{ lhs = "g?", mode = "n" }, { lhs = "g?", mode = "x" }]
 
 [plugins."kulala.nvim"]
 git = "mistweaverco/kulala.nvim"
 ft = "http"
-rev = "v4.4.1"
 
 [plugins."barbar.nvim"]
 git = "romgrk/barbar.nvim"
-rev = "v1.9.1"
 
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
-rev = "e3eedf36ceda1932e296ec894de4ceea8ddeacb6"
 
 [plugins.luasnip]
 git = "L3MON4D3/LuaSnip"
-rev = "v2.3.0"
 
 [plugins.nvim]
 git = "catppuccin/nvim"
-rev = "v1.9.0"
 
 [treesitter]
 auto_highlight = "all"

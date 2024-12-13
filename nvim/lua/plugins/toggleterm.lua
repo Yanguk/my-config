@@ -21,7 +21,7 @@ local lazygit = Terminal:new({
       return vim.o.columns
     end,
     height = function()
-      return vim.o.lines
+      return vim.o.lines - 5
     end,
   },
 })

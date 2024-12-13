@@ -186,4 +186,9 @@ items = [
 items = ["luasnip", "blink.cmp", "friendly-snippets"]
 
 [bundles."conform-mason"]
-items = ["mason.nvim", "conform.nvim", "mason-conform.nvim"]
+items = [
+  "mason.nvim",
+  "conform.nvim",
+  "mason-conform.nvim",
+  "blink-cmp-copilot",
+]

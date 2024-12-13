@@ -42,11 +42,11 @@ local server_configs = {
   ["bashls"] = {
     filetypes = { "sh", "zsh", "bash" },
   },
-  ["clangd"] = {
-    capabilities = {
-      offsetEncoding = "utf-16",
-    },
-  },
+  -- ["clangd"] = {
+  --   capabilities = {
+  --     offsetEncoding = "utf-16",
+  --   },
+  -- },
 }
 
 for k, v in pairs(server_configs) do
@@ -56,3 +56,36 @@ for k, v in pairs(server_configs) do
 
   lspconfig[server].setup(config)
 end
+
+vim.g.rustaceanvim = {
+  -- Plugin configuration
+  tools = {},
+  -- LSP configuration
+  server = {
+    on_init = default_config.on_init,
+    on_attach = default_config.on_attach,
+    capabilities = default_config.capabilities,
+    default_settings = {
+      -- rust-analyzer language server configuration
+      ["rust-analyzer"] = {
+        command = "clippy",
+      },
+    },
+  },
+  -- DAP configuration
+  dap = {},
+}
+
+require("typescript-tools").setup({
+  on_init = default_config.on_init,
+  on_attach = default_config.on_attach,
+  capabilities = default_config.capabilities,
+  settings = {
+    tsserver_file_preferences = {
+      includeInlayParameterNameHints = "all",
+      importModuleSpecifierPreference = "non-relative",
+    },
+  },
+  root_dir = lspconfig.util.root_pattern("package.json"),
+})
+

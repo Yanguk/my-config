@@ -20,7 +20,6 @@
 "mason.nvim" = "1.10.0"
 "mason-lspconfig.nvim" = "1.31.0"
 "nvim-lspconfig" = "1.0.0"
-"friendly-snippets" = "scm"
 nvim-web-devicons = "0.100"
 "nvim-notify" = "3.14.0"
 nvim-surround = "2.1.5"
@@ -30,7 +29,6 @@ nvim-surround = "2.1.5"
 nvim-ufo = "1.4.0"
 "statuscol.nvim" = "scm"
 "gitsigns.nvim" = "0.9.0"
-luasnip = "2.3.0"
 "typescript-tools.nvim" = "scm"
 rustaceanvim = "5.18.0"
 "leap.nvim" = "scm"
@@ -58,6 +56,10 @@ tree-sitter-rust = "0.0.37"
 nvim-highlight-colors = "scm"
 tree-sitter-jsonc = "0.0.29"
 "which-key.nvim" = "3.14.1"
+
+[plugins."friendly-snippets" ]
+git = "rafamadriz/friendly-snippets"
+rev = "efff286dd74c22f731cdec26a70b46e5b203c619"
 
 [plugins."copilot.lua" ]
 git = "zbirenbaum/copilot.lua"
@@ -163,6 +165,10 @@ rev = "v1.9.1"
 git = "giuxtaposition/blink-cmp-copilot"
 rev = "e3eedf36ceda1932e296ec894de4ceea8ddeacb6"
 
+[plugins.luasnip]
+git = "L3MON4D3/LuaSnip"
+rev = "v2.3.0"
+
 [plugins.nvim]
 git = "catppuccin/nvim"
 rev = "v1.9.0"
@@ -184,6 +190,8 @@ items = [
   "friendly-snippets",
   "luasnip",
   "blink.cmp",
+  "typescript-tools.nvim",
+  "rustaceanvim",
 ]
 
 [bundles.cmp]

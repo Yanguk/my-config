@@ -17,9 +17,6 @@ require("blink.cmp").setup({
         enabled = true,
       },
     },
-    list = {
-      max_items = 20,
-    },
     menu = {
       border = "rounded",
       draw = {
@@ -48,3 +45,4 @@ require("blink.cmp").setup({
     end,
   },
 })
+

@@ -98,6 +98,8 @@ vim.filetype.add({
   },
 })
 
+vim.treesitter.language.add('markdown') -- cmp docs type
+
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
   pattern = "*",

@@ -29,13 +29,13 @@ require("conform").setup({
     yaml = { "yamlfmt" },
     zig = { "zig fmt" },
   },
-  -- format_on_save = function(bufnr)
-  --   -- Disable with a global or buffer-local variable
-  --   if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-  --     return
-  --   end
-  --   return { timeout_ms = 500, lsp_format = "fallback" }
-  -- end,
+  format_on_save = function(bufnr)
+    -- Disable with a global or buffer-local variable
+    if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+      return
+    end
+    return { timeout_ms = 500, lsp_format = "fallback" }
+  end,
 })
 
 local command = vim.api.nvim_create_user_command
@@ -58,6 +58,8 @@ command("FormatEnable", function()
 end, {
   desc = "Re-enable autoformat-on-save",
 })
+
+vim.cmd("FormatDisable")
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil

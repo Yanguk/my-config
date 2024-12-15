@@ -57,6 +57,7 @@ nvim-highlight-colors = "scm"
 tree-sitter-jsonc = "0.0.29"
 "which-key.nvim" = "3.15.0"
 "conform.nvim" = "8.2.0"
+"zen-mode.nvim" = "1.4.0"
 
 [plugins."friendly-snippets"]
 git = "rafamadriz/friendly-snippets"

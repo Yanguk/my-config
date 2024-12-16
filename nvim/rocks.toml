@@ -30,12 +30,12 @@ nvim-ufo = "1.4.0"
 "statuscol.nvim" = "scm"
 "gitsigns.nvim" = "0.9.0"
 "typescript-tools.nvim" = "scm"
-rustaceanvim = "5.18.0"
+rustaceanvim = "5.19.0"
 "leap.nvim" = "scm"
 "trouble.nvim" = "3.6.0"
 "lualine.nvim" = "scm"
 tree-sitter-tsx = "0.0.31"
-tree-sitter-zig = "0.0.32"
+tree-sitter-zig = "0.0.33"
 tree-sitter-toml = "0.0.31"
 tree-sitter-lua = "0.0.31"
 tree-sitter-json = "0.0.33"
@@ -58,6 +58,12 @@ tree-sitter-jsonc = "0.0.29"
 "which-key.nvim" = "3.15.0"
 "conform.nvim" = "8.2.0"
 "zen-mode.nvim" = "1.4.0"
+"telescope.nvim" = "scm"
+"toggleterm.nvim" = "2.13.0"
+"nvim-spectre" = "scm"
+"diffview.nvim" = "scm"
+"aerial.nvim" = "2.3.1"
+"nvim-autopairs" = "scm"
 
 [plugins."friendly-snippets"]
 git = "rafamadriz/friendly-snippets"
@@ -77,61 +83,6 @@ keys = [
   { lhs = "<A-2>", mode = "n" },
   { lhs = "<A-3>", mode = "n" },
   { lhs = "<A-4>", mode = "n" },
-]
-
-[plugins."nvim-autopairs"]
-version = "scm"
-event = "InsertEnter"
-
-[plugins."aerial.nvim"]
-version = "2.3.1"
-cmd = "AerialToggle"
-keys = [{ lhs = "<leader>a", mode = "n" }]
-
-[plugins."telescope.nvim"]
-version = "scm"
-cmd = "Telescope"
-keys = [
-  { lhs = "<leader>fw", mode = "n" },
-  { lhs = "<leader>fb", mode = "n" },
-  { lhs = "<leader>fh", mode = "n" },
-  { lhs = "<leader>ma", mode = "n" },
-  { lhs = "<leader>fo", mode = "n" },
-  { lhs = "<leader>fz", mode = "n" },
-  { lhs = "<leader>cm", mode = "n" },
-  { lhs = "<leader>gt", mode = "n" },
-  { lhs = "<leader>ff", mode = "n" },
-  { lhs = "<leader>fa", mode = "n" },
-]
-
-[plugins."diffview.nvim"]
-version = "scm"
-cmd = "DiffviewOpen"
-keys = [
-  { lhs = "<leader>do", mode = "n" },
-  { lhs = "<leader>dv", mode = "n" },
-  { lhs = "<leader>dc", mode = "n" },
-]
-
-[plugins."toggleterm.nvim"]
-version = "2.13.0"
-keys = [
-  { lhs = "<A-v>", mode = "n" },
-  { lhs = "<A-v>", mode = "t" },
-  { lhs = "<A-h>", mode = "n" },
-  { lhs = "<A-h>", mode = "t" },
-  { lhs = "<A-i>", mode = "n" },
-  { lhs = "<A-i>", mode = "t" },
-  { lhs = "<leader>lg", mode = "n" },
-]
-
-[plugins."nvim-spectre"]
-version = "scm"
-keys = [
-  { lhs = "<leader>sw", mode = "n" },
-  { lhs = "<leader>sw", mode = "v" },
-  { lhs = "<leader>S", mode = "n" },
-  { lhs = "<leader>sp", mode = "n" },
 ]
 
 [plugins."blink.cmp"]
@@ -160,7 +111,7 @@ rev = "v1.9.1"
 
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
-rev = "e3eedf36ceda1932e296ec894de4ceea8ddeacb6"
+rev = "f8e12f3ec152ca7dfbdbd6f50797aac0171a46a9"
 
 [plugins.luasnip]
 git = "L3MON4D3/LuaSnip"

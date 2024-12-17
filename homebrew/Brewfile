@@ -21,5 +21,4 @@ cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "obsidian"
 cask "orbstack"
-cask "raycast"
 mas "KakaoTalk", id: 869223134

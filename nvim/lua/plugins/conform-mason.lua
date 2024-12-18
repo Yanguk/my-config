@@ -33,7 +33,11 @@ require("conform").setup({
     local bufname = vim.api.nvim_buf_get_name(bufnr)
 
     -- disable in moknowre
-    if bufname:match("/moknowre/") then
+    if bufname:find("moknowre") then
+      return
+    end
+
+    if bufname:find("bridge") then
       return
     end
 

@@ -35,8 +35,8 @@ map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts)
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
-map("n", "<A-s-c>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<leader>x", "<Cmd>BufferClose<CR>", opts)
+map("n", "<leader>X", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
 
 -- Wipeout buffer
 --                 :BufferWipeout

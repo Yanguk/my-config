@@ -64,6 +64,7 @@ tree-sitter-jsonc = "0.0.29"
 "diffview.nvim" = "scm"
 "aerial.nvim" = "2.3.1"
 "nvim-autopairs" = "scm"
+luasnip = "2.3.0"
 
 [plugins."friendly-snippets"]
 git = "rafamadriz/friendly-snippets"
@@ -111,11 +112,7 @@ rev = "v1.9.1"
 
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
-rev = "f8e12f3ec152ca7dfbdbd6f50797aac0171a46a9"
-
-[plugins.luasnip]
-git = "L3MON4D3/LuaSnip"
-rev = "v2.3.0"
+rev = "c38d3e4201b135ab290c7ad126a9720cf76c788c"
 
 [plugins.nvim]
 git = "catppuccin/nvim"

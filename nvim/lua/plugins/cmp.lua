@@ -1,5 +1,20 @@
 -- blink
 require("blink.cmp").setup({
+  keymap = {
+    preset = "default",
+    ["<C-space>"] = {},
+    ["<C-e>"] = { "hide" },
+    ["<C-y>"] = { "select_and_accept" },
+
+    ["<C-p>"] = { "select_prev", "fallback" },
+    ["<C-n>"] = { "select_next", "fallback" },
+
+    ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+    ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+
+    ["<Tab>"] = { "snippet_forward", "fallback" },
+    ["<S-Tab>"] = { "snippet_backward", "fallback" },
+  },
   sources = {
     providers = {
       copilot = {
@@ -18,16 +33,12 @@ require("blink.cmp").setup({
       },
     },
     menu = {
-      border = "rounded",
       draw = {
         treesitter = true,
       },
     },
     documentation = {
       auto_show = true,
-      window = {
-        border = "rounded",
-      },
     },
   },
   snippets = {

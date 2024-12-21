@@ -52,7 +52,7 @@ tree-sitter-gitcommit = "0.0.33"
 tree-sitter-yaml = "0.0.30"
 tree-sitter-html = "0.0.33"
 tree-sitter-markdown_inline = "0.0.37"
-tree-sitter-rust = "0.0.37"
+tree-sitter-rust = "0.0.38"
 nvim-highlight-colors = "scm"
 tree-sitter-jsonc = "0.0.29"
 "which-key.nvim" = "3.15.0"
@@ -88,7 +88,7 @@ keys = [
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
-rev = "v0.7.6"
+rev = "v0.8.0"
 build = "cargo build --release"
 
 [plugins."gx.nvim"]

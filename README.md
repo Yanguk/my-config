@@ -27,3 +27,7 @@ nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nv
 [github](https://github.com/ColemakMods/mod-dh)
 
 cp -r Colemak\ DH.bundle ~/Library/Keyboard\ Layouts
+
+# 구름 입력기
+
+https://github.com/gureum/gureum

@@ -65,10 +65,7 @@ tree-sitter-jsonc = "0.0.29"
 "aerial.nvim" = "2.4.0"
 "nvim-autopairs" = "scm"
 luasnip = "2.3.0"
-
-[plugins."friendly-snippets"]
-git = "rafamadriz/friendly-snippets"
-rev = "efff286dd74c22f731cdec26a70b46e5b203c619"
+"friendly-snippets" = "scm"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
@@ -76,7 +73,7 @@ rev = "d3783b9283a7c35940ed8d71549030d5f5f9f980"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
-rev = "v0.8.1"
+rev = "v0.8.2"
 
 [plugins."gx.nvim"]
 git = "chrishrb/gx.nvim"

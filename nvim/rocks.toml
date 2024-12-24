@@ -30,7 +30,7 @@ nvim-ufo = "1.4.0"
 "statuscol.nvim" = "scm"
 "gitsigns.nvim" = "0.9.0"
 "typescript-tools.nvim" = "scm"
-rustaceanvim = "5.19.2"
+rustaceanvim = "5.20.1"
 "leap.nvim" = "scm"
 "trouble.nvim" = "3.6.0"
 "lualine.nvim" = "scm"
@@ -68,7 +68,7 @@ luasnip = "2.3.0"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
-branch = "master"
+rev = "886ee73b6d464b2b3e3e6a7ff55ce87feac423a9"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
@@ -95,7 +95,7 @@ rev = "v1.9.1"
 
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
-branch = "main"
+rev = "c5c5cbce5748d21073f1d5348a92ebe6ce63f387"
 
 [plugins.nvim]
 git = "catppuccin/nvim"
@@ -103,11 +103,9 @@ rev = "v1.9.0"
 
 [plugins."mason-conform.nvim"]
 git = "zapling/mason-conform.nvim"
-branch = "main"
 
 [plugins.friendly-snippets]
 git = "rafamadriz/friendly-snippets"
-branch = "main"
 
 [treesitter]
 auto_highlight = "all"

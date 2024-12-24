@@ -5,6 +5,7 @@ table.unpack = table.unpack or unpack
 require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = true,
+  ensure_installed = { "ts_ls" },
 })
 
 local lspconfig = require("lspconfig")

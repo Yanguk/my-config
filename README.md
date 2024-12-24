@@ -19,4 +19,11 @@ brew install bat
 bat cache --build
 
 # nvim-rocks
+
 nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nvim/master/installer.lua"
+
+# Add colemak-dh
+
+[github](https://github.com/ColemakMods/mod-dh)
+
+cp -r Colemak\ DH.bundle ~/Library/Keyboard\ Layouts

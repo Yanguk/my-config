@@ -65,7 +65,6 @@ tree-sitter-jsonc = "0.0.29"
 "aerial.nvim" = "2.4.0"
 "nvim-autopairs" = "scm"
 luasnip = "2.3.0"
-"friendly-snippets" = "scm"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"
@@ -105,6 +104,10 @@ rev = "v1.9.0"
 [plugins."mason-conform.nvim"]
 git = "zapling/mason-conform.nvim"
 rev = "abce2be529f3b4b336c56d0ba6336a9144e0fee6"
+
+[plugins.friendly-snippets]
+git = "rafamadriz/friendly-snippets"
+rev = "efff286dd74c22f731cdec26a70b46e5b203c619"
 
 [treesitter]
 auto_highlight = "all"

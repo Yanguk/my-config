@@ -1,2 +1,5 @@
 [default.extend-words]
 "calender" = "calendar"
+
+[default.extend-identifiers]
+nin = "nin"

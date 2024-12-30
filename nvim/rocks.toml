@@ -128,12 +128,7 @@ items = [
 ]
 
 [bundles.cmp]
-items = ["luasnip", "blink.cmp", "friendly-snippets"]
+items = ["luasnip", "blink.cmp", "friendly-snippets", "blink-cmp-copilot"]
 
 [bundles."conform-mason"]
-items = [
-  "mason.nvim",
-  "conform.nvim",
-  "mason-conform.nvim",
-  "blink-cmp-copilot",
-]
+items = ["mason.nvim", "conform.nvim", "mason-conform.nvim"]

@@ -5,11 +5,14 @@ require("barbar").setup({
 })
 
 local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+
+local function opts(desc)
+  return { noremap = true, silent = true, desc = desc }
+end
 
 -- Move to previous/next
-map("n", "<Tab>", "<Cmd>BufferNext<CR>", opts)
-map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts)
+map("n", "<Tab>", "<Cmd>BufferNext<CR>", opts("Move to next buffer"))
+map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts("Move to previous buffer"))
 
 -- Re-order to previous/next
 -- map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
@@ -35,8 +38,8 @@ map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts)
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map("n", "<leader>x", "<Cmd>BufferClose<CR>", opts)
-map("n", "<leader>X", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<leader>x", "<Cmd>confirm BufferClose<CR>", opts("Buffer close"))
+map("n", "<leader>X", "<Cmd>bufdo confirm BufferClose<CR>", opts("Buffer close all but current"))
 
 -- Wipeout buffer
 --                 :BufferWipeout

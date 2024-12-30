@@ -39,7 +39,7 @@ map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts("Move to previous buffer"))
 
 -- Close buffer
 map("n", "<leader>x", "<Cmd>confirm BufferClose<CR>", opts("Buffer close"))
-map("n", "<leader>X", "<Cmd>bufdo confirm BufferClose<CR>", opts("Buffer close all but current"))
+map("n", "<leader>X", "<Cmd>bufdo confirm BufferClose<CR>", opts("Buffer close all"))
 
 -- Wipeout buffer
 --                 :BufferWipeout

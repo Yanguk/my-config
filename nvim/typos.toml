@@ -1,5 +1,7 @@
 [default.extend-words]
 "calender" = "calendar"
+"resuit" = "result"
+"mutatation" = "mutation"
 
 [default.extend-identifiers]
 nin = "nin"

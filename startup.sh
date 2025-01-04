@@ -18,13 +18,9 @@ function print_line() {
 
 # ----------------------------
 print_start "homebrew"
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-sudo chown -R $(whoami) $(brew --prefix)/*
-brew install cash
-
 print_end "homebrew"
+print_line
 
 # ----------------------------
 print_start "oh-my-zsh"

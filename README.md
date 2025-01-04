@@ -15,6 +15,8 @@ git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 
 # delta
 
+https://github.com/catppuccin/bat
+
 brew install bat
 bat cache --build
 
@@ -26,7 +28,9 @@ nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nv
 
 [github](https://github.com/ColemakMods/mod-dh)
 
-cp -r Colemak\ DH.bundle ~/Library/Keyboard\ Layouts
+1. download Colemak
+
+2. cp -r Colemak\ DH.bundle ~/Library/Keyboard\ Layouts
 
 # 구름 입력기
 

@@ -1,61 +1,93 @@
--- cSpell:disable
-require("nvchad.options")
-
--- add yours here!
 local opt = vim.opt
 local o = vim.o
+local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
-local command = vim.api.nvim_create_user_command
+g.mapleader = " "
 
------------ default options -----------
+------
+o.laststatus = 3
+o.showmode = false
+
+o.clipboard = "unnamedplus"
+o.cursorline = true
+o.cursorlineopt = "number"
+
+-- Indenting
+o.expandtab = true
+o.shiftwidth = 2
+o.smartindent = true
+o.tabstop = 2
+o.softtabstop = 2
+
+opt.fillchars = { eob = " " }
+o.ignorecase = true
+o.smartcase = true
+o.mouse = "a"
+
+-- Numbers
+o.number = true
+o.numberwidth = 2
+o.ruler = false
+
 o.termguicolors = true
 opt.wrap = false
-opt.swapfile = false -- don't create backup files
+opt.whichwrap:append("<>[]hl")
 
--- add filetype --
+-- disable nvim intro
+opt.shortmess:append("sI")
+
+o.signcolumn = "yes"
+o.splitbelow = true
+o.splitright = true
+o.timeoutlen = 400
+o.undofile = true
+
+local disabled_built_ins = {
+  "2html_plugin",
+  "tohtml",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "syntax",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin",
+  "netrw_nogx",
+  "node_provider",
+  "python3_provider",
+  "perl_provider",
+  "ruby_provider",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  g["loaded_" .. plugin] = 1
+end
+
 vim.filetype.add({
   extension = {
-    ["http"] = "http",
+    http = "http", -- .http 파일을 http 파일타입으로 설정
   },
 })
 
------------ plugin -----------
-
--- UFO folding
-o.foldcolumn = "1" -- '0' is not bad
-o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-o.foldlevelstart = 99
-o.foldenable = true
-o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
---------- rustaceanvim ---------
-require("configs.rustaceanvim")
-
--- conform toggle --
-command("FormatDisable", function(args)
-  if args.bang then
-    -- FormatDisable! will disable formatting just for this buffer
-    vim.b.disable_autoformat = true
-  else
-    vim.g.disable_autoformat = true
-  end
-end, {
-  desc = "Disable autoformat-on-save",
-  bang = true,
-})
-
-command("FormatEnable", function()
-  vim.b.disable_autoformat = false
-  vim.g.disable_autoformat = false
-end, {
-  desc = "Re-enable autoformat-on-save",
-})
-
--- ts 프로젝트에서는 자동포멧 비활성화
-autocmd("FileType", {
-  pattern = { "typescript", "typescriptreact", "javascript" },
-  command = "FormatDisable",
-})
+vim.treesitter.language.add("markdown") -- cmp docs type
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

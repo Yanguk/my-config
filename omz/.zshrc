@@ -23,6 +23,7 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
   direnv
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -56,3 +57,6 @@ alias awspf='export AWS_PROFILE=$(sed -n -E "s/\[(profile )?([^][]+)\]?\s*$/\2/p
 
 # java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+export PATH=$PATH:~/.config/zig-macos-aarch64-0.14.0-dev.2340+182cdf74b
+

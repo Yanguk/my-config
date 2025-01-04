@@ -21,7 +21,8 @@ local git_ignored = setmetatable({}, {
 
 local detail = false
 
-return {
+require("oil").setup({
+  use_default_keymaps = false,
   keymaps = {
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
@@ -31,6 +32,7 @@ return {
     ["<C-p>"] = "actions.preview",
     ["<C-c>"] = "actions.close",
     -- ["<C-l>"] = "actions.refresh",
+    ["<C-r>"] = "actions.refresh",
     ["-"] = "actions.parent",
     ["_"] = "actions.open_cwd",
     ["`"] = "actions.cd",
@@ -52,7 +54,6 @@ return {
       end,
     },
   },
-  use_default_keymaps = false,
   view_options = {
     is_hidden_file = function(name, _)
       -- dotfiles are always considered hidden
@@ -68,4 +69,6 @@ return {
       return vim.list_contains(git_ignored[dir], name)
     end,
   },
-}
+})
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

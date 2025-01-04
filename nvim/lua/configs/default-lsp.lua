@@ -1,25 +1,18 @@
--- cSpell:disable
 local map = vim.keymap.set
-local configs = require("nvchad.configs.lspconfig")
-
-local nvchad_on_attach = configs.on_attach
-local nvchad_on_init = configs.on_init
-local nvchad_capabilities = configs.capabilities
 
 local default_config = {
-  capabilities = nvchad_capabilities,
-  on_init = nvchad_on_init,
+  capabilities = require("blink.cmp").get_lsp_capabilities(),
+  on_init = function(client)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
   on_attach = function(client, bufnr)
-    nvchad_on_attach(client, bufnr)
-
     local function opts(desc)
       return { buffer = bufnr, desc = desc }
     end
 
-    -- Instead of using 'gr', trouble is used.
     map(
       "n",
-      "<leader>D",
+      "go",
       "<cmd>Trouble lsp_type_definition toggle focus=true auto_refresh=false<CR>",
       opts("Trouble lsp_type_definition")
     )
@@ -41,6 +34,10 @@ local default_config = {
       "<cmd>Trouble lsp_definitions toggle focus=true auto_refresh=false<CR>",
       opts("Trouble lsp_definitions")
     )
+
+    map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
+    map("n", "<leader>ra", vim.lsp.buf.rename, opts("rename"))
+    map("n", "K", vim.lsp.buf.hover, opts("Code action"))
 
     if client.server_capabilities.inlayHintProvider then
       map("n", "<leader>ih", function()

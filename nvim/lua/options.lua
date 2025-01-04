@@ -33,12 +33,6 @@ o.termguicolors = true
 opt.wrap = false
 opt.whichwrap:append("<>[]hl")
 
--- disable some default providers
-g.loaded_node_provider = 0
-g.loaded_python3_provider = 0
-g.loaded_perl_provider = 0
-g.loaded_ruby_provider = 0
-
 -- disable nvim intro
 opt.shortmess:append("sI")
 
@@ -47,9 +41,6 @@ o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
-
--- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 250
 
 local disabled_built_ins = {
   "2html_plugin",
@@ -80,16 +71,15 @@ local disabled_built_ins = {
   "bugreport",
   "ftplugin",
   "netrw_nogx",
+  "node_provider",
+  "python3_provider",
+  "perl_provider",
+  "ruby_provider",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
-
-g.loaded_node_provider = 1
-g.loaded_python3_provider = 1
-g.loaded_perl_provider = 1
-g.loaded_ruby_provider = 1
 
 vim.filetype.add({
   extension = {

@@ -4,19 +4,19 @@ require("conform").setup({
     lua = { "stylua" },
 
     javascript = {
-      "prettierd",
+      "prettier",
     },
     typescript = {
-      "prettierd",
+      "prettier",
     },
     javascriptreact = {
-      "prettierd",
+      "prettier",
     },
     typescriptreact = {
-      "prettierd",
+      "prettier",
     },
-    markdown = { "prettierd" },
-    html = { "prettierd" },
+    markdown = { "prettier" },
+    html = { "prettier" },
 
     -- racket = { "raco" },
     sh = { "shfmt" },
@@ -24,8 +24,8 @@ require("conform").setup({
     -- c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "prettierd" },
-    jsonc = { "prettierd" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
     yaml = { "yamlfmt" },
     zig = { "zig fmt" },
   },

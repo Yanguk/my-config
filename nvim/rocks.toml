@@ -19,7 +19,7 @@
 "oil.nvim" = "2.14.0"
 "mason.nvim" = "1.10.0"
 "mason-lspconfig.nvim" = "1.31.0"
-"nvim-lspconfig" = "1.2.0"
+"nvim-lspconfig" = "1.3.0"
 nvim-web-devicons = "0.100"
 "nvim-notify" = "3.14.1"
 nvim-surround = "2.1.5"

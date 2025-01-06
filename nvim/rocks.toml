@@ -73,7 +73,7 @@ rev = "886ee73b6d464b2b3e3e6a7ff55ce87feac423a9"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
-rev = "v0.9.2"
+rev = "v0.9.3"
 
 [plugins."gx.nvim"]
 git = "chrishrb/gx.nvim"

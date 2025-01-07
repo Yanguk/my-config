@@ -37,7 +37,7 @@ local default_config = {
 
     map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
     map("n", "<leader>ra", vim.lsp.buf.rename, opts("rename"))
-    map("n", "K", vim.lsp.buf.hover, opts("Code action"))
+    map("n", "K", vim.lsp.buf.hover, opts("hover"))
 
     if client.server_capabilities.inlayHintProvider then
       map("n", "<leader>ih", function()

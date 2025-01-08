@@ -66,6 +66,7 @@ tree-sitter-jsonc = "0.0.29"
 "nvim-autopairs" = "scm"
 luasnip = "2.3.0"
 friendly-snippets = "scm"
+"lazygit.nvim" = "scm"
 
 [plugins."copilot.lua"]
 git = "zbirenbaum/copilot.lua"

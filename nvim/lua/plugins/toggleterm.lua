@@ -9,30 +9,6 @@ end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
-local Terminal = require("toggleterm.terminal").Terminal
-
-local lazygit = Terminal:new({
-  cmd = "lazygit",
-  hidden = true,
-  display_name = "lazygit",
-  direction = "float",
-  float_opts = {
-    width = function()
-      return vim.o.columns
-    end,
-    height = function()
-      return vim.o.lines - 5
-    end,
-  },
-})
-
----@diagnostic disable-next-line: lowercase-global
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-
 -- toggleable
 vim.keymap.set(
   { "n", "t" },

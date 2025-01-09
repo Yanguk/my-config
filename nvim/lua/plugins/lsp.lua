@@ -46,6 +46,8 @@ local server_configs = {
   ["denols"] = {
     root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
   },
+  "docker_compose_language_service",
+  "dockerls",
 }
 
 for k, v in pairs(server_configs) do

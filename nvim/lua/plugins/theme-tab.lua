@@ -1,11 +1,12 @@
 require("catppuccin").setup({
-  default_integrations = false,
   integrations = {
-    -- blink_cmp = true,
-    aerial = true,
-    barbar = true,
+    blink_cmp = true,
     diffview = true,
-    gitsigns = true,
+    -- aerial = true,
+    -- leap = true,
+    -- lsp_trouble = true,
+    -- notify = true,
+    -- which_key = true,
   },
 })
 

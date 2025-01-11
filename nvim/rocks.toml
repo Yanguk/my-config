@@ -39,7 +39,7 @@ tree-sitter-zig = "0.0.34"
 tree-sitter-toml = "0.0.31"
 tree-sitter-lua = "0.0.32"
 tree-sitter-json = "0.0.33"
-tree-sitter-http = "0.0.33"
+tree-sitter-http = "0.0.34"
 tree-sitter-markdown = "0.0.37"
 tree-sitter-gitignore = "0.0.29"
 tree-sitter-bash = "0.0.37"
@@ -69,6 +69,7 @@ tree-sitter-css = "0.0.31"
 tree-sitter-ini = "0.0.29"
 tree-sitter-editorconfig = "0.0.46"
 "bufferline.nvim" = "4.9.0"
+"indent-blankline.nvim" = "3.8.6"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
@@ -95,7 +96,8 @@ rev = "c5c5cbce5748d21073f1d5348a92ebe6ce63f387"
 
 [plugins."nvim"]
 git = "catppuccin/nvim"
-rev = "v1.9.0"
+rev = "f67b886d65a029f12ffa298701fb8f1efd89295d"
+branch = "main"
 
 [plugins."mason-conform.nvim"]
 git = "zapling/mason-conform.nvim"

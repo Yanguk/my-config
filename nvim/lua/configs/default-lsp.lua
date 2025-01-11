@@ -12,7 +12,7 @@ local default_config = {
 
     map(
       "n",
-      "go",
+      "gD",
       "<cmd>Trouble lsp_type_definition toggle focus=true auto_refresh=false<CR>",
       opts("Trouble lsp_type_definition")
     )

@@ -10,6 +10,8 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 local default_config = require("configs.default-lsp")
+local eslint_config = require("configs.eslint-lsp")
+local byDomain = require("configs.by-domain")
 
 -- server setup
 local server_configs = {
@@ -29,11 +31,12 @@ local server_configs = {
     on_attach = function(client, bufnr)
       default_config.on_attach(client, bufnr)
 
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        command = "EslintFixAll",
-      })
+      -- 브릿지 프로젝트만 eslint로 포멧
+      if byDomain.isBridgeProject(bufnr) then
+        eslint_config.activeFixAll(bufnr)
+      end
     end,
+    root_dir = eslint_config.root_dir,
   },
   ["bashls"] = {
     filetypes = { "sh", "zsh", "bash" },

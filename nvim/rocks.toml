@@ -68,6 +68,7 @@ luasnip = "2.3.0"
 "lazygit.nvim" = "scm"
 tree-sitter-css = "0.0.31"
 tree-sitter-ini = "0.0.29"
+tree-sitter-editorconfig = "0.0.46"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"

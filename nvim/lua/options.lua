@@ -42,6 +42,8 @@ o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
 
+opt.swapfile = false -- don't create backup files
+
 local disabled_built_ins = {
   "2html_plugin",
   "tohtml",

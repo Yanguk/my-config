@@ -1,3 +1,5 @@
+local byDomain = require("configs.by-domain")
+
 -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#format-command
 require("conform").setup({
   formatters_by_ft = {
@@ -30,14 +32,8 @@ require("conform").setup({
     zig = { "zig fmt" },
   },
   format_on_save = function(bufnr)
-    local bufname = vim.api.nvim_buf_get_name(bufnr)
-
-    -- disable in moknowre
-    if bufname:find("moknowre") then
-      return
-    end
-
-    if bufname:find("bridge") then
+    -- 해당 프로젝트는 eslint로 포멧
+    if byDomain.isBridgeProject(bufnr) then
       return
     end
 
@@ -45,6 +41,7 @@ require("conform").setup({
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
       return
     end
+
     return { timeout_ms = 1000, lsp_format = "fallback" }
   end,
 })

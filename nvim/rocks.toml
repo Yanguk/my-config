@@ -65,10 +65,10 @@ tree-sitter-jsonc = "0.0.29"
 "aerial.nvim" = "2.4.0"
 "nvim-autopairs" = "scm"
 luasnip = "2.3.0"
-"lazygit.nvim" = "scm"
 tree-sitter-css = "0.0.31"
 tree-sitter-ini = "0.0.29"
 tree-sitter-editorconfig = "0.0.46"
+"bufferline.nvim" = "4.9.0"
 
 [plugins."blink.cmp"]
 git = "saghen/blink.cmp"
@@ -89,15 +89,11 @@ git = "mistweaverco/kulala.nvim"
 ft = "http"
 rev = "v4.4.1"
 
-[plugins."barbar.nvim"]
-git = "romgrk/barbar.nvim"
-rev = "v1.9.1"
-
 [plugins.blink-cmp-copilot]
 git = "giuxtaposition/blink-cmp-copilot"
 rev = "c5c5cbce5748d21073f1d5348a92ebe6ce63f387"
 
-[plugins.nvim]
+[plugins."nvim"]
 git = "catppuccin/nvim"
 rev = "v1.9.0"
 
@@ -152,3 +148,6 @@ items = ["luasnip", "blink.cmp", "friendly-snippets", "blink-cmp-copilot"]
 
 [bundles."conform-mason"]
 items = ["mason.nvim", "conform.nvim", "mason-conform.nvim"]
+
+[bundles.theme-tab]
+items = ["nvim", "bufferline.nvim"]

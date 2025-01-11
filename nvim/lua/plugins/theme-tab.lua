@@ -1,7 +1,26 @@
-vim.g.barbar_auto_setup = false -- disable auto-setup
+require("catppuccin").setup({
+  default_integrations = false,
+  integrations = {
+    -- blink_cmp = true,
+    aerial = true,
+    barbar = true,
+    diffview = true,
+    gitsigns = true,
+  },
+})
 
-require("barbar").setup({
-  animation = false,
+vim.cmd.colorscheme("catppuccin")
+
+require("bufferline").setup({
+  highlights = require("catppuccin.groups.integrations.bufferline").get(),
+  options = {
+    close_command = "confirm bdelete %d",
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      local icon = level:match("error") and " " or " "
+      return " " .. icon .. count
+    end,
+  },
 })
 
 local map = vim.api.nvim_set_keymap
@@ -11,8 +30,8 @@ local function opts(desc)
 end
 
 -- Move to previous/next
-map("n", "<Tab>", "<Cmd>BufferNext<CR>", opts("Move to next buffer"))
-map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts("Move to previous buffer"))
+map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts("Move to next buffer"))
+map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts("Move to previous buffer"))
 
 -- Re-order to previous/next
 -- map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
@@ -38,8 +57,8 @@ map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts("Move to previous buffer"))
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map("n", "<leader>x", "<Cmd>confirm BufferClose<CR>", opts("Buffer close"))
-map("n", "<leader>X", "<Cmd>bufdo confirm BufferClose<CR>", opts("Buffer close all"))
+map("n", "<leader>x", "<Cmd>confirm bdelete<CR>", opts("Buffer close"))
+map("n", "<leader>X", "<Cmd>BufferLineCloseOthers<CR>", opts("Buffer close all"))
 
 -- Wipeout buffer
 --                 :BufferWipeout

@@ -2,7 +2,7 @@ local lspconfig = require("lspconfig")
 
 local M = {}
 
- -- https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
+-- https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
 local root_file = {
   ".eslintrc",
   ".eslintrc.js",

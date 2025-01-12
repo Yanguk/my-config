@@ -6,19 +6,21 @@ require("conform").setup({
     lua = { "stylua" },
 
     javascript = {
-      "prettier",
+      "prettierd",
     },
     typescript = {
-      "prettier",
+      "prettierd",
     },
     javascriptreact = {
-      "prettier",
+      "prettierd",
     },
     typescriptreact = {
-      "prettier",
+      "prettierd",
     },
-    markdown = { "prettier" },
-    html = { "prettier" },
+    markdown = { "prettierd" },
+    html = { "prettierd" },
+    json = { "prettierd" },
+    jsonc = { "prettierd" },
 
     -- racket = { "raco" },
     sh = { "shfmt" },
@@ -26,10 +28,8 @@ require("conform").setup({
     -- c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "prettier" },
-    jsonc = { "prettier" },
     yaml = { "yamlfmt" },
-    zig = { "zig fmt" },
+    zig = { "zigfmt" },
   },
   format_on_save = function(bufnr)
     -- 해당 프로젝트는 eslint로 포멧

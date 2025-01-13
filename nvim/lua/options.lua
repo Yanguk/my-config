@@ -44,52 +44,13 @@ o.undofile = true
 
 opt.swapfile = false -- don't create backup files
 
-local disabled_built_ins = {
-  "2html_plugin",
-  "tohtml",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
-  "netrw_nogx",
-  "node_provider",
-  "python3_provider",
-  "perl_provider",
-  "ruby_provider",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  g["loaded_" .. plugin] = 1
-end
-
 vim.filetype.add({
   extension = {
     http = "http", -- .http 파일을 http 파일타입으로 설정
   },
 })
 
-vim.treesitter.language.add("markdown") -- cmp docs type
+-- vim.treesitter.language.add("markdown") -- cmp docs type
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

@@ -1,3 +1,8 @@
-require("lualine").setup({
-  theme = "catppuccin",
-})
+return {
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  event = "BufRead",
+  opts = {
+    theme = "catppuccin",
+  },
+}

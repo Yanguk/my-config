@@ -1,4 +1,8 @@
-require("nvim-highlight-colors").setup({
-  enable_tailwind = true,
-  render = 'virtual'
-})
+return {
+  "brenoprata10/nvim-highlight-colors",
+  opts = {
+    enable_tailwind = true,
+    render = "virtual",
+  },
+  event = "BufRead",
+}

@@ -1,7 +1,3 @@
-require("notify").setup({
-  stages = "static",
-})
-
 local banned_messages = { "No information available" }
 
 -- See https://github.com/neovim/nvim-lspconfig/issues/1931#issuecomment-1297599534
@@ -15,3 +11,11 @@ vim.notify = function(msg, ...)
   end
   return require("notify")(msg, ...)
 end
+
+return {
+  "rcarriga/nvim-notify",
+  event = "VeryLazy",
+  opts = {
+    stages = "static",
+  },
+}

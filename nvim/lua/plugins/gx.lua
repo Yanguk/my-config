@@ -1,3 +1,7 @@
-require("gx").setup()
-
-vim.keymap.set({ "n", "x" }, "gx", "<cmd>Browse<cr>")
+return {
+  "chrishrb/gx.nvim",
+  opts = {},
+  keys = {
+    { "gx", "<cmd>Browse<cr>", desc = "Browse" },
+  },
+}

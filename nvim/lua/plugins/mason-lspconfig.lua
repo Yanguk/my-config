@@ -39,10 +39,10 @@ return {
         on_attach = function(client, bufnr)
           default_config.on_attach(client, bufnr)
 
-          -- 브릿지 프로젝트만 eslint로 포멧
-          if byDomain.isBridgeProject(bufnr) then
-            eslint_config.activeFixAll(bufnr)
-          end
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
         end,
         root_dir = eslint_config.root_dir,
       },

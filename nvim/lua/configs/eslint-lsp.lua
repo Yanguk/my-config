@@ -34,11 +34,4 @@ M.root_dir = function(startpath)
   end
 end
 
-M.activeFixAll = function(bufnr)
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = bufnr,
-    command = "EslintFixAll",
-  })
-end
-
 return M

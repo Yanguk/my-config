@@ -44,6 +44,7 @@ local detail = false
 
 return {
   "stevearc/oil.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons", "MagicDuck/grug-far.nvim" },
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
@@ -78,6 +79,27 @@ return {
           end
         end,
       },
+      ["gs"] = {
+        callback = function()
+          -- get the current directory
+          local prefills = { paths = require("oil").get_current_dir() }
+
+          local grug_far = require("grug-far")
+          -- instance check
+          if not grug_far.has_instance("explorer") then
+            grug_far.open({
+              instanceName = "explorer",
+              prefills = prefills,
+              staticTitle = "Find and Replace from Explorer",
+            })
+          else
+            grug_far.open_instance("explorer")
+            -- updating the prefills without clearing the search and other fields
+            grug_far.update_instance_prefills("explorer", prefills, false)
+          end
+        end,
+        desc = "oil: Search in directory",
+      },
     },
     view_options = {
       is_hidden_file = function(name, bufnr)
@@ -108,8 +130,6 @@ return {
 
     require("oil").setup(opts)
   end,
-  -- Optional dependencies
-  dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     { "-", "<CMD>Oil<CR>", desc = "Open parent directory" },
   },

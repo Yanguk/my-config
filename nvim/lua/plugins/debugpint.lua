@@ -18,10 +18,10 @@ return {
       ["jsx"] = js,
     },
   },
-  lazy = false, -- Required to make line highlighting work before debugprint is first used
+  -- lazy = false, -- Required to make line highlighting work before debugprint is first used
   version = "*", -- Remove if you DON'T want to use the stable version
   keys = {
+    { "g?" },
     { "g?d", "<cmd>DeleteDebugPrints<CR>", desc = "Delete debug prints" },
   },
 }
-

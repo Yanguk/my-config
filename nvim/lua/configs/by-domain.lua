@@ -1,14 +1,14 @@
 local M = {}
 
-M.isBridgeProject = function(bufnr)
+M.isDisableAutoFormatBuf = function(bufnr)
   local bufname = vim.api.nvim_buf_get_name(bufnr)
 
-  if bufname:find("bridge") then
-    return true
-  end
+  local patterns = { "bridge", "tooling", "server%-common" }
 
-  if bufname:find("tooling") then
-    return true
+  for _, pattern in ipairs(patterns) do
+    if bufname:find(pattern) then
+      return true
+    end
   end
 
   return false

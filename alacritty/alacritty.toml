@@ -26,11 +26,10 @@ option_as_alt = "OnlyLeft"
 title = "Alacritty"
 padding = { x = 5, y = 5 }
 dimensions = { columns = 120, lines = 40 }
+# blur = true
+# opacity = 0.95
 
 [general]
 live_config_reload = true
 working_directory = "./Desktop"
-# import = ["~/.config/alacritty/kanagawa_wave.toml"]
 import = ["~/.config/alacritty/catppuccin-mocha.toml"]
-# blur = true
-# opacity = 0.95

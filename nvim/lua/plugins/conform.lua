@@ -67,7 +67,7 @@ return {
     },
     format_on_save = function(bufnr)
       -- 해당 프로젝트는 eslint로 포멧
-      if byDomain.isBridgeProject(bufnr) then
+      if byDomain.isDisableAutoFormatBuf(bufnr) then
         return
       end
 

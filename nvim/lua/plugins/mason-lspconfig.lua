@@ -20,7 +20,6 @@ return {
     local lspconfig = require("lspconfig")
     local default_config = require("configs.default-lsp")
     local eslint_config = require("configs.eslint-lsp")
-    local byDomain = require("configs.by-domain")
 
     local server_configs = {
       "lua_ls",

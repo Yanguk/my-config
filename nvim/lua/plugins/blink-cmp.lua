@@ -12,6 +12,7 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load()
       end,
     },
+    "moyiz/blink-emoji.nvim",
   },
 
   -- use a release tag to download pre-built binaries
@@ -42,7 +43,7 @@ return {
       preset = "luasnip",
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "copilot" },
+      default = { "lsp", "path", "snippets", "buffer", "copilot", "emoji" },
       providers = {
         copilot = {
           name = "copilot",
@@ -66,6 +67,12 @@ return {
 
             return items
           end,
+        },
+        emoji = {
+          module = "blink-emoji",
+          name = "Emoji",
+          score_offset = 15, -- Tune by preference
+          opts = { insert = true }, -- Insert emoji (default) or complete its name
         },
       },
     },

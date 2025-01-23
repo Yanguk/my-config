@@ -47,11 +47,7 @@ return {
     function _G.set_terminal_keymaps()
       local opts = { buffer = 0, noremap = true }
 
-      vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-      vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-      vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-      vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-      vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+      vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], opts)
     end
 
     -- if you only want these mappings for toggle term use term://*toggleterm#* instead

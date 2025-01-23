@@ -10,7 +10,7 @@ return {
     -- ToggleTerm: Vertical
     {
       "<A-v>",
-      "<cmd>ToggleTerm direction=vertical size=45<CR>",
+      "<cmd>ToggleTerm direction=vertical<CR>",
       mode = { "n", "t" },
       desc = "Toggle terminal vertical",
     },
@@ -32,13 +32,26 @@ return {
     },
   },
   config = function()
-    require("toggleterm").setup()
+    require("toggleterm").setup({
+      open_mapping = [[<c-\>]],
+      size = function(term)
+        if term.direction == "horizontal" then
+          return 15
+        elseif term.direction == "vertical" then
+          return vim.o.columns * 0.4
+        end
+      end,
+    })
 
     ---@diagnostic disable-next-line: duplicate-set-field
     function _G.set_terminal_keymaps()
-      local opts = { buffer = 0 }
+      local opts = { buffer = 0, noremap = true }
 
-      vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], opts)
+      vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+      vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+      vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+      vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+      vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
     end
 
     -- if you only want these mappings for toggle term use term://*toggleterm#* instead

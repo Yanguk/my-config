@@ -1,4 +1,9 @@
-local banned_messages = { "No information available" }
+local banned_messages = {
+  "No information available",
+  "could not find adapter for buffer '://'",
+  "Could not find oil adapter for scheme '://'",
+  "[oil] could not find adapter for buffer '://'",
+}
 
 -- See https://github.com/neovim/nvim-lspconfig/issues/1931#issuecomment-1297599534
 -- An alternative solution: https://github.com/neovim/neovim/issues/20457#issuecomment-1266782345

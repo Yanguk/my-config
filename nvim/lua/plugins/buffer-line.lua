@@ -39,5 +39,5 @@ return {
     { "<leader>x", "<Cmd>confirm bdelete<CR>", desc = "Buffer close" },
     { "<leader>X", "<Cmd>BufferLineCloseOthers<CR>", desc = "Buffer close all" },
   },
-  event = "VeryLazy",
+  lazy = false,
 }

@@ -56,3 +56,5 @@ autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
+
+vim.cmd([[ inoremap <C-c> <Esc>\`^ ]])

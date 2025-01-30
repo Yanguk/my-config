@@ -1,39 +1,84 @@
----@diagnostic disable-next-line: deprecated
-table.unpack = table.unpack or unpack
-
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "LspInfo", "LspInstall", "LspUninstall" },
   dependencies = {
     "saghen/blink.cmp",
-    { "williamboman/mason.nvim", cmd = "Mason" },
+
+    -- mason
+    { "williamboman/mason.nvim", cmd = "Mason", opts = {} },
     "williamboman/mason-lspconfig.nvim",
+
+    -- rust
+    {
+      "mrcjkb/rustaceanvim",
+      version = "^5", -- Recommended
+      lazy = false, -- This plugin is already lazy
+    },
+
+    -- ts-tools
+    "pmizio/typescript-tools.nvim",
+    "nvim-lua/plenary.nvim",
   },
   config = function()
-    require("mason").setup()
     require("mason-lspconfig").setup({
       automatic_installation = true,
       ensure_installed = { "ts_ls" },
     })
 
     local lspconfig = require("lspconfig")
-    local default_config = require("configs.default-lsp")
     local eslint_config = require("configs.eslint-lsp")
 
-    local server_configs = {
+    local default_config = {
+      capabilities = require("blink.cmp").get_lsp_capabilities(),
+      on_init = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
+      on_attach = function(client, bufnr)
+        local function opts(desc)
+          return { buffer = bufnr, desc = desc }
+        end
+
+        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
+        vim.keymap.set("n", "<leader>ra", vim.lsp.buf.rename, opts("rename"))
+
+        if client.server_capabilities.inlayHintProvider then
+          vim.keymap.set("n", "<leader>ih", function()
+            local current_setting = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+
+            vim.lsp.inlay_hint.enable(not current_setting, { bufnr = bufnr })
+          end, opts("toggle [I]nlay [H]ints"))
+        end
+      end,
+    }
+
+    -- nvim-ufo (ts 에서 배열을 폴드할려면 lsp로 해야함)
+    default_config.capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+
+    local default_servers = {
       "lua_ls",
       "zls",
       "yamlls",
       "tailwindcss",
       "graphql",
       "prismals",
+      "docker_compose_language_service",
+      "dockerls",
+    }
+
+    for _, server in pairs(default_servers) do
+      lspconfig[server].setup(default_config)
+    end
+
+    local server_configs = {
       ["typos_lsp"] = {
         init_options = {
           config = "~/.config/nvim/typos.toml",
         },
       },
-
       ["eslint"] = {
         on_attach = function(client, bufnr)
           default_config.on_attach(client, bufnr)
@@ -48,24 +93,36 @@ return {
       ["bashls"] = {
         filetypes = { "sh", "zsh", "bash" },
       },
-      -- ["clangd"] = {
-      --   capabilities = {
-      --     offsetEncoding = "utf-16",
-      --   },
-      -- },
+      ["clangd"] = {
+        capabilities = {
+          offsetEncoding = "utf-16",
+        },
+      },
       ["denols"] = {
         root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
       },
-      "docker_compose_language_service",
-      "dockerls",
     }
 
-    for k, v in pairs(server_configs) do
-      local server, config = table.unpack(
-        type(k) == "number" and { v, default_config } or { k, vim.tbl_deep_extend("force", default_config, v) }
-      )
-
-      lspconfig[server].setup(config)
+    for server, config in pairs(server_configs) do
+      lspconfig[server].setup(vim.tbl_deep_extend("force", default_config, config))
     end
+
+    vim.g.rustaceanvim = {
+      server = default_config,
+    }
+
+    require("typescript-tools").setup({
+      on_init = default_config.on_init,
+      on_attach = default_config.on_attach,
+      capabilities = default_config.capabilities,
+      settings = {
+        tsserver_file_preferences = {
+          includeInlayParameterNameHints = "all",
+          importModuleSpecifierPreference = "non-relative",
+        },
+      },
+      root_dir = lspconfig.util.root_pattern("package.json"),
+      single_file_support = false,
+    })
   end,
 }

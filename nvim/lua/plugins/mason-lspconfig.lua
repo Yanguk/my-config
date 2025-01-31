@@ -27,7 +27,6 @@ return {
     })
 
     local lspconfig = require("lspconfig")
-    local eslint_config = require("configs.eslint-lsp")
 
     local default_config = {
       capabilities = require("blink.cmp").get_lsp_capabilities(),
@@ -73,6 +72,22 @@ return {
       lspconfig[server].setup(default_config)
     end
 
+    -- https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
+    local eslint_root_file = {
+      "eslint.config.js",
+      ".eslintrc.js",
+      ".eslintrc",
+      ".eslintrc.cjs",
+      ".eslintrc.yaml",
+      ".eslintrc.yml",
+      ".eslintrc.json",
+      "eslint.config.mjs",
+      "eslint.config.cjs",
+      "eslint.config.ts",
+      "eslint.config.mts",
+      "eslint.config.cts",
+    }
+
     local server_configs = {
       ["typos_lsp"] = {
         init_options = {
@@ -88,7 +103,11 @@ return {
             command = "EslintFixAll",
           })
         end,
-        root_dir = eslint_config.root_dir,
+        root_dir = function(fname)
+          return lspconfig.util.root_pattern(
+            unpack(lspconfig.util.insert_package_json(eslint_root_file, "eslintConfig", fname))
+          )(fname)
+        end,
       },
       ["bashls"] = {
         filetypes = { "sh", "zsh", "bash" },

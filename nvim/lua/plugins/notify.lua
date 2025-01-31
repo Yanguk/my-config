@@ -3,7 +3,6 @@ return {
   event = "VeryLazy",
   opts = {
     stages = "static",
-    render = "minimal",
   },
   config = function(_, opts)
     local notify = require("notify")

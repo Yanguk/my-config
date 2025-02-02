@@ -7,42 +7,42 @@ return {
   },
   keys = {
     {
-      "<leader>dc",
+      "<F5>",
       function()
         require("dap").continue()
       end,
       desc = "Debug: Start/Continue",
     },
     {
-      "<leader>di",
-      function()
-        require("dap").step_into()
-      end,
-      desc = "Debug: Step Into",
-    },
-    {
-      "<leader>do",
-      function()
-        require("dap").step_out()
-      end,
-      desc = "Debug: Step Out",
-    },
-    {
-      "<leader>dO",
+      "<F10>",
       function()
         require("dap").step_over()
       end,
       desc = "Debug: Step Over",
     },
     {
-      "<leader>db",
+      "<F11>",
+      function()
+        require("dap").step_into()
+      end,
+      desc = "Debug: Step Into",
+    },
+    {
+      "<F12>",
+      function()
+        require("dap").step_out()
+      end,
+      desc = "Debug: Step Out",
+    },
+    {
+      "<F9>",
       function()
         require("dap").toggle_breakpoint()
       end,
       desc = "Debug: Toggle Breakpoint",
     },
     {
-      "<leader>dt",
+      "<F4>",
       function()
         require("dap").terminate()
       end,
@@ -82,9 +82,8 @@ return {
       port = "${port}",
       executable = {
         command = "node",
-        -- 💀 Make sure to update this path to point to your installation
         args = {
-          get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
+          get_pkg_path("js-debug-adapter", "js-debug/src/dapDebugServer.js"),
           "${port}",
         },
       },
@@ -92,22 +91,17 @@ return {
 
     dap.configurations.zig = {
       {
-        type = "pwa-node",
+        name = "Launch",
+        type = "codelldb",
         request = "launch",
-        name = "Launch file",
-        program = "${file}",
+        program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
         cwd = "${workspaceFolder}",
-      },
-      {
-        type = "pwa-node",
-        request = "attach",
-        name = "Attach",
-        processId = require("dap.utils").pick_process,
-        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
       },
     }
 
-    for _, language in ipairs({ "typescript", "javascript", "typescriptreact" }) do
+    for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
       dap.configurations[language] = {
         {
           type = "pwa-node",
@@ -116,11 +110,20 @@ return {
           program = "${file}",
           cwd = "${workspaceFolder}",
         },
+        {
+          type = "pwa-node",
+          request = "attach",
+          name = "Attach",
+          processId = require("dap.utils").pick_process,
+          cwd = "${workspaceFolder}",
+        },
       }
     end
 
     dap.listeners.after.event_initialized["dapui_config"] = dapui.open
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+    vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
   end,
 }

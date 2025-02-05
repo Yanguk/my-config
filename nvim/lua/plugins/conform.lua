@@ -52,6 +52,7 @@ return {
       toml = { "taplo" },
       yaml = { "yamlfmt" },
       zig = { "zigfmt" },
+      nix = { "nixfmt" },
     },
     format_on_save = function(bufnr)
       -- 해당 프로젝트는 eslint로 포멧

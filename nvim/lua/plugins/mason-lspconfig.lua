@@ -66,6 +66,7 @@ return {
       "prismals",
       "docker_compose_language_service",
       "dockerls",
+      "nil_ls",
     }
 
     for _, server in pairs(default_servers) do

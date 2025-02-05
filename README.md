@@ -31,3 +31,18 @@ bat cache --build
 # 구름 입력기
 
 https://github.com/gureum/gureum
+
+# install nix
+
+```bash
+# https://nixos.org/download/
+sh <(curl -L https://nixos.org/nix/install)
+
+# https://github.com/LnL7/nix-darwin
+sudo mkdir -p /etc/nix-darwin
+sudo chown $(id -nu):$(id -ng) /etc/nix-darwin
+cd /etc/nix-darwin
+# To use Nixpkgs unstable:
+nix flake init -t nix-darwin/master
+sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
+```

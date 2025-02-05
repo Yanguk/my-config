@@ -24,20 +24,22 @@ return {
     keymap = {
       preset = "default",
       ["<C-space>"] = {},
-      ["<C-b>"] = {},
-      ["<C-f>"] = {},
+      ["<C-k>"] = {},
+      ["<Up>"] = {},
+      ["<Down>"] = {},
+      -- ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
       -- ["<C-e>"] = { "hide" },
       -- ["<C-y>"] = { "select_and_accept" },
-
-      ["<C-p>"] = { "select_prev", "fallback" },
-      ["<C-n>"] = { "select_next", "fallback" },
-
-      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
-
+      -- ["<C-p>"] = { "select_prev", "fallback" },
+      -- ["<C-n>"] = { "select_next", "fallback" },
       -- ["<Tab>"] = { "snippet_forward", "fallback" },
       -- ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+      ["<C-b>"] = {},
+      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-f>"] = {},
+      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
     },
     snippets = {
       preset = "luasnip",

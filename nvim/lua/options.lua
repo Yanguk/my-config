@@ -49,6 +49,10 @@ vim.filetype.add({
   extension = {
     http = "http", -- .http 파일을 http 파일타입으로 설정
   },
+  pattern = {
+    -- INFO: Match filenames like - ".env.example", ".env.local" and so on
+    ["%.env%.[%w_.-]+"] = "sh",
+  },
 })
 
 -- Auto resize panes when resizing nvim window

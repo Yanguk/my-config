@@ -39,10 +39,12 @@ https://github.com/gureum/gureum
 sh <(curl -L https://nixos.org/nix/install)
 
 # https://github.com/LnL7/nix-darwin
-sudo mkdir -p /etc/nix-darwin
-sudo chown $(id -nu):$(id -ng) /etc/nix-darwin
-cd /etc/nix-darwin
-# To use Nixpkgs unstable:
-nix flake init -t nix-darwin/master
-sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
+nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.config/nix#Yanguk
+
+# or
+ln -sf ~/.config/nix/flake.nix /etc/nix-darwin/flake.nix
+
+# or
+cd ~/.config/nix
+darwin-rebuild switch --flake .#Yanguk
 ```

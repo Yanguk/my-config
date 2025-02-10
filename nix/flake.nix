@@ -50,6 +50,7 @@
             terraform-local
             awscli2
             ripgrep
+            wget
           ];
 
           fonts.packages = with pkgs; [
@@ -59,7 +60,6 @@
           homebrew = {
             enable = true;
             brews = [
-              "mas"
               "awscli-local"
             ];
             casks = [
@@ -110,8 +110,6 @@
 
               # User owning the Homebrew prefix
               user = username;
-
-              # autoMigrate = true;
             };
           }
           home-manager.darwinModules.home-manager

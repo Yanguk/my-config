@@ -28,23 +28,27 @@
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
-          environment.systemPackages = [
-            pkgs.alacritty
-            pkgs.neovim
-            pkgs.tmux
-            pkgs.obsidian
-            pkgs.nixfmt-rfc-style
-            pkgs.lazygit
-            pkgs.zsh-fast-syntax-highlighting
-            pkgs.zsh-autosuggestions
-            pkgs.oh-my-zsh
-            pkgs.delta
-            pkgs.bat
-            pkgs.autojump
-            pkgs.gnupg
-            pkgs.direnv
-            pkgs.fzf
-            pkgs.gnupg
+          environment.systemPackages = with pkgs; [
+            alacritty
+            neovim
+            tmux
+            obsidian
+            nixfmt-rfc-style
+            lazygit
+            zsh-fast-syntax-highlighting
+            zsh-autosuggestions
+            oh-my-zsh
+            delta
+            bat
+            autojump
+            gnupg
+            direnv
+            fzf
+            gnupg
+            terraform
+            terraform-local
+            awscli2
+            ripgrep
           ];
 
           fonts.packages = with pkgs; [
@@ -55,6 +59,7 @@
             enable = true;
             brews = [
               "mas"
+              "awscli-local"
             ];
             casks = [
               "duckduckgo"

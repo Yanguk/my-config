@@ -1,5 +1,5 @@
 {
-  description = "Yanguk nix-darwin system flake";
+  description = "yanguk nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -35,6 +35,16 @@
             pkgs.obsidian
             pkgs.nixfmt-rfc-style
             pkgs.lazygit
+            pkgs.zsh-fast-syntax-highlighting
+            pkgs.zsh-autosuggestions
+            pkgs.oh-my-zsh
+            pkgs.delta
+            pkgs.bat
+            pkgs.autojump
+            pkgs.gnupg
+            pkgs.direnv
+            pkgs.fzf
+            pkgs.gnupg
           ];
 
           fonts.packages = with pkgs; [
@@ -79,8 +89,8 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Yanguk
-      darwinConfigurations."Yanguk" = nix-darwin.lib.darwinSystem {
+      # $ darwin-rebuild build --flake .#yanguk
+      darwinConfigurations."yanguk" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           nix-homebrew.darwinModules.nix-homebrew
@@ -102,6 +112,7 @@
           # {
           #   home-manager.useGlobalPkgs = true;
           #   home-manager.useUserPackages = true;
+          #   home-manager.users.yanguk = import ./home.nix;
           #
           #   users.users.yanguk = {
           #     name = "yanguk";

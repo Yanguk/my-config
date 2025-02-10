@@ -30,6 +30,7 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = with pkgs; [
+            google-chrome
             alacritty
             neovim
             tmux
@@ -42,7 +43,6 @@
             delta
             bat
             autojump
-            gnupg
             direnv
             fzf
             gnupg

@@ -14,7 +14,6 @@ ngrok
 github-copilot
 tmux/plugins
 alacritty/themes
-.gitconfig
 
 zed/*
 !zed/keymap.json

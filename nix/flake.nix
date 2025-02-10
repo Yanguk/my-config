@@ -6,8 +6,8 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    # home-manager.url = "github:nix-community/home-manager";
-    # home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -16,9 +16,10 @@
       nix-darwin,
       nixpkgs,
       nix-homebrew,
-    # home-manager,
+      home-manager,
     }:
     let
+      username = "yanguk";
       configuration =
         { pkgs, ... }:
         {
@@ -95,7 +96,7 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#yanguk
-      darwinConfigurations."yanguk" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.${username} = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           nix-homebrew.darwinModules.nix-homebrew
@@ -108,44 +109,21 @@
               enableRosetta = true;
 
               # User owning the Homebrew prefix
-              user = "yanguk";
+              user = username;
 
               # autoMigrate = true;
             };
           }
-          # home-manager.darwinModules.home-manager
-          # {
-          #   home-manager.useGlobalPkgs = true;
-          #   home-manager.useUserPackages = true;
-          #   home-manager.users.yanguk = import ./home.nix;
-          #
-          #   users.users.yanguk = {
-          #     name = "yanguk";
-          #     home = "/Users/yanguk";
-          #   };
-          #
-          #   home-manager.users.yanguk = {
-          #     home.stateVersion = "24.11";
-          #     programs = {
-          #       zsh = {
-          #         enable = true;
-          #         # custom = "$HOME/.config/zsh/omz-custom";
-          #         oh-my-zsh = {
-          #           enable = true;
-          #         };
-          #         # dotDir = ".config/zsh";
-          #       };
-          #       autojump = {
-          #         enable = true;
-          #       };
-          #
-          #       direnv = {
-          #         enable = true;
-          #         nix-direnv.enable = true;
-          #       };
-          #     };
-          #   };
-          # }
+          home-manager.darwinModules.home-manager
+          {
+            users.users.${username} = {
+              name = username;
+              home = "/Users/${username}";
+            };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home.nix;
+          }
         ];
       };
     };

@@ -30,28 +30,34 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = with pkgs; [
-            google-chrome
-            alacritty
             neovim
             tmux
-            obsidian
-            nixfmt-rfc-style
-            lazygit
+
             zsh-fast-syntax-highlighting
             zsh-autosuggestions
             oh-my-zsh
+            autojump
+
+            nixfmt-rfc-style
+            lazygit
             delta
             bat
-            autojump
             direnv
             fzf
-            gnupg
             terraform
             terraform-local
             awscli2
             ripgrep
             wget
             deno
+
+            # casks
+            google-chrome
+            alacritty
+            obsidian
+            slack
+            raycast
+            rectangle
           ];
 
           fonts.packages = with pkgs; [
@@ -65,6 +71,7 @@
             ];
             casks = [
               "duckduckgo"
+              "orbStack"
             ];
             masApps = {
               "kakaotalk" = 869223134;

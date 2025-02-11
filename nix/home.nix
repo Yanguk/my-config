@@ -13,6 +13,7 @@ in
   home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;
+  programs.gpg.enable = true;
 
   services.gpg-agent = {
     enable = true;

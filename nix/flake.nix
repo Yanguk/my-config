@@ -51,6 +51,7 @@
             awscli2
             ripgrep
             wget
+            deno
           ];
 
           fonts.packages = with pkgs; [

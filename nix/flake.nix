@@ -50,6 +50,7 @@
             ripgrep
             wget
             deno
+            gnupg
 
             # casks
             google-chrome
@@ -120,16 +121,16 @@
               user = username;
             };
           }
-          home-manager.darwinModules.home-manager
-          {
-            users.users.${username} = {
-              name = username;
-              home = "/Users/${username}";
-            };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home.nix;
-          }
+          # home-manager.darwinModules.home-manager
+          # {
+          #   users.users.${username} = {
+          #     name = username;
+          #     home = "/Users/${username}";
+          #   };
+          #   home-manager.useGlobalPkgs = true;
+          #   home-manager.useUserPackages = true;
+          #   home-manager.users.${username} = import ./home.nix;
+          # }
         ];
       };
     };

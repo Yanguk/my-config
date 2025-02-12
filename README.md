@@ -1,25 +1,32 @@
 # install nix
 
+[nix guide](https://zero-to-nix.com)
+
+````bash
+# https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#determinate-nix-installer
 ```bash
-# https://nixos.org/download/
-sh <(curl -L https://nixos.org/nix/install)
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
+  sh -s -- install
+````
 
 # https://github.com/LnL7/nix-darwin
-nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.config/nix#Yanguk
 
-# or
-ln -sf ~/.config/nix/flake.nix /etc/nix-darwin/flake.nix
+### nix-darwin install
 
-# or
-cd ~/.config/nix
-darwin-rebuild switch --flake .#Yanguk
+```bash
+nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.config/nix#yanguk
+```
+
+### run switch
+
+```bash
+darwin-rebuild switch --flake ~/.config/nix#yanguk
 ```
 
 # zsh
 
 ```bash
 ln -sf ~/.config/zsh/.zshrc ~/.zshrc
-
 ```
 
 # tmux

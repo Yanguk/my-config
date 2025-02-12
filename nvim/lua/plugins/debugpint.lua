@@ -22,6 +22,7 @@ return {
   version = "*", -- Remove if you DON'T want to use the stable version
   keys = {
     { "g?" },
+    { "g?", mode = "v" },
     { "g?d", "<cmd>DeleteDebugPrints<CR>", desc = "Delete debug prints" },
   },
 }

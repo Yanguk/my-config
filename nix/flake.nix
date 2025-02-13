@@ -70,11 +70,11 @@
             enable = true;
             brews = [
               "awscli-local"
+              "nvm"
             ];
             casks = [
               "duckduckgo"
               "orbStack"
-              "nvm"
             ];
             masApps = {
               "kakaotalk" = 869223134;

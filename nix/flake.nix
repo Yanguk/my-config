@@ -59,6 +59,7 @@
             slack
             raycast
             rectangle
+            vscode
           ];
 
           fonts.packages = with pkgs; [
@@ -73,6 +74,7 @@
             casks = [
               "duckduckgo"
               "orbStack"
+              "nvm"
             ];
             masApps = {
               "kakaotalk" = 869223134;

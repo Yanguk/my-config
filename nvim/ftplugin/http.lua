@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap(
   ":lua require('kulala').set_selected_env()<CR>",
   { noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<leader>rs", ":lua require('kulala').scratchpad()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ks", ":lua require('kulala').scratchpad()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
   "n",
   "<leader>kv",

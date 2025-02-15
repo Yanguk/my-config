@@ -52,6 +52,7 @@
             wget
             deno
             gnupg
+            gh
 
             # casks
             google-chrome

@@ -30,6 +30,10 @@ return {
       mode = { "n", "t" },
       desc = "Toggle terminal floating",
     },
+    {
+      "<c-\\>",
+      desc = "Toggle terminal",
+    },
   },
   config = function()
     require("toggleterm").setup({
@@ -41,6 +45,7 @@ return {
           return vim.o.columns * 0.4
         end
       end,
+      direction = "vertical",
     })
 
     ---@diagnostic disable-next-line: duplicate-set-field

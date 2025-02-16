@@ -50,9 +50,11 @@
             awscli2
             ripgrep
             wget
-            deno
             gnupg
             gh
+
+            deno
+            rustup
 
             # casks
             google-chrome
